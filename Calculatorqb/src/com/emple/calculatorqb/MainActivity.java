@@ -22,6 +22,7 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.StateListDrawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -79,6 +80,7 @@ public class MainActivity extends Activity {
 	Main1Inputtext main1inputtext=new Main1Inputtext();			
 	Globe globe=new Globe();	
 	TextView pbCal,pbCal1;	
+	SkinManage skinManage;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,19 +116,24 @@ public class MainActivity extends Activity {
  	  units.add("长    度");units.add("质    量");units.add("面    积");units.add("体    积");units.add("压    力");
  	  units.add("流    量");
  	  funet1=new EditText(this);funet1.setFocusableInTouchMode(false);funet1.setFocusable(false);
- 	  funet1.setTextColor(Color.WHITE);funet1.setBackgroundResource(R.drawable.main1bgrl2);
+ 	  funet1.setTextColor(Color.WHITE);funet1.setBackgroundDrawable(null);
  	 
-       init();        
-       getset();
+ 	  createSkin();
+      init();
+      getset();
        /*π=customvalues.π;
        e=customvalues.e;*/     
        
        
-       
-       
     }
     
-    private void getset() {
+    private void createSkin() {
+		// TODO Auto-generated method stub
+    	//Log.e("", "createSkin---------->"+SkinManage.loadAssetsSkin("", ct));
+    	skinManage=new SkinManage("Default", ct);
+	}
+
+	private void getset() {
 		// TODO Auto-generated method stub
 
     	main1inputtext.ct=ct;
@@ -195,14 +202,16 @@ public class MainActivity extends Activity {
     	rln3=new RelativeLayout(this);
     	rln1=(RelativeLayout) findViewById(R.id.main1rln1);	
     	main1et1=(EditText) findViewById(R.id.main1et1);
+    	
+    	rln1.setBackgroundDrawable(skinManage.loadMain1BgSkin());
     	rln1.removeView(main1et1);
     	rln1.addView(rln3,pwidth,pheight-6*bth1-5*btspace-bth1*4/7);
     	rln1.addView(main1et1,pwidth-12,pheight-6*bth1-5*btspace-bth1*4/7);
-    	main1et1.setX(6);rln3.setBackgroundResource(R.drawable.main1bg1);
+    	main1et1.setX(6);
+    	rln3.setBackgroundDrawable(skinManage.loadMain1Et1Skin());
     	etsize=(int) (main1et1.getTextSize()+4);
     	btsize=(int) (main1et1.getTextSize());
     	main1et1.setTextSize(TypedValue.COMPLEX_UNIT_PX, etsize);
-    	
     	
     	for(int i=0;i<30;i++){
     		Button bt=new Button(this);
@@ -210,15 +219,18 @@ public class MainActivity extends Activity {
     			bt.setText(strarray[i]);
     		}else{
     			bt.setText(function.get(i-20));
-    	}
+    		}
     		bt.setTextColor(Color.WHITE);///bt.setTextAppearance(context, resid)
     		bt.setTypeface(Typeface.SERIF);bt.setTextSize(TypedValue.COMPLEX_UNIT_PX, btsize);   		
     		if(i==2 || i==6 || i==7 || i==8 || i==11 || i==12 || i==13 || i==16 || i==17 || i==18){
-    			bt.setBackgroundResource(R.drawable.btbg);
+    			//bt.setBackgroundResource(R.drawable.btbg);
+    			bt.setBackgroundDrawable(skinManage.loadBtbgSkin());
     		}if(i==0 || i==1 || i==3 || i==4 || i==9 || i==14 || i==19 || i==5 || i==10 || i==15){
-    			bt.setBackgroundResource(R.drawable.btbg2);
+    			//bt.setBackgroundResource(R.drawable.btbg2);
+    			bt.setBackgroundDrawable(skinManage.loadBtbg1Skin());
     		}if(i==20  || i==21 || i==22 || i==23 || i==24 || i==25 || i==26 || i==27 || i==28 || i==29){
-    			bt.setBackgroundResource(R.drawable.btbg1);
+    			//bt.setBackgroundResource(R.drawable.btbg1);
+    			bt.setBackgroundDrawable(skinManage.loadBtbg2Skin());
     		}
     		globe.btarray.add(bt); 
             if(i%5==4){
@@ -234,7 +246,7 @@ public class MainActivity extends Activity {
     		funbt[i]=new Button(this);
     		funbt[i].setTextColor(Color.WHITE);///bt.setTextAppearance(context, resid)
     		funbt[i].setTypeface(Typeface.SERIF);funbt[i].setTextSize(TypedValue.COMPLEX_UNIT_PX, btsize); 
-    		funbt[i].setBackgroundResource(R.drawable.btbg1);
+    		funbt[i].setBackgroundDrawable(skinManage.loadBtbg2Skin());
     		if(i%5==4){
             	rln1.addView(funbt[i],btw1+ds,bth1);  
     		}else{
@@ -254,7 +266,9 @@ public class MainActivity extends Activity {
     	globe.btarray.get(29).setOnLongClickListener(new btlong());
     	rln2=new RelativeLayout(this);
     	rln1.addView(rln2,RelativeLayout.LayoutParams.FILL_PARENT,bth1*4/7);
-    	rln2.setBackgroundResource(R.drawable.main1bgrl2);rln2.setY(globe.btarray.get(25).getY()-bth1*4/7);
+    	//rln2.setBackgroundResource(R.drawable.main1bgrl2);
+    	rln2.setBackgroundDrawable(skinManage.loadMain1Rl2Skin());
+    	rln2.setY(globe.btarray.get(25).getY()-bth1*4/7);
     	main1tv1=new TextView(this);main1tv1.setBackgroundResource(R.drawable.main1tv1a);
     	main1tv2=new TextView(this);main1tv2.setBackgroundResource(R.drawable.main1tv2c);
     	main1tv3=new TextView(this);main1tv3.setBackgroundResource(R.drawable.main1tv3);
@@ -319,7 +333,9 @@ public class MainActivity extends Activity {
 		pbCal.setX(bth1*6/5);pbCal.setVisibility(View.INVISIBLE);
 		pbCal1=new TextView(ct);rln2.addView(pbCal1,bth1*6/5,RelativeLayout.LayoutParams.FILL_PARENT);
 		pbCal1.setX(pwidth-bth1*6/5+2); pbCal1.setText("取消操作");pbCal1.setGravity(Gravity.CENTER);
-		pbCal1.setTextColor(colorList);pbCal1.setClickable(true);pbCal1.setBackgroundResource(R.drawable.main1bgrl2);
+		pbCal1.setTextColor(colorList);pbCal1.setClickable(true);
+		//pbCal1.setBackgroundResource(R.drawable.main1bgrl2);
+		pbCal1.setBackgroundDrawable(skinManage.loadMain1Rl2Skin());
 		pbCal1.setOnClickListener(new pbcal1click());pbCal1.setVisibility(View.INVISIBLE);
 		
 		/*btCal=new Button(ct);btCal.setText("取消");//btCal.setBackgroundResource(R.drawable.)

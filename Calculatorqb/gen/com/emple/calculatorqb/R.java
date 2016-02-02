@@ -11,18 +11,20 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int alpha=0x7f04000c;
-        public static final int blue=0x7f040004;
-        public static final int blue1=0x7f040001;
-        public static final int blue2=0x7f040002;
-        public static final int blue4=0x7f040005;
-        public static final int strpan1=0x7f040006;
-        public static final int strpan2=0x7f040007;
-        public static final int strpan3=0x7f040008;
-        public static final int strpan4=0x7f040009;
-        public static final int strpan5=0x7f04000a;
-        public static final int strpan6=0x7f04000b;
-        public static final int white1=0x7f040003;
+        public static final int alpha=0x7f040008;
+        /**  <color name="blue">#26AEAE</color>
+    <color name="blue4">#2BB3B3</color> 
+         */
+        public static final int strpan1=0x7f040002;
+        public static final int strpan2=0x7f040003;
+        public static final int strpan3=0x7f040004;
+        public static final int strpan4=0x7f040005;
+        public static final int strpan5=0x7f040006;
+        public static final int strpan6=0x7f040007;
+        /**      <color name="blue1">#2EC0C0</color>
+    <color name="blue2">#84E1E1</color> 
+         */
+        public static final int white1=0x7f040001;
         public static final int yellow1=0x7f040000;
     }
     public static final class dimen {
@@ -36,26 +38,23 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int btbg=0x7f020000;
-        public static final int btbg1=0x7f020001;
-        public static final int btbg2=0x7f020002;
-        public static final int calpb=0x7f020003;
-        public static final int calpb1=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int main1bg=0x7f020006;
-        public static final int main1bg1=0x7f020007;
-        public static final int main1bgrl2=0x7f020008;
-        public static final int main1tv1a=0x7f020009;
-        public static final int main1tv1b=0x7f02000a;
-        public static final int main1tv2=0x7f02000b;
-        public static final int main1tv2a=0x7f02000c;
-        public static final int main1tv2b=0x7f02000d;
-        public static final int main1tv2c=0x7f02000e;
-        public static final int main1tv3=0x7f02000f;
-        public static final int main1tv3a=0x7f020010;
-        public static final int main1tv3b=0x7f020011;
-        public static final int main1tv3c=0x7f020012;
-        public static final int unitpopbg=0x7f020013;
+        public static final int calpb=0x7f020000;
+        public static final int calpb1=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int main1bg=0x7f020003;
+        public static final int main1bg1=0x7f020004;
+        public static final int main1bgrl2=0x7f020005;
+        public static final int main1tv1a=0x7f020006;
+        public static final int main1tv1b=0x7f020007;
+        public static final int main1tv2=0x7f020008;
+        public static final int main1tv2a=0x7f020009;
+        public static final int main1tv2b=0x7f02000a;
+        public static final int main1tv2c=0x7f02000b;
+        public static final int main1tv3=0x7f02000c;
+        public static final int main1tv3a=0x7f02000d;
+        public static final int main1tv3b=0x7f02000e;
+        public static final int main1tv3c=0x7f02000f;
+        public static final int unitpopbg=0x7f020010;
     }
     public static final class id {
         public static final int action_settings=0x7f090006;
