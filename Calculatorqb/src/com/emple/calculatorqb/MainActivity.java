@@ -130,7 +130,7 @@ public class MainActivity extends Activity {
     private void createSkin() {
 		// TODO Auto-generated method stub
     	//Log.e("", "createSkin---------->"+SkinManage.loadAssetsSkin("", ct));
-    	skinManage=new SkinManage("Default", ct);
+    	skinManage=new SkinManage("Default0", ct);
 	}
 
 	private void getset() {
