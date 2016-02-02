@@ -93,9 +93,18 @@ public class MainActivity extends Activity {
  	   getWindowManager().getDefaultDisplay().getMetrics(dm);    
  	   pwidth = dm.widthPixels;              
  	   pheight = dm.heightPixels/*-statusBarHeight*/;
- 	   int ds1=pwidth-pwidth*50/254*5-pwidth/254*4;
+ 	   
+ 	   
+ 	   /*int ds1=pwidth-pwidth*50/254*5-pwidth/254*4;
  	   ds=ds1-ds1/5;
- 	   btw1=pwidth*50/254+ds1/5;bth1=pwidth*10/54;btspace=pwidth/254;
+ 	   btw1=pwidth*50/254+ds1/5;bth1=pwidth*10/54;btspace=pwidth/254;*/
+ 	   
+ 	   ds=1;
+ 	   btw1=(pwidth-4*ds)/5;
+ 	   bth1=pheight*15/(24*6);
+ 	   //bth1=btw1*5/6;	
+ 	   btspace=ds;
+ 	   
  	   ct=this;	   
  	   flater=LayoutInflater.from(ct);
  	   for(int i=0;i<6;i++){
@@ -110,7 +119,11 @@ public class MainActivity extends Activity {
        init();        
        getset();
        /*π=customvalues.π;
-       e=customvalues.e;*/           
+       e=customvalues.e;*/     
+       
+       
+       
+       
     }
     
     private void getset() {
