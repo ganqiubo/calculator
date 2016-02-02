@@ -48,7 +48,7 @@ public class Main1Inputtext {
 	4.[]1/N∑()[,,]
 	5.()*/
 	
-    public void inputtext(int a, String s){
+    public void inputtext(int a, String s) throws Exception{
 	   	  
     	int a1=0;
     	if(!globe.isfuning && !globe.isfun1save){
@@ -56,6 +56,7 @@ public class Main1Inputtext {
     		inputnormal(a, s);
     		if(a==3){
     			String s1=globe.calculate.calculate(main1et1.getText().toString());
+    			//s1=unityScale(s1);
     			Log.e("", "计算结果为："+s1);
     			if(s1==null){
     				
@@ -459,6 +460,7 @@ public class Main1Inputtext {
     	   etcursor();    	  
     }   
     
+    //计算结果优化
     public String unityScale(String s1) {
 		// TODO Auto-generated method stub
     	
@@ -501,7 +503,7 @@ public class Main1Inputtext {
 	} 
 
 
-	public Object[] funismatch(int funa1, int funb1, int funa2, int funb2) {
+	public Object[] funismatch(int funa1, int funb1, int funa2, int funb2) throws Exception {
 		// TODO Auto-generated method stub
     	String matches1=main1et1.getText().toString().substring(funa1+1, funb1);
 		String matches2=main1et1.getText().toString().substring(funa2+1, funb2);

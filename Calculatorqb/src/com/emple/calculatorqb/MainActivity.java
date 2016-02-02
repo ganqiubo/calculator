@@ -629,7 +629,12 @@ public class MainActivity extends Activity {
 					   
 					}				
 				}else{
-						main1inputtext.inputtext(globe.btarray.indexOf(arg0),s);
+						try {
+							main1inputtext.inputtext(globe.btarray.indexOf(arg0),s);
+						} catch (Exception e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						Log.e("", ">>>>>>>>>>>>>>"+globe.btarray.indexOf(arg0));
 				}
 			}
