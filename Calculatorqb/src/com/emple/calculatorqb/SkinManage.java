@@ -10,6 +10,7 @@ import android.util.Log;
 public class SkinManage {
 	
 	private int pressed = android.R.attr.state_pressed; 
+	private int activated = android.R.attr.state_activated; 
 	private String skinName;
 	private Context ct;
 	private String skinPath;
@@ -19,6 +20,7 @@ public class SkinManage {
 		this.skinName = skinName;
 		this.ct = ct;
 		this.skinPathMode = 1;
+		//ct.getApplicationContext()
 	}
 	
 	public SkinManage(String skinName, String skinPath) {
@@ -32,6 +34,14 @@ public class SkinManage {
 			return LoadMode1DrawBg(skinName+"/main1bg.png", "main1bg");
 		}else {
 			return LoadMode2DrawBg(skinPath+"/"+skinName+"/main1bg-b.png");
+		}
+	}
+	
+	public Drawable loadPopLv1BgSkin(){
+		if (skinPathMode==1) {
+			return LoadMode1DrawBg(skinName+"/unitpopbg.png", "unitpopbg");
+		}else {
+			return LoadMode2DrawBg(skinPath+"/"+skinName+"/unitpopbg.png");
 		}
 	}
 	
@@ -78,11 +88,38 @@ public class SkinManage {
 		}
 	}
 	
+	public StateListDrawable loadMain1Tv2Skin(){
+		if(skinPathMode==1){
+			return LoadMode1Draw(new String[]{skinName+"/main1tv2-b.png",skinName+"/main1tv2-a.png",skinName+"/main1tv2-c.png"}, 
+					new String[]{"main1tv2-b","main1tv2-a","main1tv2-c"});
+		}else{
+			return LoadMode2Draw(new String[]{skinPath+"/"+skinName+"/main1tv2-b.png",
+									skinPath+"/"+skinName+"/main1tv2-a.png",
+									skinPath+"/"+skinName+"/main1tv2-c.png",});
+		}
+	}
+	
+	public StateListDrawable loadMain1Tv3Skin(){
+		if(skinPathMode==1){
+			return LoadMode1Draw(new String[]{skinName+"/main1tv3-b.png",skinName+"/main1tv3-a.png",skinName+"/main1tv3-c.png"}, 
+					new String[]{"main1tv3-b","main1tv3-a","main1tv3-c"});
+		}else{
+			return LoadMode2Draw(new String[]{skinPath+"/"+skinName+"/main1tv3-b.png",
+									skinPath+"/"+skinName+"/main1tv3-a.png",
+									skinPath+"/"+skinName+"/main1tv3-c.png",});
+		}
+	}
+	
 	private StateListDrawable LoadMode1Draw(String[] drawPaths,String[] drawNames){
 		StateListDrawable draw = new StateListDrawable();
 		try {
 			draw.addState(new int[]{pressed}, 
 					Drawable.createFromStream(ct.getAssets().open(drawPaths[0]), drawNames[0]));
+			if (drawPaths.length==3) {
+				Log.e("", "===>"+drawPaths.length);
+				draw.addState(new int[]{-activated},
+					Drawable.createFromStream(ct.getAssets().open(drawPaths[2]), drawNames[2]));
+			}
 			draw.addState(new int[]{}, 
 					Drawable.createFromStream(ct.getAssets().open(drawPaths[1]), drawNames[1]));
 		} catch (IOException e) {
@@ -98,6 +135,10 @@ public class SkinManage {
 		try {
 			draw.addState(new int[]{pressed}, 
 					Drawable.createFromPath(drawPaths[0]));
+			if (drawPaths.length==3) {
+				draw.addState(new int[]{-activated}, 
+						Drawable.createFromPath(drawPaths[2]));
+			}
 			draw.addState(new int[]{}, 
 					Drawable.createFromPath(drawPaths[1]));
 		} catch (Exception e) {

@@ -101,12 +101,11 @@ public class MainActivity extends Activity {
  	   ds=ds1-ds1/5;
  	   btw1=pwidth*50/254+ds1/5;bth1=pwidth*10/54;btspace=pwidth/254;*/
  	   
- 	   ds=1;
+ 	   ds=2;
  	   btw1=(pwidth-4*ds)/5;
  	   bth1=pheight*15/(24*6);
  	   //bth1=btw1*5/6;	
  	   btspace=ds;
- 	   
  	   ct=this;	   
  	   flater=LayoutInflater.from(ct);
  	   for(int i=0;i<6;i++){
@@ -123,14 +122,12 @@ public class MainActivity extends Activity {
       getset();
        /*π=customvalues.π;
        e=customvalues.e;*/     
-       
-       
     }
     
     private void createSkin() {
 		// TODO Auto-generated method stub
     	//Log.e("", "createSkin---------->"+SkinManage.loadAssetsSkin("", ct));
-    	skinManage=new SkinManage("Default0", ct);
+    	skinManage=new SkinManage("Default1", ct);
 	}
 
 	private void getset() {
@@ -270,8 +267,8 @@ public class MainActivity extends Activity {
     	rln2.setBackgroundDrawable(skinManage.loadMain1Rl2Skin());
     	rln2.setY(globe.btarray.get(25).getY()-bth1*4/7);
     	main1tv1=new TextView(this);main1tv1.setBackgroundResource(R.drawable.main1tv1a);
-    	main1tv2=new TextView(this);main1tv2.setBackgroundResource(R.drawable.main1tv2c);
-    	main1tv3=new TextView(this);main1tv3.setBackgroundResource(R.drawable.main1tv3);
+    	main1tv2=new TextView(this);main1tv2.setBackgroundDrawable(skinManage.loadMain1Tv2Skin());
+    	main1tv3=new TextView(this);main1tv3.setBackgroundDrawable(skinManage.loadMain1Tv3Skin());
     	main1tv4=new TextView(this);main1tv4.setGravity(Gravity.CENTER);main1tv4.setText("长度");
     	main1tv1.setGravity(Gravity.CENTER);
     	rln2.addView(main1tv1, bth1*3/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv1.setClickable(true);
@@ -280,8 +277,9 @@ public class MainActivity extends Activity {
     	rln2.addView(main1tv4, bth1*3/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv4.setClickable(true);main1tv4.setX(pwidth-bth1*3/5);   	
     	main1tv1.setOnClickListener(new tvclick());main1tv4.setOnClickListener(new tvclick());
     	main1tv2.setOnClickListener(new tvclick());main1tv3.setOnClickListener(new tvclick());
-    	main1tv2.setFocusable(false);main1tv2.setFocusableInTouchMode(false);main1tv2.setClickable(false);
-    	  	
+    	main1tv2.setFocusable(false);main1tv2.setFocusableInTouchMode(false);main1tv2.setClickable(false);main1tv2.setActivated(false);
+    	main1tv3.setActivated(true);  	
+    	
     	int[] colors = new int[] { Color.rgb(255, 102, 0),Color.rgb(255, 255, 255)};  
         int[][] states = new int[2][]; 
         states[0] = new int[] {android.R.attr.state_pressed};  
@@ -300,6 +298,7 @@ public class MainActivity extends Activity {
 		unitpoplv1.setAdapter((ListAdapter) new ArrayAdapter<String>(this,  
                 R.layout.unitpopstyle,units));
 		unitpoplv1.setOnItemClickListener(new unititem());
+		unitpoplv1.setBackgroundDrawable(skinManage.loadPopLv1BgSkin());
 			
 		getunitname();
 		/*Cursor c = db.rawQuery("select * from unit_table", null);
@@ -532,23 +531,27 @@ public class MainActivity extends Activity {
 				}if(v==main1tv2){
 					if(funid==maxfunid){
 						main1tv3.setClickable(true);
-						main1tv3.setBackgroundResource(R.drawable.main1tv3);					
+						//main1tv3.setBackgroundResource(R.drawable.main1tv3);
+						main1tv3.setActivated(true);
 					}if(funid>1){
 						funid=funid-1;
 						funchange("down");
 					}if(funid==1){
-						main1tv2.setBackgroundResource(R.drawable.main1tv2c);
+						//main1tv2.setBackgroundResource(R.drawable.main1tv2c);
+						Log.e("", "oooo");
+						main1tv2.setActivated(false);
 						main1tv2.setFocusable(false);main1tv2.setFocusableInTouchMode(false);main1tv2.setClickable(false);
 					}			
 				}if(v==main1tv3){
 					if(funid==1){
-					    main1tv2.setClickable(true);
-						main1tv2.setBackgroundResource(R.drawable.main1tv2);
+					    main1tv2.setClickable(true);main1tv2.setActivated(true);
+						//main1tv2.setBackgroundResource(R.drawable.main1tv2);
 					}if(funid!=maxfunid){
 						funid=funid+1;
 						funchange("up");
 					}if(funid==maxfunid){
-						main1tv3.setBackgroundResource(R.drawable.main1tv3c); 
+						//main1tv3.setBackgroundResource(R.drawable.main1tv3c); 
+						main1tv3.setActivated(false);
 						main1tv3.setFocusable(false);main1tv3.setFocusableInTouchMode(false);main1tv3.setClickable(false);
 					}	
 				}if(v==main1tv4){
