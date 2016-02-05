@@ -30,6 +30,11 @@ public final class R {
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
+
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
@@ -38,48 +43,66 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int calpb=0x7f020000;
-        public static final int calpb1=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int main1bg=0x7f020003;
-        public static final int main1bg1=0x7f020004;
-        public static final int main1bgrl2=0x7f020005;
-        public static final int main1tv1a=0x7f020006;
-        public static final int main1tv1b=0x7f020007;
-        public static final int main1tv2=0x7f020008;
-        public static final int main1tv2a=0x7f020009;
-        public static final int main1tv2b=0x7f02000a;
-        public static final int main1tv2c=0x7f02000b;
-        public static final int main1tv3=0x7f02000c;
-        public static final int main1tv3a=0x7f02000d;
-        public static final int main1tv3b=0x7f02000e;
-        public static final int main1tv3c=0x7f02000f;
-        public static final int unitpopbg=0x7f020010;
+        public static final int back_normal=0x7f020000;
+        public static final int back_pressed=0x7f020001;
+        public static final int calpb=0x7f020002;
+        public static final int calpb1=0x7f020003;
+        public static final int element_list=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int main1bg=0x7f020006;
+        public static final int main1bg1=0x7f020007;
+        public static final int main1bgrl2=0x7f020008;
+        public static final int main1tv1a=0x7f020009;
+        public static final int main1tv1b=0x7f02000a;
+        public static final int main1tv2=0x7f02000b;
+        public static final int main1tv2a=0x7f02000c;
+        public static final int main1tv2b=0x7f02000d;
+        public static final int main1tv2c=0x7f02000e;
+        public static final int main1tv3=0x7f02000f;
+        public static final int main1tv3a=0x7f020010;
+        public static final int main1tv3b=0x7f020011;
+        public static final int main1tv3c=0x7f020012;
+        public static final int note=0x7f020013;
+        public static final int selector_back_click=0x7f020014;
+        public static final int skin=0x7f020015;
+        public static final int unit_tables=0x7f020016;
+        public static final int unitpopbg=0x7f020017;
+        public static final int version_info=0x7f020018;
     }
     public static final class id {
-        public static final int action_settings=0x7f090006;
+        public static final int action_settings=0x7f09000c;
         public static final int main1et1=0x7f090001;
         public static final int main1hsv1=0x7f090002;
         public static final int main1ll1=0x7f090003;
         public static final int main1rln1=0x7f090000;
-        public static final int unitpoplv1=0x7f090005;
-        public static final int unitpoprl1=0x7f090004;
+        public static final int mhead_back=0x7f090005;
+        public static final int mhead_title=0x7f090006;
+        public static final int setting_list_item=0x7f090009;
+        public static final int setting_list_itemiv=0x7f090008;
+        public static final int settinhg_head=0x7f090004;
+        public static final int settinhg_list=0x7f090007;
+        public static final int unitpoplv1=0x7f09000b;
+        public static final int unitpoprl1=0x7f09000a;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_main_draw=0x7f030001;
-        public static final int unitpop=0x7f030002;
-        public static final int unitpopstyle=0x7f030003;
+        public static final int activity_setting=0x7f030002;
+        public static final int set_list_item=0x7f030003;
+        public static final int unitpop=0x7f030004;
+        public static final int unitpopstyle=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f080000;
         public static final int main_draw=0x7f080001;
+        public static final int setting=0x7f080002;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060002;
         public static final int title_activity_main_draw=0x7f060003;
+        public static final int title_activity_setting=0x7f060004;
     }
     public static final class style {
         /** 

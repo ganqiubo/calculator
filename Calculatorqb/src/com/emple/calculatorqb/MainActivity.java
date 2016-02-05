@@ -15,6 +15,7 @@ import android.os.Vibrator;
 import android.app.Activity;
 import android.app.Service;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -27,6 +28,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -51,6 +53,7 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
@@ -81,6 +84,7 @@ public class MainActivity extends Activity {
 	Globe globe=new Globe();	
 	TextView pbCal,pbCal1;	
 	SkinManage skinManage;
+	long systime=0;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +105,7 @@ public class MainActivity extends Activity {
  	   ds=ds1-ds1/5;
  	   btw1=pwidth*50/254+ds1/5;bth1=pwidth*10/54;btspace=pwidth/254;*/
  	   
- 	   ds=2;
+ 	   ds=1;
  	   btw1=(pwidth-4*ds)/5;
  	   bth1=pheight*15/(24*6);
  	   //bth1=btw1*5/6;	
@@ -127,7 +131,7 @@ public class MainActivity extends Activity {
     private void createSkin() {
 		// TODO Auto-generated method stub
     	//Log.e("", "createSkin---------->"+SkinManage.loadAssetsSkin("", ct));
-    	skinManage=new SkinManage("Default1", ct);
+    	skinManage=new SkinManage("Default0", ct);
 	}
 
 	private void getset() {
@@ -789,5 +793,27 @@ public class MainActivity extends Activity {
     		globe.btarray.get(i).startAnimation(sa1);		
     	}
     }
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		// TODO Auto-generated method stub
+		if (event.getKeyCode()==KeyEvent.KEYCODE_BACK) {
+			if(System.currentTimeMillis()-systime<200){
+				finish();
+			}else{
+				systime=System.currentTimeMillis();
+				Toast.makeText(ct, "再按一次退出", Toast.LENGTH_SHORT).show();
+			}
+			
+		}if (event.getKeyCode()==KeyEvent.KEYCODE_MENU) {
+			//Log.e("", "===>KEYCODE_MENU");
+			Intent intent=new Intent(this, SettingActivity.class);
+			startActivity(intent);
+		}
+		return false;
+	}
+    
+    
+    
     
 }

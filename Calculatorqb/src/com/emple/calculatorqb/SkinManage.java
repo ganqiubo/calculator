@@ -5,7 +5,6 @@ import java.io.IOException;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
-import android.util.Log;
 
 public class SkinManage {
 	
@@ -116,7 +115,6 @@ public class SkinManage {
 			draw.addState(new int[]{pressed}, 
 					Drawable.createFromStream(ct.getAssets().open(drawPaths[0]), drawNames[0]));
 			if (drawPaths.length==3) {
-				Log.e("", "===>"+drawPaths.length);
 				draw.addState(new int[]{-activated},
 					Drawable.createFromStream(ct.getAssets().open(drawPaths[2]), drawNames[2]));
 			}
@@ -171,10 +169,6 @@ public class SkinManage {
 		return draw;
 	}
 	
-	
-	
-
-	
 	/*style:
 	 * 	btbg
 	 * 	btbg1
@@ -182,14 +176,5 @@ public class SkinManage {
 	 * 	rln1
 	 * 
 	 * */
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
