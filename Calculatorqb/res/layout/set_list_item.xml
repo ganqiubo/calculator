@@ -3,30 +3,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-    <ImageView 
-        android:id="@+id/setting_list_itemiv"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignTop="@+id/setting_list_item"
-        android:layout_alignBottom="@+id/setting_list_item"
-        android:layout_alignParentLeft="true"
-        android:src="@drawable/element_list"
-        />
-    
     <RelativeLayout
         android:id="@+id/setting_list_item"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/setting_list_itemiv" >
+        android:layout_height="wrap_content" 
+        android:paddingTop="12dp">
+
+        <ImageView
+            android:id="@+id/setting_list_itemiv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignBottom="@+id/setting_list_itemtv"
+            android:layout_alignTop="@id/setting_list_itemtv"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/element_list" />
 
         <TextView
+            android:id="@+id/setting_list_itemtv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-            android:textSize="22dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:text="hello"
-            />
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/setting_list_itemiv"
+            android:gravity="center"
+            android:text="元素表"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#676767"
+            android:textSize="20sp" />
+        
+        <View 
+            android:layout_width="wrap_content"
+            android:layout_height="1dip"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/setting_list_itemtv"
+            android:layout_toRightOf="@+id/setting_list_itemiv"
+            android:background="#DDDDDD" />
 
     </RelativeLayout>
     

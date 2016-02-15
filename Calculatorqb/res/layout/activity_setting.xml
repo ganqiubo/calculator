@@ -2,14 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#dddddd"
+    android:background="#FFFFFF"
     tools:context="com.emple.calculatorqb.SettingActivity" >
 
     <RelativeLayout 
         android:id="@+id/settinhg_head"
         android:layout_width="match_parent"
     	android:layout_height="wrap_content"
-    	android:background="#ffffff">
+    	android:background="#0CACF4">
         <ImageButton
 	        android:id="@+id/mhead_back"
 	        android:layout_width="wrap_content"
@@ -21,7 +21,7 @@
 
 	    <TextView
 	        android:id="@+id/mhead_title"
-	        android:layout_width="wrap_content"
+	        android:layout_width="wrap_content" 
 	        android:layout_height="wrap_content"
 	        android:layout_centerHorizontal="true"
 	        android:layout_alignTop="@+id/mhead_back"
@@ -29,15 +29,16 @@
 	        android:gravity="center"
 	        android:padding="10dp"
 	        android:text="更多 "
-	        android:textColor="#555"
+	        android:textColor="#fff"
 	        android:textSize="22sp" />
     </RelativeLayout>
     
     <ListView 
-        android:id="@+id/settinhg_list"
+        android:id="@+id/setting_list"
         android:layout_below="@+id/settinhg_head"
         android:layout_width="fill_parent"
-	    android:layout_height="fill_parent">
+	    android:layout_height="fill_parent"
+	    android:divider="#00ffffff">
     </ListView>
 
 </RelativeLayout>

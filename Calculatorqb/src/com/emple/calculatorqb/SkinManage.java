@@ -174,7 +174,8 @@ public class SkinManage {
 	 * 	btbg1
 	 * 	btbg2
 	 * 	rln1
-	 * 
 	 * */
 
+	
+	
 }

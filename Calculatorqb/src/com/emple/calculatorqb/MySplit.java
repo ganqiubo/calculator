@@ -1,5 +1,7 @@
 package com.emple.calculatorqb;
 
+import android.widget.TextView;
+
 public class MySplit {
 
     public String[] mysplit(String s1,String s2) {

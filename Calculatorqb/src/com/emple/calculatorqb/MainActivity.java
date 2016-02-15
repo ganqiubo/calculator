@@ -798,7 +798,7 @@ public class MainActivity extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		// TODO Auto-generated method stub
 		if (event.getKeyCode()==KeyEvent.KEYCODE_BACK) {
-			if(System.currentTimeMillis()-systime<200){
+			if(System.currentTimeMillis()-systime<400){
 				finish();
 			}else{
 				systime=System.currentTimeMillis();
@@ -809,6 +809,7 @@ public class MainActivity extends Activity {
 			//Log.e("", "===>KEYCODE_MENU");
 			Intent intent=new Intent(this, SettingActivity.class);
 			startActivity(intent);
+			overridePendingTransition(R.anim.slide_in_right,R.anim.slide_no);    
 		}
 		return false;
 	}
