@@ -1,12 +1,64 @@
 package com.emple.calculatorqb;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 
 public class SkinManage {
+	
+	public static int SKINMODE=1;
+	public static String SKINPATH="skin/Default0";
+	public static boolean MODECHANGE=true;
+	
+	public static HashMap<String, Integer> States=new HashMap<String, Integer>();
+	
+	static{
+		States.put("above_anchor", android.R.attr.state_above_anchor);
+		States.put("unabove_anchor", -android.R.attr.state_above_anchor);
+		States.put("accelerated", android.R.attr.state_accelerated);
+		States.put("unaccelerated", -android.R.attr.state_accelerated);
+		States.put("activated", android.R.attr.state_activated);
+		States.put("unactivated", -android.R.attr.state_activated);
+		States.put("active", android.R.attr.state_active);
+		States.put("unactive", -android.R.attr.state_active);
+		States.put("checkable", android.R.attr.state_checkable);
+		States.put("uncheckable", -android.R.attr.state_checkable);
+		States.put("drag_can_accept", android.R.attr.state_drag_can_accept);
+		States.put("undrag_can_accept", -android.R.attr.state_drag_can_accept);
+		States.put("drag_hovered", android.R.attr.state_drag_hovered);
+		States.put("undrag_hovered", -android.R.attr.state_drag_hovered);
+		States.put("empty", android.R.attr.state_empty);
+		States.put("unempty", -android.R.attr.state_empty);
+		States.put("enabled", android.R.attr.state_enabled);
+		States.put("unenabled", -android.R.attr.state_enabled);
+		States.put("expanded", android.R.attr.state_expanded);
+		States.put("unexpanded", -android.R.attr.state_expanded);
+		States.put("first", android.R.attr.state_first);
+		States.put("unfirst", -android.R.attr.state_first);
+		States.put("focused", android.R.attr.state_focused);
+		States.put("unfocused", -android.R.attr.state_focused);
+		States.put("hovered", android.R.attr.state_hovered);
+		States.put("unhovered", -android.R.attr.state_hovered);
+		States.put("last", android.R.attr.state_last);
+		States.put("unlast", -android.R.attr.state_last);
+		States.put("long_pressable", android.R.attr.state_long_pressable);
+		States.put("unlong_pressable", -android.R.attr.state_long_pressable);
+		States.put("middle", android.R.attr.state_middle);
+		States.put("unmiddle", -android.R.attr.state_middle);
+		States.put("multiline", android.R.attr.state_multiline);
+		States.put("unmultiline", -android.R.attr.state_multiline);
+		States.put("pressed", android.R.attr.state_pressed);
+		States.put("unpressed", -android.R.attr.state_pressed);
+		States.put("selected", android.R.attr.state_selected);
+		States.put("unselected", -android.R.attr.state_selected);
+		States.put("single", android.R.attr.state_single);
+		States.put("unsingle", -android.R.attr.state_single);
+		States.put("window_focused", android.R.attr.state_window_focused);
+		States.put("unwindow_focused", -android.R.attr.state_window_focused);
+	}
 	
 	private int pressed = android.R.attr.state_pressed; 
 	private int activated = android.R.attr.state_activated; 
@@ -113,13 +165,13 @@ public class SkinManage {
 		StateListDrawable draw = new StateListDrawable();
 		try {
 			draw.addState(new int[]{pressed}, 
-					Drawable.createFromStream(ct.getAssets().open(drawPaths[0]), drawNames[0]));
+					Drawable.createFromStream(ct.getAssets().open("skin/"+drawPaths[0]), drawNames[0]));
 			if (drawPaths.length==3) {
 				draw.addState(new int[]{-activated},
-					Drawable.createFromStream(ct.getAssets().open(drawPaths[2]), drawNames[2]));
+					Drawable.createFromStream(ct.getAssets().open("skin/"+drawPaths[2]), drawNames[2]));
 			}
 			draw.addState(new int[]{}, 
-					Drawable.createFromStream(ct.getAssets().open(drawPaths[1]), drawNames[1]));
+					Drawable.createFromStream(ct.getAssets().open("skin/"+drawPaths[1]), drawNames[1]));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -149,7 +201,7 @@ public class SkinManage {
 	private Drawable LoadMode1DrawBg(String drawPath,String drawName){
 		Drawable draw=null;
 		try {
-			draw=Drawable.createFromStream(ct.getAssets().open(drawPath), drawName);
+			draw=Drawable.createFromStream(ct.getAssets().open("skin/"+drawPath), drawName);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

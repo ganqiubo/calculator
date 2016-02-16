@@ -8,7 +8,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Globe{
-        
 	
 	public boolean hasUnity;
 	public TextView pbCal,pbCal1,main1tv4;

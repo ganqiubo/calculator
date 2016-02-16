@@ -9,6 +9,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+
+import com.emple.annotation.InjectStateDraw;
+
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Vibrator;
@@ -55,7 +58,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FrameActivity {
 	
 	String unitnameshow="all";//,funnote="";
 	BigDecimal π;
@@ -86,6 +89,8 @@ public class MainActivity extends Activity {
 	SkinManage skinManage;
 	long systime=0;
 	
+	Button[] main1btgroup1=new Button[10];
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,6 +104,7 @@ public class MainActivity extends Activity {
  	   getWindowManager().getDefaultDisplay().getMetrics(dm);    
  	   pwidth = dm.widthPixels;              
  	   pheight = dm.heightPixels/*-statusBarHeight*/;
+ 	   
  	   
  	   
  	   /*int ds1=pwidth-pwidth*50/254*5-pwidth/254*4;
@@ -136,7 +142,7 @@ public class MainActivity extends Activity {
 
 	private void getset() {
 		// TODO Auto-generated method stub
-
+		
     	main1inputtext.ct=ct;
     	main1inputtext.funet1=funet1;   	    	
     	main1inputtext.main1et1=main1et1;
@@ -215,7 +221,22 @@ public class MainActivity extends Activity {
     	main1et1.setTextSize(TypedValue.COMPLEX_UNIT_PX, etsize);
     	
     	for(int i=0;i<30;i++){
-    		Button bt=new Button(this);
+    		Button bt = null;
+    		if(i==2 || i==6 || i==7 || i==8 || i==11 || i==12 || i==13 || i==16 || i==17 || i==18){
+    			//bt.setBackgroundResource(R.drawable.btbg);
+    			
+    			bt=new Button(this);
+    			bt.setBackgroundDrawable(skinManage.loadBtbgSkin());
+    		}if(i==0 || i==1 || i==3 || i==4 || i==9 || i==14 || i==19 || i==5 || i==10 || i==15){
+    			//bt.setBackgroundResource(R.drawable.btbg2);
+    			bt=new Button(this);
+    			bt.setBackgroundDrawable(skinManage.loadBtbg1Skin());
+    		}if(i==20  || i==21 || i==22 || i==23 || i==24 || i==25 || i==26 || i==27 || i==28 || i==29){
+    			//bt.setBackgroundResource(R.drawable.btbg1);
+    			bt=new Button(this);
+    			bt.setBackgroundDrawable(skinManage.loadBtbg2Skin());
+    		}
+    		
     		if(i<=19 || i>=25){
     			bt.setText(strarray[i]);
     		}else{
@@ -223,16 +244,6 @@ public class MainActivity extends Activity {
     		}
     		bt.setTextColor(Color.WHITE);///bt.setTextAppearance(context, resid)
     		bt.setTypeface(Typeface.SERIF);bt.setTextSize(TypedValue.COMPLEX_UNIT_PX, btsize);   		
-    		if(i==2 || i==6 || i==7 || i==8 || i==11 || i==12 || i==13 || i==16 || i==17 || i==18){
-    			//bt.setBackgroundResource(R.drawable.btbg);
-    			bt.setBackgroundDrawable(skinManage.loadBtbgSkin());
-    		}if(i==0 || i==1 || i==3 || i==4 || i==9 || i==14 || i==19 || i==5 || i==10 || i==15){
-    			//bt.setBackgroundResource(R.drawable.btbg2);
-    			bt.setBackgroundDrawable(skinManage.loadBtbg1Skin());
-    		}if(i==20  || i==21 || i==22 || i==23 || i==24 || i==25 || i==26 || i==27 || i==28 || i==29){
-    			//bt.setBackgroundResource(R.drawable.btbg1);
-    			bt.setBackgroundDrawable(skinManage.loadBtbg2Skin());
-    		}
     		globe.btarray.add(bt); 
             if(i%5==4){
             	rln1.addView(bt,btw1+ds,bth1);  
