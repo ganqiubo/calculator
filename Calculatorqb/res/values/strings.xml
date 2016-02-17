@@ -6,5 +6,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_main_draw">MainDraw</string>
     <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_skin_set">SkinSetActivity</string>
+    <string name="title_activity_unit_tables">UnitTablesActivity</string>
+    <string name="title_activity_element_list">ElementListActivity</string>
+    <string name="title_activity_note">NoteActivity</string>
+    <string name="title_activity_version_info">VersionInfoActivity</string>
 
 </resources>

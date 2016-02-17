@@ -75,28 +75,35 @@ public final class R {
         public static final int version_info=0x7f020018;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a000d;
+        public static final int action_settings=0x7f0a000e;
+        public static final int include=0x7f0a0004;
         public static final int main1et1=0x7f0a0001;
         public static final int main1hsv1=0x7f0a0002;
         public static final int main1ll1=0x7f0a0003;
         public static final int main1rln1=0x7f0a0000;
-        public static final int mhead_back=0x7f0a0005;
-        public static final int mhead_title=0x7f0a0006;
-        public static final int setting_list=0x7f0a0007;
-        public static final int setting_list_item=0x7f0a0008;
-        public static final int setting_list_itemiv=0x7f0a0009;
-        public static final int setting_list_itemtv=0x7f0a000a;
-        public static final int settinhg_head=0x7f0a0004;
-        public static final int unitpoplv1=0x7f0a000c;
-        public static final int unitpoprl1=0x7f0a000b;
+        public static final int mhead_back=0x7f0a0007;
+        public static final int mhead_title=0x7f0a0008;
+        public static final int setting_list=0x7f0a0005;
+        public static final int setting_list_item=0x7f0a0009;
+        public static final int setting_list_itemiv=0x7f0a000a;
+        public static final int setting_list_itemtv=0x7f0a000b;
+        public static final int settinhg_head=0x7f0a0006;
+        public static final int unitpoplv1=0x7f0a000d;
+        public static final int unitpoprl1=0x7f0a000c;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int activity_main_draw=0x7f030001;
-        public static final int activity_setting=0x7f030002;
-        public static final int set_list_item=0x7f030003;
-        public static final int unitpop=0x7f030004;
-        public static final int unitpopstyle=0x7f030005;
+        public static final int activity_element_list=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_main_draw=0x7f030002;
+        public static final int activity_note=0x7f030003;
+        public static final int activity_setting=0x7f030004;
+        public static final int activity_skin_set=0x7f030005;
+        public static final int activity_unit_tables=0x7f030006;
+        public static final int activity_version_info=0x7f030007;
+        public static final int head=0x7f030008;
+        public static final int set_list_item=0x7f030009;
+        public static final int unitpop=0x7f03000a;
+        public static final int unitpopstyle=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -107,8 +114,13 @@ public final class R {
         public static final int action_settings=0x7f070001;
         public static final int app_name=0x7f070000;
         public static final int hello_world=0x7f070002;
+        public static final int title_activity_element_list=0x7f070007;
         public static final int title_activity_main_draw=0x7f070003;
+        public static final int title_activity_note=0x7f070008;
         public static final int title_activity_setting=0x7f070004;
+        public static final int title_activity_skin_set=0x7f070005;
+        public static final int title_activity_unit_tables=0x7f070006;
+        public static final int title_activity_version_info=0x7f070009;
     }
     public static final class style {
         /** 

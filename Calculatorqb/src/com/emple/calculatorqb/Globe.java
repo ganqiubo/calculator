@@ -39,5 +39,6 @@ public class Globe{
 	public CalDataTask cdTask;
 	public EditText main1et1;
 	public Main1Inputtext main1inputtext;
+	public static int statusHeight1;
 	
 }

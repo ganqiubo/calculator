@@ -23,9 +23,14 @@ import com.emple.calculatorqb.R.drawable;
 import com.emple.calculatorqb.R.id;
 import com.emple.calculatorqb.R.layout;
 
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Vibrator;
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Service;
 import android.content.Context;
@@ -69,6 +74,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+@SuppressLint("NewApi")
 public class MainActivity extends FrameActivity {
 	
 	String unitnameshow="all";//,funnote="";
@@ -185,14 +191,15 @@ public class MainActivity extends FrameActivity {
 	Button bts29;
 	@InjectStateDraw(draw_name="btbg2")
 	Button bts30;
-	
-    @Override
+
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
         		WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        
         setContentView(R.layout.activity_main);
   	   //statusBarHeight=getStatusHeight(this); 	   
        DisplayMetrics  dm = new DisplayMetrics();    
@@ -200,7 +207,6 @@ public class MainActivity extends FrameActivity {
  	   pwidth = dm.widthPixels;              
  	   pheight = dm.heightPixels/*-statusBarHeight*/;
  	   SkinManage.MODECHANGE=true;
- 	  
  	   addButtons();
  	   
  	   /*int ds1=pwidth-pwidth*50/254*5-pwidth/254*4;
@@ -223,9 +229,9 @@ public class MainActivity extends FrameActivity {
  	  funet1=new EditText(this);funet1.setFocusableInTouchMode(false);funet1.setFocusable(false);
  	  funet1.setTextColor(Color.WHITE);funet1.setBackgroundDrawable(null);
  	 
- 	  createSkin();
       init();
       getset();
+      globe.statusHeight1=getStatusHeight(this);
        /*π=customvalues.π;
        e=customvalues.e;*/     
     }
@@ -247,12 +253,6 @@ public class MainActivity extends FrameActivity {
 		globe.btarray.add(bts16);globe.btarray.add(bts17);globe.btarray.add(bts18);globe.btarray.add(bts19);globe.btarray.add(bts20);
 		globe.btarray.add(bts21);globe.btarray.add(bts22);globe.btarray.add(bts23);globe.btarray.add(bts24);globe.btarray.add(bts25);
 		globe.btarray.add(bts26);globe.btarray.add(bts27);globe.btarray.add(bts28);globe.btarray.add(bts29);globe.btarray.add(bts30);
-	}
-
-	private void createSkin() {
-		// TODO Auto-generated method stub
-    	//Log.e("", "createSkin---------->"+SkinManage.loadAssetsSkin("", ct));
-    	//skinManage=new SkinManage("Default0", ct);
 	}
 
 	private void getset() {

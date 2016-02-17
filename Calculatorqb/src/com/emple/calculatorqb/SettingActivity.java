@@ -1,28 +1,42 @@
 package com.emple.calculatorqb;
 
+import com.emple.activity.ElementListActivity;
+import com.emple.activity.NoteActivity;
+import com.emple.activity.SkinSetActivity;
+import com.emple.activity.StatusSetActivity;
+import com.emple.activity.UnitTablesActivity;
+import com.emple.activity.VersionInfoActivity;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class SettingActivity extends Activity {
+@SuppressLint("NewApi")
+public class SettingActivity extends StatusSetActivity{
 
 	private static String[] SETS=new String[]{"皮肤管理","功能详细说明","单位转换表","元素周期表","软件版本号"};
 	private static int[] SETICONS=new int[]{R.drawable.skin,R.drawable.note,R.drawable.unit_tables,R.drawable.element_list,R.drawable.version_info};
 	private ListView list_sets;
-	private ImageButton back;
 	private Context mcontext=this;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,18 +50,32 @@ public class SettingActivity extends Activity {
 	private void initview() {
 		// TODO Auto-generated method stub
 		list_sets=(ListView) findViewById(R.id.setting_list);
-		back=(ImageButton) findViewById(R.id.mhead_back);
 		
-		back.setOnClickListener(new backclick());
 		list_sets.setAdapter(new MyListAdapter());
+		list_sets.setOnItemClickListener(new itemclick());
 	}
-	
-	class backclick implements OnClickListener{
+
+	class itemclick implements OnItemClickListener{
 		@Override
-		public void onClick(View v) {
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			// TODO Auto-generated method stub
-			finish();
-			overridePendingTransition(R.anim.slide_no,R.anim.slide_out_right);    
+			if (position==0) {
+				Intent intent=new Intent(SettingActivity.this, SkinSetActivity.class);
+				startActivity(intent);
+			}if (position==1) {
+				Intent intent=new Intent(SettingActivity.this, NoteActivity.class);
+				startActivity(intent);
+			}if (position==2) {
+				Intent intent=new Intent(SettingActivity.this, UnitTablesActivity.class);
+				startActivity(intent);
+			}if (position==3) {
+				Intent intent=new Intent(SettingActivity.this, ElementListActivity.class);
+				startActivity(intent);
+			}if (position==4) {
+				Intent intent=new Intent(SettingActivity.this, VersionInfoActivity.class);
+				startActivity(intent);
+			}
+			overridePendingTransition(R.anim.slide_in_right,R.anim.slide_no); 
 		}
 	}
 	
@@ -102,18 +130,5 @@ public class SettingActivity extends Activity {
 		TextView set_tv;
 		ImageView set_icon;
 	}
-	
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		// TODO Auto-generated method stub
-		
-		if (event.getKeyCode()==KeyEvent.KEYCODE_BACK) {
-			finish();
-			overridePendingTransition(R.anim.slide_no,R.anim.slide_out_right);    
-		}
-		return false;
-	}
-
-	
 	
 }
