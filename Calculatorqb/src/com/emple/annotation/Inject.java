@@ -27,6 +27,7 @@ public class Inject {
 			Class<?> clazz=activity.getClass();
 			Field[] fields=clazz.getDeclaredFields();
 			
+			
 			/*资源文件按注解名分类*/
 			Map<String, List<String[]>> classifyDraws=new HashMap<String, List<String[]>>();
 			try {
@@ -41,32 +42,33 @@ public class Inject {
 			}
 			
 			Log.e("", fields.length+"=======>");
-			/*for (int i = 0; i < fields.length; i++) {
-				Toast.makeText(activity, ""+fields[i], Toast.LENGTH_SHORT).show();
-				
-			}*/
 			/*注入皮肤背景图片*/
-			for (Field field : fields) {
+			for (Field field : fields) {		
 				
-				//Log.e("", field+"=======>");
 				InjectStateDraw injectStateDraw=field.getAnnotation(InjectStateDraw.class);
-				String draw_name=injectStateDraw.draw_name();
-				Log.e("", "=======>"+field);
-				if (injectStateDraw!=null) {
-					Toast.makeText(activity, ""+field, Toast.LENGTH_SHORT).show();
-				}
-				if (injectStateDraw!=null && !"".equals(draw_name)) {				
-					
+				String draw_name="";
+				System.out.println("====>INJECT");
+				if (injectStateDraw!=null && !"".equals(injectStateDraw.draw_name())) {	
+					draw_name=injectStateDraw.draw_name();
+					//Log.e("", injectStateDraw+"=======>"+field);
 					StateListDrawable draw = null;
 					if (SkinManage.SKINMODE==1) {
 						draw=getStateDraw1(activity,classifyDraws,draw_name);
 					}else{
 						draw=getStateDraw2(activity,classifyDraws,draw_name);
 					}
-					
-					//((View)field.get(activity)).setBackgroundDrawable(new Drawable());
-					
-					//(View)field.get(activity)
+					try {
+						//Log.e("", draw+"====>"+((View)field.get(activity)));
+						field.setAccessible(true);
+						if (draw!=null && ((View)field.get(activity))!=null) {
+							((View)field.get(activity)).setBackgroundDrawable(draw);
+							//Log.e("", field+"--->"+draw+"====>"+((View)field.get(activity)));
+							Log.e("", field+"------>3333333333333");
+						}
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+					} 
+					//Toast.makeText(activity, injectStateDraw+"--->"+field+"===>"+draw, Toast.LENGTH_SHORT).show();
 				}
 			}
 			SkinManage.MODECHANGE=false;
@@ -81,18 +83,18 @@ public class Inject {
 			String normal_draw_name="";
 			String normal_draw_filename="";
 			for (String[] parts : classifyDraws.get(draw_name)) {
-				if ("normal".equals(parts[1])) {
+				if ("normal".equals(parts[0])) {
 					hasnormal=true;
 					normal_draw_name=draw_name;
-					normal_draw_filename=parts[2];
+					normal_draw_filename=parts[1];
 				}else{
-					draw.addState(new int[]{SkinManage.States.get(parts[1])}, 
-							Drawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+"/"+parts[2]), draw_name));
+					draw.addState(new int[]{SkinManage.States.get(parts[0])}, 
+							Drawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+"/"+parts[1]), draw_name));
 				}
 			}
 			if (hasnormal) {
 				draw.addState(new int[]{}, 
-						Drawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+normal_draw_filename), draw_name));
+						Drawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+"/"+normal_draw_filename), draw_name));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

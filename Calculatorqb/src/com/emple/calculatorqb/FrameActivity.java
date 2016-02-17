@@ -3,6 +3,7 @@ package com.emple.calculatorqb;
 import com.emple.annotation.Inject;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -14,14 +15,12 @@ public class FrameActivity extends Activity {
     protected void onStart() {
     	// TODO Auto-generated method stub
     	super.onStart();
-    	
+    	Log.e("", "====>onStart");
     	try {
     		Inject.inject(this);
 		} catch (Exception e) {
 			// TODO: handle exception
+			Log.e("", ""+e);
 		}
-    	
-    	
     }
-
 }

@@ -1,4 +1,4 @@
-package com.emple.calculatorqb;
+﻿package com.emple.calculatorqb;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -11,6 +11,17 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import com.emple.annotation.InjectStateDraw;
+import com.emple.calculatorqb.Globe;
+import com.emple.calculatorqb.Judge;
+import com.emple.calculatorqb.Main1Inputtext;
+import com.emple.calculatorqb.R;
+import com.emple.calculatorqb.SettingActivity;
+import com.emple.calculatorqb.SkinManage;
+import com.emple.calculatorqb.R.anim;
+import com.emple.calculatorqb.R.color;
+import com.emple.calculatorqb.R.drawable;
+import com.emple.calculatorqb.R.id;
+import com.emple.calculatorqb.R.layout;
 
 import android.os.Bundle;
 import android.os.Environment;
@@ -68,9 +79,20 @@ public class MainActivity extends FrameActivity {
 	String[] strarray=new String[]{"n",".","0","=","+","√","1","2","3","-","^","4","5","6","×",
 			                    "( )","7","8","9","÷","sin","cos","tan","log","ln","L","R","∑","C","D"};			 	
 	int pwidth,pheight,btw1,bth1,btspace/*,statusBarHeight*/,ds,funid=1,maxfunid=0,etsize=0,btsize=0;
-	RelativeLayout rln1,rln2,rln3;
+	@InjectStateDraw(draw_name="main1bg")
+	RelativeLayout rln1;
+	@InjectStateDraw(draw_name="main1rl2")
+	RelativeLayout rln2;
+	@InjectStateDraw(draw_name="main1et1")
+	RelativeLayout rln3;
 	EditText main1et1,funet1;
-	TextView main1tv1,main1tv4,main1tv2,main1tv3;
+	
+	TextView main1tv1;
+	TextView main1tv4;
+	@InjectStateDraw(draw_name="main1tv2")
+	TextView main1tv2;
+	@InjectStateDraw(draw_name="main1tv3")
+	TextView main1tv3;
 	ArrayList<String> function, units=new ArrayList<String>();
 	Button[] funbt=new Button[5];
 	LinearLayout main1ll1;
@@ -79,17 +101,90 @@ public class MainActivity extends FrameActivity {
 	PopupWindow unitpop;
 	View unitview;
 	LayoutInflater flater;
+	@InjectStateDraw(draw_name="unitpopbg")
 	ListView unitpoplv1;
 	SQLiteDatabase db;
 	//float TextSize=0;
 	Judge judge;
 	Main1Inputtext main1inputtext=new Main1Inputtext();			
 	Globe globe=new Globe();	
-	TextView pbCal,pbCal1;	
-	SkinManage skinManage;
+	TextView pbCal;
+	@InjectStateDraw(draw_name="main1rl2")
+	TextView pbCal1;	
+	//SkinManage skinManage;
 	long systime=0;
 	
-	Button[] main1btgroup1=new Button[10];
+	@InjectStateDraw(draw_name="btbg2")
+	Button funbt1;
+	@InjectStateDraw(draw_name="btbg2")
+	Button funbt2;
+	@InjectStateDraw(draw_name="btbg2")
+	Button funbt3;
+	@InjectStateDraw(draw_name="btbg2")
+	Button funbt4;
+	@InjectStateDraw(draw_name="btbg2")
+	Button funbt5;
+	
+	@InjectStateDraw(draw_name="btbg1")
+	Button bts1;
+	@InjectStateDraw(draw_name="btbg1")
+	Button bts2;
+	@InjectStateDraw(draw_name="btbg")
+	Button bts3;
+	@InjectStateDraw(draw_name="btbg1")
+	Button bts4;
+	@InjectStateDraw(draw_name="btbg1")
+	Button bts5;
+	@InjectStateDraw(draw_name="btbg1")
+	Button bts6;
+	@InjectStateDraw(draw_name="btbg")
+	Button bts7;
+	@InjectStateDraw(draw_name="btbg")
+	Button bts8;
+	@InjectStateDraw(draw_name="btbg")
+	Button bts9;
+	@InjectStateDraw(draw_name="btbg1")
+	Button bts10;
+	@InjectStateDraw(draw_name="btbg1")
+	Button bts11;
+	@InjectStateDraw(draw_name="btbg")
+	Button bts12;
+	@InjectStateDraw(draw_name="btbg")
+	Button bts13;
+	@InjectStateDraw(draw_name="btbg")
+	Button bts14;
+	@InjectStateDraw(draw_name="btbg1")
+	Button bts15;
+	@InjectStateDraw(draw_name="btbg1")
+	Button bts16;
+	@InjectStateDraw(draw_name="btbg")
+	Button bts17;
+	@InjectStateDraw(draw_name="btbg")
+	Button bts18;
+	@InjectStateDraw(draw_name="btbg")
+	Button bts19;
+	@InjectStateDraw(draw_name="btbg1")
+	Button bts20;
+	@InjectStateDraw(draw_name="btbg2")
+	Button bts21;
+	@InjectStateDraw(draw_name="btbg2")
+	Button bts22;
+	@InjectStateDraw(draw_name="btbg2")
+	Button bts23;
+	@InjectStateDraw(draw_name="btbg2")
+	Button bts24;
+	@InjectStateDraw(draw_name="btbg2")
+	Button bts25;
+	@InjectStateDraw(draw_name="btbg2")
+	Button bts26;
+	@InjectStateDraw(draw_name="btbg2")
+	Button bts27;
+	@InjectStateDraw(draw_name="btbg2")
+	Button bts28;
+	@InjectStateDraw(draw_name="btbg2")
+	Button bts29;
+	@InjectStateDraw(draw_name="btbg2")
+	Button bts30;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,8 +199,9 @@ public class MainActivity extends FrameActivity {
  	   getWindowManager().getDefaultDisplay().getMetrics(dm);    
  	   pwidth = dm.widthPixels;              
  	   pheight = dm.heightPixels/*-statusBarHeight*/;
- 	   
- 	   
+ 	   SkinManage.MODECHANGE=true;
+ 	  
+ 	   addButtons();
  	   
  	   /*int ds1=pwidth-pwidth*50/254*5-pwidth/254*4;
  	   ds=ds1-ds1/5;
@@ -134,15 +230,33 @@ public class MainActivity extends FrameActivity {
        e=customvalues.e;*/     
     }
     
-    private void createSkin() {
+    private void addButtons() {
+		// TODO Auto-generated method stub
+    	funbt1=new Button(this);funbt2=new Button(this);funbt3=new Button(this);funbt4=new Button(this);funbt5=new Button(this);
+    	funbt[0]=funbt1;funbt[1]=funbt2;funbt[2]=funbt3;funbt[3]=funbt4;funbt[4]=funbt5;
+    	
+    	bts1=new Button(this);bts2=new Button(this);bts3=new Button(this);bts4=new Button(this);bts5=new Button(this);
+    	bts6=new Button(this);bts7=new Button(this);bts8=new Button(this);bts9=new Button(this);bts10=new Button(this);
+    	bts11=new Button(this);bts12=new Button(this);bts13=new Button(this);bts14=new Button(this);bts15=new Button(this);
+    	bts16=new Button(this);bts17=new Button(this);bts18=new Button(this);bts19=new Button(this);bts20=new Button(this);
+    	bts21=new Button(this);bts22=new Button(this);bts23=new Button(this);bts24=new Button(this);bts25=new Button(this);
+    	bts26=new Button(this);bts27=new Button(this);bts28=new Button(this);bts29=new Button(this);bts30=new Button(this);
+    	globe.btarray.add(bts1);globe.btarray.add(bts2);globe.btarray.add(bts3);globe.btarray.add(bts4);globe.btarray.add(bts5);
+    	globe.btarray.add(bts6);globe.btarray.add(bts7);globe.btarray.add(bts8);globe.btarray.add(bts9);globe.btarray.add(bts10);
+		globe.btarray.add(bts11);globe.btarray.add(bts12);globe.btarray.add(bts13);globe.btarray.add(bts14);globe.btarray.add(bts15);
+		globe.btarray.add(bts16);globe.btarray.add(bts17);globe.btarray.add(bts18);globe.btarray.add(bts19);globe.btarray.add(bts20);
+		globe.btarray.add(bts21);globe.btarray.add(bts22);globe.btarray.add(bts23);globe.btarray.add(bts24);globe.btarray.add(bts25);
+		globe.btarray.add(bts26);globe.btarray.add(bts27);globe.btarray.add(bts28);globe.btarray.add(bts29);globe.btarray.add(bts30);
+	}
+
+	private void createSkin() {
 		// TODO Auto-generated method stub
     	//Log.e("", "createSkin---------->"+SkinManage.loadAssetsSkin("", ct));
-    	skinManage=new SkinManage("Default0", ct);
+    	//skinManage=new SkinManage("Default0", ct);
 	}
 
 	private void getset() {
 		// TODO Auto-generated method stub
-		
     	main1inputtext.ct=ct;
     	main1inputtext.funet1=funet1;   	    	
     	main1inputtext.main1et1=main1et1;
@@ -210,55 +324,49 @@ public class MainActivity extends FrameActivity {
     	rln1=(RelativeLayout) findViewById(R.id.main1rln1);	
     	main1et1=(EditText) findViewById(R.id.main1et1);
     	
-    	rln1.setBackgroundDrawable(skinManage.loadMain1BgSkin());
+    	//rln1.setBackgroundDrawable(skinManage.loadMain1BgSkin());
     	rln1.removeView(main1et1);
     	rln1.addView(rln3,pwidth,pheight-6*bth1-5*btspace-bth1*4/7);
     	rln1.addView(main1et1,pwidth-12,pheight-6*bth1-5*btspace-bth1*4/7);
     	main1et1.setX(6);
-    	rln3.setBackgroundDrawable(skinManage.loadMain1Et1Skin());
+    	//rln3.setBackgroundDrawable(skinManage.loadMain1Et1Skin());
     	etsize=(int) (main1et1.getTextSize()+4);
     	btsize=(int) (main1et1.getTextSize());
     	main1et1.setTextSize(TypedValue.COMPLEX_UNIT_PX, etsize);
     	
     	for(int i=0;i<30;i++){
-    		Button bt = null;
     		if(i==2 || i==6 || i==7 || i==8 || i==11 || i==12 || i==13 || i==16 || i==17 || i==18){
     			//bt.setBackgroundResource(R.drawable.btbg);
-    			
-    			bt=new Button(this);
-    			bt.setBackgroundDrawable(skinManage.loadBtbgSkin());
+    			//globe.btarray.get(i).setBackgroundDrawable(skinManage.loadBtbgSkin());
     		}if(i==0 || i==1 || i==3 || i==4 || i==9 || i==14 || i==19 || i==5 || i==10 || i==15){
     			//bt.setBackgroundResource(R.drawable.btbg2);
-    			bt=new Button(this);
-    			bt.setBackgroundDrawable(skinManage.loadBtbg1Skin());
+    			//globe.btarray.get(i).setBackgroundDrawable(skinManage.loadBtbg1Skin());
     		}if(i==20  || i==21 || i==22 || i==23 || i==24 || i==25 || i==26 || i==27 || i==28 || i==29){
     			//bt.setBackgroundResource(R.drawable.btbg1);
-    			bt=new Button(this);
-    			bt.setBackgroundDrawable(skinManage.loadBtbg2Skin());
+    			//globe.btarray.get(i).setBackgroundDrawable(skinManage.loadBtbg2Skin());
     		}
     		
     		if(i<=19 || i>=25){
-    			bt.setText(strarray[i]);
+    			globe.btarray.get(i).setText(strarray[i]);
     		}else{
-    			bt.setText(function.get(i-20));
+    			globe.btarray.get(i).setText(function.get(i-20));
     		}
-    		bt.setTextColor(Color.WHITE);///bt.setTextAppearance(context, resid)
-    		bt.setTypeface(Typeface.SERIF);bt.setTextSize(TypedValue.COMPLEX_UNIT_PX, btsize);   		
-    		globe.btarray.add(bt); 
+    		globe.btarray.get(i).setTextColor(Color.WHITE);///bt.setTextAppearance(context, resid)
+    		globe.btarray.get(i).setTypeface(Typeface.SERIF);globe.btarray.get(i).setTextSize(TypedValue.COMPLEX_UNIT_PX, btsize);   		
+    		//globe.btarray.add(bt); 
             if(i%5==4){
-            	rln1.addView(bt,btw1+ds,bth1);  
+            	rln1.addView(globe.btarray.get(i),btw1+ds,bth1);  
     		}else{
-    			rln1.addView(bt,btw1,bth1);
+    			rln1.addView(globe.btarray.get(i),btw1,bth1);
     		}
-    		bt.setX((i%5*(btw1+btspace)));bt.setY(pheight-(i/5+1)*bth1-i/5*btspace);
-    		bt.setOnClickListener(new main1btclick());
+            globe.btarray.get(i).setX((i%5*(btw1+btspace)));globe.btarray.get(i).setY(pheight-(i/5+1)*bth1-i/5*btspace);
+            globe.btarray.get(i).setOnClickListener(new main1btclick());
     	}
     	
     	for(int i=0;i<5;i++){
-    		funbt[i]=new Button(this);
     		funbt[i].setTextColor(Color.WHITE);///bt.setTextAppearance(context, resid)
     		funbt[i].setTypeface(Typeface.SERIF);funbt[i].setTextSize(TypedValue.COMPLEX_UNIT_PX, btsize); 
-    		funbt[i].setBackgroundDrawable(skinManage.loadBtbg2Skin());
+    		//funbt[i].setBackgroundDrawable(skinManage.loadBtbg2Skin());
     		if(i%5==4){
             	rln1.addView(funbt[i],btw1+ds,bth1);  
     		}else{
@@ -279,11 +387,11 @@ public class MainActivity extends FrameActivity {
     	rln2=new RelativeLayout(this);
     	rln1.addView(rln2,RelativeLayout.LayoutParams.FILL_PARENT,bth1*4/7);
     	//rln2.setBackgroundResource(R.drawable.main1bgrl2);
-    	rln2.setBackgroundDrawable(skinManage.loadMain1Rl2Skin());
+    	//rln2.setBackgroundDrawable(skinManage.loadMain1Rl2Skin());
     	rln2.setY(globe.btarray.get(25).getY()-bth1*4/7);
     	main1tv1=new TextView(this);main1tv1.setBackgroundResource(R.drawable.main1tv1a);
-    	main1tv2=new TextView(this);main1tv2.setBackgroundDrawable(skinManage.loadMain1Tv2Skin());
-    	main1tv3=new TextView(this);main1tv3.setBackgroundDrawable(skinManage.loadMain1Tv3Skin());
+    	main1tv2=new TextView(this);//main1tv2.setBackgroundDrawable(skinManage.loadMain1Tv2Skin());
+    	main1tv3=new TextView(this);//main1tv3.setBackgroundDrawable(skinManage.loadMain1Tv3Skin());
     	main1tv4=new TextView(this);main1tv4.setGravity(Gravity.CENTER);main1tv4.setText("长度");
     	main1tv1.setGravity(Gravity.CENTER);
     	rln2.addView(main1tv1, bth1*3/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv1.setClickable(true);
@@ -313,7 +421,7 @@ public class MainActivity extends FrameActivity {
 		unitpoplv1.setAdapter((ListAdapter) new ArrayAdapter<String>(this,  
                 R.layout.unitpopstyle,units));
 		unitpoplv1.setOnItemClickListener(new unititem());
-		unitpoplv1.setBackgroundDrawable(skinManage.loadPopLv1BgSkin());
+		//unitpoplv1.setBackgroundDrawable(skinManage.loadPopLv1BgSkin());
 			
 		getunitname();
 		/*Cursor c = db.rawQuery("select * from unit_table", null);
@@ -349,7 +457,7 @@ public class MainActivity extends FrameActivity {
 		pbCal1.setX(pwidth-bth1*6/5+2); pbCal1.setText("取消操作");pbCal1.setGravity(Gravity.CENTER);
 		pbCal1.setTextColor(colorList);pbCal1.setClickable(true);
 		//pbCal1.setBackgroundResource(R.drawable.main1bgrl2);
-		pbCal1.setBackgroundDrawable(skinManage.loadMain1Rl2Skin());
+		//pbCal1.setBackgroundDrawable(skinManage.loadMain1Rl2Skin());
 		pbCal1.setOnClickListener(new pbcal1click());pbCal1.setVisibility(View.INVISIBLE);
 		
 		/*btCal=new Button(ct);btCal.setText("取消");//btCal.setBackgroundResource(R.drawable.)
