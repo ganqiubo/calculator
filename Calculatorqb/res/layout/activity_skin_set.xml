@@ -11,4 +11,41 @@
         android:layout_width="match_parent"
     	android:layout_height="wrap_content"/>
     
+    <TextView
+        android:id="@+id/myskin_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:textColor="#454545"
+        android:layout_alignBottom="@+id/myskin_sp"
+        android:layout_alignTop="@+id/myskin_sp"
+        android:text="我的皮肤："
+        android:textSize="22sp"
+        android:gravity="center"
+        android:layout_marginLeft="20dp"
+        />
+    
+    <Spinner
+        android:id="@+id/myskin_sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_below="@+id/include"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/myskin_tv"
+        android:layout_marginRight="20dp"
+        />
+    
+    <Button
+        android:id="@+id/myskin_modify"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myskin_sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="25dp"
+        android:text="确认修改"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/btshape"
+         />
+    
 </RelativeLayout>

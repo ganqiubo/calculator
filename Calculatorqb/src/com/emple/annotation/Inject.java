@@ -63,7 +63,7 @@ public class Inject {
 						if (draw!=null && ((View)field.get(activity))!=null) {
 							((View)field.get(activity)).setBackgroundDrawable(draw);
 							//Log.e("", field+"--->"+draw+"====>"+((View)field.get(activity)));
-							Log.e("", field+"------>3333333333333");
+							//Log.e("", field+"------>3333333333333");
 						}
 					} catch (Exception e) {
 						// TODO Auto-generated catch block

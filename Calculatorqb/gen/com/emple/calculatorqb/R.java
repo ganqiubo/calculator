@@ -50,46 +50,50 @@ public final class R {
     public static final class drawable {
         public static final int back_normal=0x7f020000;
         public static final int back_pressed=0x7f020001;
-        public static final int calpb=0x7f020002;
-        public static final int calpb1=0x7f020003;
-        public static final int element_list=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int main1bg=0x7f020006;
-        public static final int main1bg1=0x7f020007;
-        public static final int main1bgrl2=0x7f020008;
-        public static final int main1tv1a=0x7f020009;
-        public static final int main1tv1b=0x7f02000a;
-        public static final int main1tv2=0x7f02000b;
-        public static final int main1tv2a=0x7f02000c;
-        public static final int main1tv2b=0x7f02000d;
-        public static final int main1tv2c=0x7f02000e;
-        public static final int main1tv3=0x7f02000f;
-        public static final int main1tv3a=0x7f020010;
-        public static final int main1tv3b=0x7f020011;
-        public static final int main1tv3c=0x7f020012;
-        public static final int note=0x7f020013;
-        public static final int selector_back_click=0x7f020014;
-        public static final int skin=0x7f020015;
-        public static final int unit_tables=0x7f020016;
-        public static final int unitpopbg=0x7f020017;
-        public static final int version_info=0x7f020018;
+        public static final int btshape=0x7f020002;
+        public static final int calpb=0x7f020003;
+        public static final int calpb1=0x7f020004;
+        public static final int element_list=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int main1bg=0x7f020007;
+        public static final int main1bg1=0x7f020008;
+        public static final int main1bgrl2=0x7f020009;
+        public static final int main1tv1a=0x7f02000a;
+        public static final int main1tv1b=0x7f02000b;
+        public static final int main1tv2=0x7f02000c;
+        public static final int main1tv2a=0x7f02000d;
+        public static final int main1tv2b=0x7f02000e;
+        public static final int main1tv2c=0x7f02000f;
+        public static final int main1tv3=0x7f020010;
+        public static final int main1tv3a=0x7f020011;
+        public static final int main1tv3b=0x7f020012;
+        public static final int main1tv3c=0x7f020013;
+        public static final int note=0x7f020014;
+        public static final int selector_back_click=0x7f020015;
+        public static final int skin=0x7f020016;
+        public static final int unit_tables=0x7f020017;
+        public static final int unitpopbg=0x7f020018;
+        public static final int version_info=0x7f020019;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a000e;
+        public static final int action_settings=0x7f0a0011;
         public static final int include=0x7f0a0004;
         public static final int main1et1=0x7f0a0001;
         public static final int main1hsv1=0x7f0a0002;
         public static final int main1ll1=0x7f0a0003;
         public static final int main1rln1=0x7f0a0000;
-        public static final int mhead_back=0x7f0a0007;
-        public static final int mhead_title=0x7f0a0008;
+        public static final int mhead_back=0x7f0a000a;
+        public static final int mhead_title=0x7f0a000b;
+        public static final int myskin_modify=0x7f0a0008;
+        public static final int myskin_sp=0x7f0a0007;
+        public static final int myskin_tv=0x7f0a0006;
         public static final int setting_list=0x7f0a0005;
-        public static final int setting_list_item=0x7f0a0009;
-        public static final int setting_list_itemiv=0x7f0a000a;
-        public static final int setting_list_itemtv=0x7f0a000b;
-        public static final int settinhg_head=0x7f0a0006;
-        public static final int unitpoplv1=0x7f0a000d;
-        public static final int unitpoprl1=0x7f0a000c;
+        public static final int setting_list_item=0x7f0a000c;
+        public static final int setting_list_itemiv=0x7f0a000d;
+        public static final int setting_list_itemtv=0x7f0a000e;
+        public static final int settinhg_head=0x7f0a0009;
+        public static final int unitpoplv1=0x7f0a0010;
+        public static final int unitpoprl1=0x7f0a000f;
     }
     public static final class layout {
         public static final int activity_element_list=0x7f030000;
@@ -102,8 +106,9 @@ public final class R {
         public static final int activity_version_info=0x7f030007;
         public static final int head=0x7f030008;
         public static final int set_list_item=0x7f030009;
-        public static final int unitpop=0x7f03000a;
-        public static final int unitpopstyle=0x7f03000b;
+        public static final int spinn_style=0x7f03000a;
+        public static final int unitpop=0x7f03000b;
+        public static final int unitpopstyle=0x7f03000c;
     }
     public static final class menu {
         public static final int main=0x7f090000;
