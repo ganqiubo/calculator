@@ -117,7 +117,6 @@ public class MainActivity extends FrameActivity {
 	TextView pbCal;
 	@InjectStateDraw(draw_name="main1rl2")
 	TextView pbCal1;	
-	//SkinManage skinManage;
 	long systime=0;
 	
 	@InjectStateDraw(draw_name="btbg2")

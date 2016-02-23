@@ -30,6 +30,7 @@
         <activity
             android:name="com.emple.draw.MainDraw"
             android:label="@string/title_activity_main_draw" >
+            
         </activity>
         <activity
             android:name=".SettingActivity"

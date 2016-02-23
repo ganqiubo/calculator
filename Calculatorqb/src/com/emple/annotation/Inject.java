@@ -9,15 +9,23 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.xmlpull.v1.XmlPullParser;
+
 import com.emple.calculatorqb.SkinManage;
 import android.app.Activity;
+import android.content.res.Resources;
+import android.content.res.XmlResourceParser;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
+import android.graphics.drawable.shapes.Shape;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ResourceCursorTreeAdapter;
 import android.widget.Toast;
 
 public class Inject {
@@ -26,7 +34,6 @@ public class Inject {
 		if (SkinManage.MODECHANGE) {
 			Class<?> clazz=activity.getClass();
 			Field[] fields=clazz.getDeclaredFields();
-			
 			
 			/*资源文件按注解名分类*/
 			Map<String, List<String[]>> classifyDraws=new HashMap<String, List<String[]>>();
@@ -42,6 +49,7 @@ public class Inject {
 			}
 			
 			Log.e("", fields.length+"=======>");
+			
 			/*注入皮肤背景图片*/
 			for (Field field : fields) {		
 				

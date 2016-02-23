@@ -64,6 +64,8 @@ public class SkinSetActivity extends StatusSetActivity {
 		public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 			// TODO Auto-generated method stub
 			Log.e("", skinname.getSelectedItem().toString()+"<<<<<<<<<onItemSelected-----¡·"+SkinManage.SKINNAME);
+			//skin_modify.getBackground().getClass();
+			Log.e("", skin_modify.getBackground().getClass()+"<<<<<<<<<getBackground-----¡·");
 			if (skinname.getSelectedItem().toString().equals(SkinManage.SKINNAME)) {
 				skin_modify.setEnabled(false);
 			}else{

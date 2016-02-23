@@ -2,6 +2,8 @@ package com.emple.calculatorqb;
 
 import java.util.HashMap;
 
+import android.graphics.drawable.StateListDrawable;
+
 public class SkinManage {
 	
 	public static int SKINMODE=1;
@@ -55,6 +57,7 @@ public class SkinManage {
 		States.put("window_focused", android.R.attr.state_window_focused);
 		States.put("unwindow_focused", -android.R.attr.state_window_focused);
 		//normal
+		StateListDrawable fgf;
 	}
 	
 	
