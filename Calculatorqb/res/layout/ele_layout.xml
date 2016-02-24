@@ -2,24 +2,137 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/ele_rl0"
     android:orientation="horizontal"
      >
+
+    <RelativeLayout
+        android:id="@+id/ele_rlcenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_centerInParent="true"
+        >
+
+        <RelativeLayout
+        android:id="@+id/ele_rl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="@dimen/ele_margin" >
+        
+        <TextView
+            android:id="@+id/ele_margin_shell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="32"
+            android:textSize="@dimen/ele_size2"
+            android:textColor="#0000"
+            />
+        
+        <TextView
+            android:id="@+id/ele_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="2"
+            android:layout_alignRight="@+id/ele_margin_shell"
+            android:layout_alignLeft="@+id/ele_margin_shell"
+            android:gravity="right"
+            android:textSize="@dimen/ele_size2"
+            />
+        
+        <TextView
+            android:id="@+id/ele_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="8"
+            android:textSize="@dimen/ele_size2"
+            android:layout_alignRight="@+id/ele_margin_shell"
+            android:layout_alignLeft="@+id/ele_margin_shell"
+            android:gravity="right"
+            android:layout_below="@+id/ele_first"
+            android:layout_marginTop="@dimen/ele_margin2"
+            />
+        
+        <TextView
+            android:id="@+id/ele_third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="18"
+            android:textSize="@dimen/ele_size2"
+            android:layout_alignRight="@+id/ele_margin_shell"
+            android:layout_alignLeft="@+id/ele_margin_shell"
+            android:gravity="right"
+            android:layout_below="@+id/ele_second"
+            android:layout_marginTop="@dimen/ele_margin2"
+            />
+        
+        <TextView
+            android:id="@+id/ele_forth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="32"
+            android:textSize="@dimen/ele_size2"
+            android:layout_alignRight="@+id/ele_margin_shell"
+            android:layout_alignLeft="@+id/ele_margin_shell"
+            android:gravity="right"
+            android:layout_below="@+id/ele_third"
+            android:layout_marginTop="@dimen/ele_margin2"
+            />
+        
+        <TextView
+            android:id="@+id/ele_fifth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="21"
+            android:layout_alignRight="@+id/ele_margin_shell"
+            android:layout_alignLeft="@+id/ele_margin_shell"
+            android:gravity="right"
+            android:textSize="@dimen/ele_size2"
+            android:layout_below="@+id/ele_forth"
+            android:layout_marginTop="@dimen/ele_margin2"
+            />
+        
+        <TextView
+            android:id="@+id/ele_sixth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="9"
+            android:layout_alignRight="@+id/ele_margin_shell"
+            android:layout_alignLeft="@+id/ele_margin_shell"
+            android:gravity="right"
+            android:textSize="@dimen/ele_size2"
+            android:layout_below="@+id/ele_fifth"
+            android:layout_marginTop="@dimen/ele_margin2"
+            />
+        
+        <TextView
+            android:id="@+id/ele_seventh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="2"
+            android:layout_alignRight="@+id/ele_margin_shell"
+            android:layout_alignLeft="@+id/ele_margin_shell"
+            android:gravity="right"
+            android:textSize="@dimen/ele_size2"
+            android:layout_below="@+id/ele_sixth"
+            android:layout_marginTop="@dimen/ele_margin2"
+            />
+    </RelativeLayout>
     
     <RelativeLayout
         android:id="@+id/ele_rl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/ele_ll1"
-        android:layout_marginRight="5dp"
-         >
+        android:paddingTop="@dimen/ele_margin"
+        android:layout_toLeftOf="@id/ele_rl2" >
         
         <TextView
         android:id="@+id/ele_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
         android:text="92"
-        android:paddingTop="5dp"
-		android:paddingLeft="5dp"
+		android:paddingLeft="8dp"
         android:textSize="@dimen/ele_size1"
         />
     
@@ -28,10 +141,10 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content" 
 	        android:text="U"
-	        android:paddingTop="5dp"
-			android:paddingLeft="5dp"
+			android:paddingLeft="8dp"
 	        android:textSize="@dimen/ele_size1"
 	        android:layout_alignParentRight="true"
+	        android:paddingRight="6dp"
 	        />
 	    
 	    <RelativeLayout
@@ -53,17 +166,16 @@
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content" 
 			        android:text="铀"
-			        android:paddingTop="5dp"
 			        android:paddingLeft="5dp"
-			        android:textSize="@dimen/ele_size1"
+			        android:textSize="@dimen/ele_size3"
+			        android:layout_marginTop="@dimen/ele_margin3"
 		        	/>	
 				<TextView
 			        android:id="@+id/ele_name_margin"
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content" 
 			        android:text="铀"
-			        android:textSize="@dimen/ele_size1"
-			        android:paddingTop="5dp"
+			        android:textSize="@dimen/ele_size3"
 			        android:paddingLeft="5dp"
 			        android:layout_alignTop="@+id/ele_name_zh"
 				    android:layout_alignBottom="@+id/ele_name_zh"
@@ -75,10 +187,7 @@
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content" 
 				    android:src="@drawable/radio"
-				    android:paddingTop="6dp"
-				    android:paddingLeft="1dp"
-				    android:paddingRight="1dp"
-				    android:paddingBottom="1dp"
+				    android:padding="1dp"
 				    android:layout_alignTop="@+id/ele_name_margin"
 				    android:layout_alignBottom="@+id/ele_name_margin"
 				    android:layout_alignLeft="@+id/ele_name_margin"
@@ -94,10 +203,23 @@
 	        android:layout_alignParentLeft="true"
 	        android:layout_alignRight="@+id/ele_rl1"
 	        android:layout_below="@+id/ele_rl1"
-	        android:paddingLeft="5dp"
-	        android:paddingTop="5dp"
+	        android:paddingLeft="6dp"
+	        android:layout_marginTop="@dimen/ele_margin2"
 	        android:text="Uranium"
 	        android:textSize="@dimen/ele_size2" />
+	    
+	    <TextView
+	        android:id="@+id/ele_atomic_structure"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignRight="@+id/ele_name_us"
+	        android:layout_below="@+id/ele_name_us"
+	        android:paddingLeft="6dp"
+	        android:layout_marginTop="-2dp"
+	        android:text="3s²3p⁴"
+	        android:textSize="@dimen/ele_size2" 
+	        />
 	    
 	    <TextView
 	        android:id="@+id/ele_atomic_mass"
@@ -105,31 +227,23 @@
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentLeft="true"
 	        android:layout_alignRight="@+id/ele_name_us"
-	        android:layout_below="@+id/ele_name_us"
-	        android:paddingLeft="5dp"
-	        android:paddingTop="5dp"
+	        android:layout_below="@+id/ele_atomic_structure"
+	        android:paddingLeft="6dp"
+	        android:layout_marginTop="-2dp"
 	        android:text="238.02891"
-	        android:textSize="@dimen/ele_size2" />
+	        android:textSize="@dimen/ele_size2" 
+	        />
+	    
+	    <View
+	        android:layout_width="wrap_content"
+	        android:layout_height="4dp" 
+	        android:layout_below="@+id/ele_atomic_mass"
+	        />
+
+	</RelativeLayout>
         
 	</RelativeLayout>
     
-    <LinearLayout
-        android:id="@+id/ele_ll1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" 
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="3dp"
-        android:layout_marginTop="5dp"
-        >
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-            android:text="2"
-            android:textSize="@dimen/ele_size2"
-            />
-        
-    </LinearLayout>
+    
     
 </RelativeLayout>

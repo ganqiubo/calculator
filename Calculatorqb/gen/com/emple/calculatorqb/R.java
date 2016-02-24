@@ -46,9 +46,14 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f060000;
         public static final int activity_vertical_margin=0x7f060001;
+        public static final int ele_margin=0x7f060006;
+        public static final int ele_margin1=0x7f060007;
+        public static final int ele_margin2=0x7f060008;
+        public static final int ele_margin3=0x7f060009;
         public static final int ele_size1=0x7f060002;
         public static final int ele_size2=0x7f060003;
         public static final int ele_size3=0x7f060004;
+        public static final int ele_size4=0x7f060005;
     }
     public static final class drawable {
         public static final int back_normal=0x7f020000;
@@ -81,38 +86,50 @@ public final class R {
         public static final int version_info=0x7f02001b;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a001c;
-        public static final int button1=0x7f0a0004;
-        public static final int ele_atomic_mass=0x7f0a0012;
-        public static final int ele_ll1=0x7f0a0013;
-        public static final int ele_name_margin=0x7f0a000f;
-        public static final int ele_name_us=0x7f0a0011;
-        public static final int ele_name_zh=0x7f0a000e;
-        public static final int ele_num=0x7f0a000b;
-        public static final int ele_radioactive=0x7f0a0010;
-        public static final int ele_rl=0x7f0a000a;
-        public static final int ele_rl1=0x7f0a000d;
-        public static final int ele_symble=0x7f0a000c;
-        public static final int include=0x7f0a0005;
-        public static final int main1et1=0x7f0a0001;
-        public static final int main1hsv1=0x7f0a0002;
-        public static final int main1ll1=0x7f0a0003;
-        public static final int main1rln1=0x7f0a0000;
-        public static final int mhead_back=0x7f0a0015;
-        public static final int mhead_title=0x7f0a0016;
-        public static final int myskin_modify=0x7f0a0009;
-        public static final int myskin_sp=0x7f0a0008;
-        public static final int myskin_tv=0x7f0a0007;
-        public static final int setting_list=0x7f0a0006;
-        public static final int setting_list_item=0x7f0a0017;
-        public static final int setting_list_itemiv=0x7f0a0018;
-        public static final int setting_list_itemtv=0x7f0a0019;
-        public static final int settinhg_head=0x7f0a0014;
-        public static final int unitpoplv1=0x7f0a001b;
-        public static final int unitpoprl1=0x7f0a001a;
+        public static final int action_settings=0x7f0a0028;
+        public static final int button1=0x7f0a0005;
+        public static final int ele_atomic_mass=0x7f0a001f;
+        public static final int ele_atomic_structure=0x7f0a001e;
+        public static final int ele_fifth=0x7f0a0013;
+        public static final int ele_first=0x7f0a000f;
+        public static final int ele_forth=0x7f0a0012;
+        public static final int ele_margin_shell=0x7f0a000e;
+        public static final int ele_name_margin=0x7f0a001b;
+        public static final int ele_name_us=0x7f0a001d;
+        public static final int ele_name_zh=0x7f0a001a;
+        public static final int ele_num=0x7f0a0017;
+        public static final int ele_radioactive=0x7f0a001c;
+        public static final int ele_rl=0x7f0a0016;
+        public static final int ele_rl0=0x7f0a000b;
+        public static final int ele_rl1=0x7f0a0019;
+        public static final int ele_rl2=0x7f0a000d;
+        public static final int ele_rlcenter=0x7f0a000c;
+        public static final int ele_second=0x7f0a0010;
+        public static final int ele_seventh=0x7f0a0015;
+        public static final int ele_sixth=0x7f0a0014;
+        public static final int ele_symble=0x7f0a0018;
+        public static final int ele_third=0x7f0a0011;
+        public static final int eles_gv=0x7f0a0000;
+        public static final int include=0x7f0a0006;
+        public static final int main1et1=0x7f0a0002;
+        public static final int main1hsv1=0x7f0a0003;
+        public static final int main1ll1=0x7f0a0004;
+        public static final int main1rln1=0x7f0a0001;
+        public static final int mhead_back=0x7f0a0021;
+        public static final int mhead_title=0x7f0a0022;
+        public static final int myskin_modify=0x7f0a000a;
+        public static final int myskin_sp=0x7f0a0009;
+        public static final int myskin_tv=0x7f0a0008;
+        public static final int setting_list=0x7f0a0007;
+        public static final int setting_list_item=0x7f0a0023;
+        public static final int setting_list_itemiv=0x7f0a0024;
+        public static final int setting_list_itemtv=0x7f0a0025;
+        public static final int settinhg_head=0x7f0a0020;
+        public static final int unitpoplv1=0x7f0a0027;
+        public static final int unitpoprl1=0x7f0a0026;
     }
     public static final class layout {
-        public static final int activity_element_list=0x7f030000;
+        public static final int activity_elements=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_main_draw=0x7f030002;
         public static final int activity_note=0x7f030003;
