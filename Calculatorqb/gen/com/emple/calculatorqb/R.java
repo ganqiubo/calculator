@@ -14,6 +14,26 @@ public final class R {
         public static final int slide_out_right=0x7f040002;
     }
     public static final class attr {
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cols=0x7f010001;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int item_layout=0x7f010002;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int rows=0x7f010000;
     }
     public static final class color {
         public static final int alpha=0x7f050008;
@@ -50,6 +70,7 @@ public final class R {
         public static final int ele_margin1=0x7f060007;
         public static final int ele_margin2=0x7f060008;
         public static final int ele_margin3=0x7f060009;
+        public static final int ele_margin4=0x7f06000a;
         public static final int ele_size1=0x7f060002;
         public static final int ele_size2=0x7f060003;
         public static final int ele_size3=0x7f060004;
@@ -86,47 +107,53 @@ public final class R {
         public static final int version_info=0x7f02001b;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0028;
-        public static final int button1=0x7f0a0005;
-        public static final int ele_atomic_mass=0x7f0a001f;
-        public static final int ele_atomic_structure=0x7f0a001e;
-        public static final int ele_fifth=0x7f0a0013;
-        public static final int ele_first=0x7f0a000f;
-        public static final int ele_forth=0x7f0a0012;
-        public static final int ele_margin_shell=0x7f0a000e;
-        public static final int ele_name_margin=0x7f0a001b;
-        public static final int ele_name_us=0x7f0a001d;
-        public static final int ele_name_zh=0x7f0a001a;
-        public static final int ele_num=0x7f0a0017;
-        public static final int ele_radioactive=0x7f0a001c;
-        public static final int ele_rl=0x7f0a0016;
-        public static final int ele_rl0=0x7f0a000b;
-        public static final int ele_rl1=0x7f0a0019;
-        public static final int ele_rl2=0x7f0a000d;
-        public static final int ele_rlcenter=0x7f0a000c;
-        public static final int ele_second=0x7f0a0010;
-        public static final int ele_seventh=0x7f0a0015;
-        public static final int ele_sixth=0x7f0a0014;
-        public static final int ele_symble=0x7f0a0018;
-        public static final int ele_third=0x7f0a0011;
-        public static final int eles_gv=0x7f0a0000;
-        public static final int include=0x7f0a0006;
-        public static final int main1et1=0x7f0a0002;
-        public static final int main1hsv1=0x7f0a0003;
-        public static final int main1ll1=0x7f0a0004;
-        public static final int main1rln1=0x7f0a0001;
-        public static final int mhead_back=0x7f0a0021;
-        public static final int mhead_title=0x7f0a0022;
-        public static final int myskin_modify=0x7f0a000a;
-        public static final int myskin_sp=0x7f0a0009;
-        public static final int myskin_tv=0x7f0a0008;
-        public static final int setting_list=0x7f0a0007;
-        public static final int setting_list_item=0x7f0a0023;
-        public static final int setting_list_itemiv=0x7f0a0024;
-        public static final int setting_list_itemtv=0x7f0a0025;
-        public static final int settinhg_head=0x7f0a0020;
-        public static final int unitpoplv1=0x7f0a0027;
-        public static final int unitpoprl1=0x7f0a0026;
+        public static final int action_settings=0x7f0a002e;
+        public static final int button1=0x7f0a000e;
+        public static final int ele_atomic_structure=0x7f0a0025;
+        public static final int ele_fifth=0x7f0a001b;
+        public static final int ele_first=0x7f0a0017;
+        public static final int ele_forth=0x7f0a001a;
+        public static final int ele_margin_shell=0x7f0a0016;
+        public static final int ele_name_margin=0x7f0a0022;
+        public static final int ele_name_us=0x7f0a0024;
+        public static final int ele_name_zh=0x7f0a0021;
+        public static final int ele_num=0x7f0a001e;
+        public static final int ele_radioactive=0x7f0a0023;
+        public static final int ele_rl=0x7f0a001d;
+        public static final int ele_rl0=0x7f0a0014;
+        public static final int ele_rl1=0x7f0a0020;
+        public static final int ele_rl2=0x7f0a0015;
+        public static final int ele_second=0x7f0a0018;
+        public static final int ele_sixth=0x7f0a001c;
+        public static final int ele_symble=0x7f0a001f;
+        public static final int ele_third=0x7f0a0019;
+        public static final int eles_ll1=0x7f0a0001;
+        public static final int eles_ll2=0x7f0a0002;
+        public static final int eles_ll3=0x7f0a0003;
+        public static final int eles_ll4=0x7f0a0004;
+        public static final int eles_ll5=0x7f0a0005;
+        public static final int eles_ll6=0x7f0a0006;
+        public static final int eles_ll7=0x7f0a0007;
+        public static final int eles_ll8=0x7f0a0008;
+        public static final int eles_ll9=0x7f0a0009;
+        public static final int eles_rl=0x7f0a0000;
+        public static final int include=0x7f0a000f;
+        public static final int main1et1=0x7f0a000b;
+        public static final int main1hsv1=0x7f0a000c;
+        public static final int main1ll1=0x7f0a000d;
+        public static final int main1rln1=0x7f0a000a;
+        public static final int mhead_back=0x7f0a0027;
+        public static final int mhead_title=0x7f0a0028;
+        public static final int myskin_modify=0x7f0a0013;
+        public static final int myskin_sp=0x7f0a0012;
+        public static final int myskin_tv=0x7f0a0011;
+        public static final int setting_list=0x7f0a0010;
+        public static final int setting_list_item=0x7f0a0029;
+        public static final int setting_list_itemiv=0x7f0a002a;
+        public static final int setting_list_itemtv=0x7f0a002b;
+        public static final int settinhg_head=0x7f0a0026;
+        public static final int unitpoplv1=0x7f0a002d;
+        public static final int unitpoprl1=0x7f0a002c;
     }
     public static final class layout {
         public static final int activity_elements=0x7f030000;
@@ -138,11 +165,12 @@ public final class R {
         public static final int activity_unit_tables=0x7f030006;
         public static final int activity_version_info=0x7f030007;
         public static final int ele_layout=0x7f030008;
-        public static final int head=0x7f030009;
-        public static final int set_list_item=0x7f03000a;
-        public static final int spinn_style=0x7f03000b;
-        public static final int unitpop=0x7f03000c;
-        public static final int unitpopstyle=0x7f03000d;
+        public static final int ele_layout1=0x7f030009;
+        public static final int head=0x7f03000a;
+        public static final int set_list_item=0x7f03000b;
+        public static final int spinn_style=0x7f03000c;
+        public static final int unitpop=0x7f03000d;
+        public static final int unitpopstyle=0x7f03000e;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -189,4 +217,61 @@ public final class R {
          */
         public static final int AppTheme=0x7f080001;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a MyTab.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #MyTab_cols com.emple.calculatorqb:cols}</code></td><td></td></tr>
+           <tr><td><code>{@link #MyTab_item_layout com.emple.calculatorqb:item_layout}</code></td><td></td></tr>
+           <tr><td><code>{@link #MyTab_rows com.emple.calculatorqb:rows}</code></td><td></td></tr>
+           </table>
+           @see #MyTab_cols
+           @see #MyTab_item_layout
+           @see #MyTab_rows
+         */
+        public static final int[] MyTab = {
+            0x7f010000, 0x7f010001, 0x7f010002
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.emple.calculatorqb.R.attr#cols}
+          attribute's value can be found in the {@link #MyTab} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.emple.calculatorqb:cols
+        */
+        public static final int MyTab_cols = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.emple.calculatorqb.R.attr#item_layout}
+          attribute's value can be found in the {@link #MyTab} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.emple.calculatorqb:item_layout
+        */
+        public static final int MyTab_item_layout = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.emple.calculatorqb.R.attr#rows}
+          attribute's value can be found in the {@link #MyTab} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.emple.calculatorqb:rows
+        */
+        public static final int MyTab_rows = 0;
+    };
 }

@@ -280,6 +280,9 @@ public class MainActivity extends FrameActivity {
     	globe.main1inputtext=main1inputtext;
     	globe.main1tv4=main1tv4;
     	
+    	globe.pwidth=pwidth;
+    	globe.pheight=pheight;
+    	
 	}
 
 	public static int getStatusHeight(Activity activity){  
@@ -931,8 +934,6 @@ public class MainActivity extends FrameActivity {
 		}
 		return false;
 	}
-    
-    
-    
+
     
 }

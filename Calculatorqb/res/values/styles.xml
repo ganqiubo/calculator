@@ -16,4 +16,10 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+     <declare-styleable name="MyTab">
+        <attr name="rows" format="integer" />
+        <attr name="cols" format="integer"/>
+        <attr name="item_layout" format="reference" />
+    </declare-styleable>
 </resources>

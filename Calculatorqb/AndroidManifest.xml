@@ -24,7 +24,7 @@
             
         </activity>
         <activity
-            android:name="com.emple.draw.MainDraw"
+            android:name="com.emple.myview.MainDraw"
             android:label="@string/title_activity_main_draw" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
