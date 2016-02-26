@@ -13,5 +13,5 @@
     <color name="strpan5">#3366cc</color>
     <color name="strpan6">#cc0000</color>
     <color name="alpha">#00000000</color>
-    
+    <color name="border">#232323</color>
 </resources>

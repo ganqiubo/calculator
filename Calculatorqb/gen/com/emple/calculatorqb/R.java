@@ -37,6 +37,7 @@ containing a value of this type.
     }
     public static final class color {
         public static final int alpha=0x7f050008;
+        public static final int border=0x7f050009;
         /**  <color name="blue">#26AEAE</color>
     <color name="blue4">#2BB3B3</color> 
          */
@@ -79,32 +80,36 @@ containing a value of this type.
     public static final class drawable {
         public static final int back_normal=0x7f020000;
         public static final int back_pressed=0x7f020001;
-        public static final int btshape=0x7f020002;
-        public static final int btshape2=0x7f020003;
-        public static final int calpb=0x7f020004;
-        public static final int calpb1=0x7f020005;
-        public static final int element_list=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int main1bg=0x7f020008;
-        public static final int main1bg1=0x7f020009;
-        public static final int main1bgrl2=0x7f02000a;
-        public static final int main1tv1a=0x7f02000b;
-        public static final int main1tv1b=0x7f02000c;
-        public static final int main1tv2=0x7f02000d;
-        public static final int main1tv2a=0x7f02000e;
-        public static final int main1tv2b=0x7f02000f;
-        public static final int main1tv2c=0x7f020010;
-        public static final int main1tv3=0x7f020011;
-        public static final int main1tv3a=0x7f020012;
-        public static final int main1tv3b=0x7f020013;
-        public static final int main1tv3c=0x7f020014;
-        public static final int note=0x7f020015;
-        public static final int radio=0x7f020016;
-        public static final int selector_back_click=0x7f020017;
-        public static final int skin=0x7f020018;
-        public static final int unit_tables=0x7f020019;
-        public static final int unitpopbg=0x7f02001a;
-        public static final int version_info=0x7f02001b;
+        public static final int border1=0x7f020002;
+        public static final int border2=0x7f020003;
+        public static final int border3=0x7f020004;
+        public static final int border4=0x7f020005;
+        public static final int btshape=0x7f020006;
+        public static final int calpb=0x7f020007;
+        public static final int calpb1=0x7f020008;
+        public static final int element_list=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int main1bg=0x7f02000b;
+        public static final int main1bg1=0x7f02000c;
+        public static final int main1bgrl2=0x7f02000d;
+        public static final int main1tv1a=0x7f02000e;
+        public static final int main1tv1b=0x7f02000f;
+        public static final int main1tv2=0x7f020010;
+        public static final int main1tv2a=0x7f020011;
+        public static final int main1tv2b=0x7f020012;
+        public static final int main1tv2c=0x7f020013;
+        public static final int main1tv3=0x7f020014;
+        public static final int main1tv3a=0x7f020015;
+        public static final int main1tv3b=0x7f020016;
+        public static final int main1tv3c=0x7f020017;
+        public static final int note=0x7f020018;
+        public static final int radio=0x7f020019;
+        public static final int selector_back_click=0x7f02001a;
+        public static final int selector_ele1=0x7f02001b;
+        public static final int skin=0x7f02001c;
+        public static final int unit_tables=0x7f02001d;
+        public static final int unitpopbg=0x7f02001e;
+        public static final int version_info=0x7f02001f;
     }
     public static final class id {
         public static final int action_settings=0x7f0a002e;

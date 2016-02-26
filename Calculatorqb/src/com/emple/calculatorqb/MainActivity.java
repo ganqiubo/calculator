@@ -305,7 +305,8 @@ public class MainActivity extends FrameActivity {
     }  
     
     private void init(){
-    	   	
+    	/*File f2=new File(Environment.getExternalStorageDirectory()+"/gqb/gqb.db");   	
+    	f2.delete();*/
     	File f=new File(Environment.getExternalStorageDirectory()+"/gqb");
     	File f1=new File(Environment.getExternalStorageDirectory()+"/gqb/gqb.db");
     	if(!f.exists()){

@@ -14,6 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/border1"
            />
         <include 
             layout="@layout/ele_layout"
@@ -831,7 +832,7 @@
         android:id="@+id/eles_ll8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/ele_margin3"
+        android:layout_marginTop="-1dp"
         android:layout_below="@+id/eles_ll7"
          >
         <include 
