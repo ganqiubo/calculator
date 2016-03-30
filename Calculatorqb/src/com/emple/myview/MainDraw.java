@@ -1,9 +1,5 @@
 package com.emple.myview;
 
-import java.util.List;
-
-import javax.sql.RowSet;
-
 import com.emple.calculatorqb.Globe;
 import com.emple.calculatorqb.R;
 import android.os.Bundle;
@@ -16,7 +12,6 @@ import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.LayerDrawable;
-import android.graphics.drawable.StateListDrawable;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;

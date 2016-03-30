@@ -234,7 +234,7 @@ public class MainActivity extends FrameActivity {
        /*π=customvalues.π;
        e=customvalues.e;*/     
     }
-    
+    	
     private void addButtons() {
 		// TODO Auto-generated method stub
     	funbt1=new Button(this);funbt2=new Button(this);funbt3=new Button(this);funbt4=new Button(this);funbt5=new Button(this);
@@ -916,6 +916,34 @@ public class MainActivity extends FrameActivity {
     	}
     }
 
+     @Override
+    public void onReMeasure(int ds) {
+    	// TODO Auto-generated method stub
+    	super.onReMeasure(ds);
+    	
+    	btw1=(pwidth-4*ds)/5;
+  	   	bth1=pheight*15/(24*6);
+  	   	//bth1=btw1*5/6;	
+  	   	btspace=ds;
+  	  for(int i=0;i<30;i++){
+  		android.widget.RelativeLayout.LayoutParams layoutParams=
+  				(android.widget.RelativeLayout.LayoutParams) globe.btarray.get(i).getLayoutParams();
+  		if(i%5==4){
+  			layoutParams.width=btw1+ds;
+  			layoutParams.height=bth1;
+		}else{
+			layoutParams.width=btw1;
+  			layoutParams.height=bth1;
+		}
+  		globe.btarray.get(i).setX((i%5*(btw1+btspace)));
+  		globe.btarray.get(i).setY(pheight-(i/5+1)*bth1-i/5*btspace);
+  	  }
+  	rln2.setY(globe.btarray.get(25).getY()-bth1*4/7);
+  	  Log.e("", "onReMeasure");
+    	
+    }
+    	
+    
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		// TODO Auto-generated method stub

@@ -17,10 +17,21 @@ public class FrameActivity extends Activity {
     	super.onStart();
     	Log.e("", "====>onStart");
     	try {
+    		if(SkinManage.SKINNAME.equals("Default2")){
+    			onReMeasure(0);
+    		}else{
+    			onReMeasure(1);
+    		}
     		Inject.inject(this);
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.e("", ""+e);
 		}
     }
+    
+    public void onReMeasure(int ds){
+    	
+    }
+    
+    
 }
