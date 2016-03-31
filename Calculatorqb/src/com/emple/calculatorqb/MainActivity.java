@@ -70,6 +70,7 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.PopupWindow.OnDismissListener;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -232,9 +233,22 @@ public class MainActivity extends FrameActivity {
       getset();
       globe.statusHeight1=getStatusHeight(this);
        /*π=customvalues.π;
-       e=customvalues.e;*/     
+       e=customvalues.e;*/    
     }
     	
+	class dismiss implements OnDismissListener{
+
+		@Override
+		public void onDismiss() {
+			// TODO Auto-generated method stub
+			globe.btarray.get(19).setText("÷");
+	    	globe.btarray.get(24).setText("ln");
+	    	globe.btarray.get(29).setText("D");
+			Log.e("", "------->onDismiss");
+		}
+		
+	}
+	
     private void addButtons() {
 		// TODO Auto-generated method stub
     	funbt1=new Button(this);funbt2=new Button(this);funbt3=new Button(this);funbt4=new Button(this);funbt5=new Button(this);
@@ -692,10 +706,14 @@ public class MainActivity extends FrameActivity {
     		unitpop.dismiss();
     	}
     	unitpop=new PopupWindow(unitview,bth1*23/20,RelativeLayout.LayoutParams.WRAP_CONTENT, true);
+    	unitpop.setOnDismissListener(new dismiss());
     	unitpop.setBackgroundDrawable(new BitmapDrawable());		
     	unitpop.showAsDropDown(main1tv4,-bth1*11/20-2,0);
     	unitpop.setOutsideTouchable(true);  		          
     	unitpop.setFocusable(true);		 
+    	globe.btarray.get(19).setText("");
+    	globe.btarray.get(24).setText("");
+    	globe.btarray.get(29).setText("");
     }
     
     private void funchange(String s){ 
