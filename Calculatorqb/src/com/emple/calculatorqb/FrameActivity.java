@@ -17,10 +17,10 @@ public class FrameActivity extends Activity {
     	super.onStart();
     	Log.e("", "====>onStart");
     	try {
-    		if(SkinManage.SKINNAME.equals("Default2")){
-    			onReMeasure(0);
-    		}else{
+    		if(SkinManage.SKINNAME.equals("Default0")){
     			onReMeasure(1);
+    		}else{
+    			onReMeasure(0);
     		}
     		Inject.inject(this);
 		} catch (Exception e) {
@@ -29,6 +29,9 @@ public class FrameActivity extends Activity {
 		}
     }
     
+    /**
+     *@param ds driver width
+     */
     public void onReMeasure(int ds){
     	
     }

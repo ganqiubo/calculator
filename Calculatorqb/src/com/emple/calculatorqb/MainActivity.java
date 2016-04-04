@@ -46,6 +46,7 @@ import android.graphics.drawable.StateListDrawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.ActionMode;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -81,7 +82,7 @@ public class MainActivity extends FrameActivity {
 	String unitnameshow="all";//,funnote="";
 	BigDecimal π;
 	BigDecimal e;
-	boolean soundinput=false;
+	//boolean soundinput=false;
 	Context ct;
 	String[] strarray=new String[]{"n",".","0","=","+","√","1","2","3","-","^","4","5","6","×",
 			                    "( )","7","8","9","÷","sin","cos","tan","log","ln","L","R","∑","C","D"};			 	
@@ -116,7 +117,7 @@ public class MainActivity extends FrameActivity {
 	Main1Inputtext main1inputtext=new Main1Inputtext();			
 	Globe globe=new Globe();	
 	TextView pbCal;
-	@InjectStateDraw(draw_name="main1rl2")
+	@InjectStateDraw(draw_name="pbcal1")
 	TextView pbCal1;	
 	long systime=0;
 	
@@ -191,6 +192,8 @@ public class MainActivity extends FrameActivity {
 	Button bts29;
 	@InjectStateDraw(draw_name="btbg2")
 	Button bts30;
+	
+	RelativeLayout funBtRl;
 
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -201,6 +204,13 @@ public class MainActivity extends FrameActivity {
         		WindowManager.LayoutParams.FLAG_FULLSCREEN);
         
         setContentView(R.layout.activity_main);
+        
+        try {
+			Thread.sleep(200);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
   	   //statusBarHeight=getStatusHeight(this); 	   
        DisplayMetrics  dm = new DisplayMetrics();    
  	   getWindowManager().getDefaultDisplay().getMetrics(dm);    
@@ -235,7 +245,13 @@ public class MainActivity extends FrameActivity {
        /*π=customvalues.π;
        e=customvalues.e;*/    
     }
-    	
+	    	
+	@Override
+	public void onActionModeFinished(ActionMode mode) {
+		// TODO Auto-generated method stub
+		super.onActionModeFinished(mode);
+	}
+	
 	class dismiss implements OnDismissListener{
 
 		@Override
@@ -293,6 +309,7 @@ public class MainActivity extends FrameActivity {
     	globe.main1et1=main1et1;
     	globe.main1inputtext=main1inputtext;
     	globe.main1tv4=main1tv4;
+    	globe.main1tv3=main1tv3;
     	
     	globe.pwidth=pwidth;
     	globe.pheight=pheight;
@@ -332,7 +349,10 @@ public class MainActivity extends FrameActivity {
     		}
     	}
     	
-    	db = SQLiteDatabase.openOrCreateDatabase(Environment.getExternalStorageDirectory()+"/gqb/gqb.db", null);   	
+    	db = SQLiteDatabase.openOrCreateDatabase(Environment.getExternalStorageDirectory()+"/gqb/gqb.db", null);  
+    	
+    	skinManagerInit();
+    	
     	getfunname();
     	maxfunid=function.size()/5+1;
     	judge=new Judge();
@@ -380,16 +400,20 @@ public class MainActivity extends FrameActivity {
             globe.btarray.get(i).setOnClickListener(new main1btclick());
     	}
     	
+    	funBtRl=new RelativeLayout(ct);
+    	rln1.addView(funBtRl,RelativeLayout.LayoutParams.FILL_PARENT,bth1);
+    	funBtRl.setY(pheight-5*bth1-4*btspace);funBtRl.setX(0);
+    	//funBtRl.setBackgroundColor(Color.argb(100, 255, 0, 0));
     	for(int i=0;i<5;i++){
     		funbt[i].setTextColor(Color.WHITE);///bt.setTextAppearance(context, resid)
     		funbt[i].setTypeface(Typeface.SERIF);funbt[i].setTextSize(TypedValue.COMPLEX_UNIT_PX, btsize); 
     		//funbt[i].setBackgroundDrawable(skinManage.loadBtbg2Skin());
     		if(i%5==4){
-            	rln1.addView(funbt[i],btw1+ds,bth1);  
+    			funBtRl.addView(funbt[i],btw1+ds,bth1);  
     		}else{
-    			rln1.addView(funbt[i],btw1,bth1);
+    			funBtRl.addView(funbt[i],btw1,bth1);
     		}
-    		funbt[i].setX((i%5*(btw1+btspace)));funbt[i].setY(pheight-5*bth1-4*btspace);
+    		funbt[i].setX((i%5*(btw1+btspace)));//funbt[i].setY(pheight-5*bth1-4*btspace);
     		funbt[i].setVisibility(View.INVISIBLE);
     	}
     	
@@ -406,7 +430,7 @@ public class MainActivity extends FrameActivity {
     	//rln2.setBackgroundResource(R.drawable.main1bgrl2);
     	//rln2.setBackgroundDrawable(skinManage.loadMain1Rl2Skin());
     	rln2.setY(globe.btarray.get(25).getY()-bth1*4/7);
-    	main1tv1=new TextView(this);main1tv1.setBackgroundResource(R.drawable.main1tv1a);
+    	main1tv1=new TextView(this);main1tv1.setBackgroundResource(R.drawable.main1tv1);
     	main1tv2=new TextView(this);//main1tv2.setBackgroundDrawable(skinManage.loadMain1Tv2Skin());
     	main1tv3=new TextView(this);//main1tv3.setBackgroundDrawable(skinManage.loadMain1Tv3Skin());
     	main1tv4=new TextView(this);main1tv4.setGravity(Gravity.CENTER);main1tv4.setText("长度");
@@ -431,7 +455,7 @@ public class MainActivity extends FrameActivity {
 		main1hsv1=(HorizontalScrollView) findViewById(R.id.main1hsv1);
 		rln1.removeView(main1hsv1);rln2.addView(main1hsv1,pwidth-bth1*12/5,bth1*4/7);
 		main1hsv1.setX(bth1*6/5);		
-		anim1(0,30,700);
+		anim1(0,30,750);
 		
 		unitview=flater.inflate(R.layout.unitpop, null);	
 		unitpoplv1=(ListView) unitview.findViewById(R.id.unitpoplv1);
@@ -483,7 +507,19 @@ public class MainActivity extends FrameActivity {
 		
     }
     
-    class pbcal1click implements OnClickListener{
+    private void skinManagerInit() {
+		// TODO Auto-generated method stub
+    	Cursor c=db.rawQuery("select * from skin", new String[]{});
+    	while (c.moveToNext()) {
+    		SkinManage.SKINMODE=c.getInt(c.getColumnIndexOrThrow("mode"));
+    		SkinManage.SKINNAME=c.getString(c.getColumnIndexOrThrow("name"));
+    		SkinManage.SKINPATH=c.getString(c.getColumnIndexOrThrow("path"));
+			break;
+		}
+    	c.close();
+	}
+
+	class pbcal1click implements OnClickListener{
 
 		@Override
 		public void onClick(View arg0) {
@@ -662,12 +698,15 @@ public class MainActivity extends FrameActivity {
 			// TODO Auto-generated method stub
 			if (globe.input==1) {
 				if(v==main1tv1){						
-					if(!soundinput){
+					/*if(!soundinput){
 						main1tv1.setBackgroundResource(R.drawable.main1tv1b);
 					}if(soundinput){
 						main1tv1.setBackgroundResource(R.drawable.main1tv1a);
 					}
-					soundinput=!soundinput;
+					soundinput=!soundinput;*/
+					Intent intent1=new Intent(ct, SettingActivity.class);
+					startActivity(intent1);
+					overridePendingTransition(R.anim.slide_in_right,R.anim.slide_no);
 				}if(v==main1tv2){
 					if(funid==maxfunid){
 						main1tv3.setClickable(true);
@@ -739,20 +778,28 @@ public class MainActivity extends FrameActivity {
     		}    		
     		btanimup(bth1);
     	} 
-    	funbt[0].setVisibility(View.VISIBLE);funbt[1].setVisibility(View.VISIBLE);
-		funbt[2].setVisibility(View.VISIBLE);funbt[3].setVisibility(View.VISIBLE);funbt[4].setVisibility(View.VISIBLE);
+    	
 		
 		anim1(20,25,500);
     }
     
     private void btanimup(int a){
+    	
+    	/*if (!"Default0".equals(SkinManage.SKINNAME)) {
+    		funbt[0].setBackgroundDrawable(null);funbt[1].setBackgroundDrawable(null);
+    		funbt[2].setBackgroundDrawable(null);funbt[3].setBackgroundDrawable(null);
+    		funbt[4].setBackgroundDrawable(null);
+    	}*/
     	TranslateAnimation ta=new TranslateAnimation(0, 0, 0, a);
-    	ta.setDuration(300);
+    	ta.setDuration(250);
     	ta.setFillAfter(true);
     	for(int i=0;i<=4;i++){
     		funbt[i].startAnimation(ta);
     	}
     	ta.setAnimationListener(new upanim());
+		funbt[0].setVisibility(View.VISIBLE);funbt[1].setVisibility(View.VISIBLE);
+		funbt[2].setVisibility(View.VISIBLE);funbt[3].setVisibility(View.VISIBLE);
+		funbt[4].setVisibility(View.VISIBLE);	
     }
     
     class upanim implements AnimationListener{
@@ -777,7 +824,6 @@ public class MainActivity extends FrameActivity {
 			// TODO Auto-generated method stub
 			
 		}
-    	
     }
     
     class main1btclick implements OnClickListener{

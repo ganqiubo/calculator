@@ -7,7 +7,11 @@ import java.util.List;
 
 import com.emple.calculatorqb.R;
 import com.emple.calculatorqb.SkinManage;
+
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,6 +30,7 @@ public class SkinSetActivity extends StatusSetActivity {
 	private TextView mhead_title;
 	private Spinner skinname;
 	private Button skin_modify;
+	private SQLiteDatabase db;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,8 @@ public class SkinSetActivity extends StatusSetActivity {
 
 	private void init() {
 		// TODO Auto-generated method stub
+		
+		db = SQLiteDatabase.openOrCreateDatabase(Environment.getExternalStorageDirectory()+"/gqb/gqb.db", null);  
 		mhead_title=(TextView) findViewById(R.id.mhead_title);
 		mhead_title.setText("皮肤设置");
 		
@@ -87,8 +94,18 @@ public class SkinSetActivity extends StatusSetActivity {
 			SkinManage.SKINNAME=newskin;
 			SkinManage.SKINPATH="skin/"+newskin;
 			SkinManage.MODECHANGE=true;
+			updateSkin();
 			Toast.makeText(SkinSetActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
 			skin_modify.setEnabled(false);
+		}
+
+		private void updateSkin() {
+			// TODO Auto-generated method stub
+			
+			ContentValues values=new ContentValues();
+			values.put("name", SkinManage.SKINNAME);
+			values.put("path", SkinManage.SKINPATH);
+			db.update("skin", values, "id=0", null);
 		}
 	}
 	

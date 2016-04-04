@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import android.R.drawable;
 import android.R.integer;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +22,7 @@ public class CalDataTask extends AsyncTask<String, Integer, String>{
 	public Context ct;
 	public int width;
 	public boolean cancer=false;
+	Drawable main1tv3bg;
 	
 	@Override
 	protected void onCancelled() {
@@ -30,6 +33,8 @@ public class CalDataTask extends AsyncTask<String, Integer, String>{
 		globe.pbCal.setLayoutParams(hu);
 		globe.pbCal.setVisibility(View.INVISIBLE);
 		globe.pbCal1.setVisibility(View.INVISIBLE);
+		globe.main1tv3.setBackgroundDrawable(main1tv3bg);
+		globe.main1tv4.setText("长度");
 		globe.input=1;
 		Toast.makeText(ct, "操作结束", Toast.LENGTH_SHORT).show();
 		super.onCancelled();
@@ -38,10 +43,12 @@ public class CalDataTask extends AsyncTask<String, Integer, String>{
 	@Override
 	protected void onPreExecute() {
 		// TODO Auto-generated method stub
-		
-		
 		globe.input=-1;
 		width=globe.pbCal.getLayoutParams().width;
+		globe.main1tv4.setText("");
+		Log.e("", "----<onPreExecute");
+		main1tv3bg=globe.main1tv3.getBackground();
+		globe.main1tv3.setBackgroundDrawable(null);
 		globe.pbCal1.setVisibility(View.VISIBLE);
 		globe.pbCal.setVisibility(View.VISIBLE);
 		LayoutParams hu = globe.pbCal.getLayoutParams();
@@ -62,6 +69,8 @@ public class CalDataTask extends AsyncTask<String, Integer, String>{
 		globe.pbCal.setLayoutParams(hu);
 		globe.pbCal.setVisibility(View.INVISIBLE);
 		globe.pbCal1.setVisibility(View.INVISIBLE);
+		globe.main1tv4.setText("长度");
+		globe.main1tv3.setBackgroundDrawable(main1tv3bg);
 		globe.input=1;globe.isfun1save=false;globe.isfuning=false;
 		globe.btarray.get(27).setText("∑");
 		if (result==null) {

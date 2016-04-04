@@ -1,5 +1,6 @@
 package com.emple.activity;
 
+import com.ant.liao.GifView;
 import com.emple.calculatorqb.Globe;
 import com.emple.calculatorqb.R;
 import android.app.Activity;
@@ -35,6 +36,8 @@ public class ElementListActivity extends Activity{
 	private LinearLayout[] rows=new LinearLayout[9];
 	private GridView gview;
 	private SQLiteDatabase db;
+	private GifView gifview;
+	//private int
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -82,11 +85,19 @@ public class ElementListActivity extends Activity{
 
 	private void initViews() {
 		// TODO Auto-generated method stub
+		
 		db = SQLiteDatabase.openOrCreateDatabase(Environment.getExternalStorageDirectory()+"/gqb/gqb.db", null);   	
 		mcontext = this;
 		eles_rl=(RelativeLayout) findViewById(R.id.eles_rl);
 		
-		for(int i=0;i<eles_rl.getChildCount();i++){
+		gifview=new GifView(mcontext);
+		gifview.setGifImage(R.drawable.gif1);
+		eles_rl.addView(gifview,RelativeLayout.LayoutParams.FILL_PARENT,
+				RelativeLayout.LayoutParams.FILL_PARENT);
+		//gifview.showAnimation();
+		//gifview.showCover();
+		
+		for(int i=0;i<(eles_rl.getChildCount()-1);i++){
 			rows[i]=(LinearLayout) eles_rl.getChildAt(i);
 			for(int j=0;j<rows[i].getChildCount();j++){
 				addEleData((RelativeLayout) rows[i].getChildAt(j), (i+1), (j+1));

@@ -14,26 +14,6 @@ public final class R {
         public static final int slide_out_right=0x7f040002;
     }
     public static final class attr {
-        /** <p>Must be an integer value, such as "<code>100</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int cols=0x7f010001;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-         */
-        public static final int item_layout=0x7f010002;
-        /** <p>Must be an integer value, such as "<code>100</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int rows=0x7f010000;
     }
     public static final class color {
         public static final int alpha=0x7f050008;
@@ -78,38 +58,45 @@ containing a value of this type.
         public static final int ele_size4=0x7f060005;
     }
     public static final class drawable {
-        public static final int back_normal=0x7f020000;
-        public static final int back_pressed=0x7f020001;
-        public static final int border1=0x7f020002;
-        public static final int border2=0x7f020003;
-        public static final int border3=0x7f020004;
-        public static final int border4=0x7f020005;
-        public static final int btshape=0x7f020006;
-        public static final int calpb=0x7f020007;
-        public static final int calpb1=0x7f020008;
-        public static final int element_list=0x7f020009;
-        public static final int ic_launcher=0x7f02000a;
-        public static final int main1bg=0x7f02000b;
-        public static final int main1bg1=0x7f02000c;
-        public static final int main1bgrl2=0x7f02000d;
-        public static final int main1tv1a=0x7f02000e;
-        public static final int main1tv1b=0x7f02000f;
-        public static final int main1tv2=0x7f020010;
-        public static final int main1tv2a=0x7f020011;
-        public static final int main1tv2b=0x7f020012;
-        public static final int main1tv2c=0x7f020013;
-        public static final int main1tv3=0x7f020014;
-        public static final int main1tv3a=0x7f020015;
-        public static final int main1tv3b=0x7f020016;
-        public static final int main1tv3c=0x7f020017;
-        public static final int note=0x7f020018;
-        public static final int radio=0x7f020019;
-        public static final int selector_back_click=0x7f02001a;
-        public static final int selector_ele1=0x7f02001b;
-        public static final int skin=0x7f02001c;
-        public static final int unit_tables=0x7f02001d;
-        public static final int unitpopbg=0x7f02001e;
-        public static final int version_info=0x7f02001f;
+        public static final int atomic=0x7f020000;
+        public static final int back_normal=0x7f020001;
+        public static final int back_pressed=0x7f020002;
+        public static final int bg=0x7f020003;
+        public static final int bgstart=0x7f020004;
+        public static final int border1=0x7f020005;
+        public static final int border2=0x7f020006;
+        public static final int border3=0x7f020007;
+        public static final int border4=0x7f020008;
+        public static final int btshape=0x7f020009;
+        public static final int calpb=0x7f02000a;
+        public static final int calpb1=0x7f02000b;
+        public static final int element_list=0x7f02000c;
+        public static final int gif1=0x7f02000d;
+        public static final int ic_launcher=0x7f02000e;
+        public static final int main1bg=0x7f02000f;
+        public static final int main1bg1=0x7f020010;
+        public static final int main1bgrl2=0x7f020011;
+        public static final int main1tv1=0x7f020012;
+        public static final int main1tv1a=0x7f020013;
+        public static final int main1tv1b=0x7f020014;
+        public static final int main1tv1na=0x7f020015;
+        public static final int main1tv1nb=0x7f020016;
+        public static final int main1tv2=0x7f020017;
+        public static final int main1tv2a=0x7f020018;
+        public static final int main1tv2b=0x7f020019;
+        public static final int main1tv2c=0x7f02001a;
+        public static final int main1tv3=0x7f02001b;
+        public static final int main1tv3a=0x7f02001c;
+        public static final int main1tv3b=0x7f02001d;
+        public static final int main1tv3c=0x7f02001e;
+        public static final int note=0x7f02001f;
+        public static final int radio=0x7f020020;
+        public static final int selector_back_click=0x7f020021;
+        public static final int selector_ele1=0x7f020022;
+        public static final int skin=0x7f020023;
+        public static final int unit_tables=0x7f020024;
+        public static final int unitpopbg=0x7f020025;
+        public static final int version_info=0x7f020026;
     }
     public static final class id {
         public static final int action_settings=0x7f0a002e;
@@ -218,65 +205,7 @@ containing a value of this type.
          */
         public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f080001;
     }
-    public static final class styleable {
-        /** Attributes that can be used with a MyTab.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MyTab_cols com.emple.calculatorqb:cols}</code></td><td></td></tr>
-           <tr><td><code>{@link #MyTab_item_layout com.emple.calculatorqb:item_layout}</code></td><td></td></tr>
-           <tr><td><code>{@link #MyTab_rows com.emple.calculatorqb:rows}</code></td><td></td></tr>
-           </table>
-           @see #MyTab_cols
-           @see #MyTab_item_layout
-           @see #MyTab_rows
-         */
-        public static final int[] MyTab = {
-            0x7f010000, 0x7f010001, 0x7f010002
-        };
-        /**
-          <p>This symbol is the offset where the {@link com.emple.calculatorqb.R.attr#cols}
-          attribute's value can be found in the {@link #MyTab} array.
-
-
-          <p>Must be an integer value, such as "<code>100</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.emple.calculatorqb:cols
-        */
-        public static final int MyTab_cols = 1;
-        /**
-          <p>This symbol is the offset where the {@link com.emple.calculatorqb.R.attr#item_layout}
-          attribute's value can be found in the {@link #MyTab} array.
-
-
-          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.emple.calculatorqb:item_layout
-        */
-        public static final int MyTab_item_layout = 2;
-        /**
-          <p>This symbol is the offset where the {@link com.emple.calculatorqb.R.attr#rows}
-          attribute's value can be found in the {@link #MyTab} array.
-
-
-          <p>Must be an integer value, such as "<code>100</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.emple.calculatorqb:rows
-        */
-        public static final int MyTab_rows = 0;
-    };
 }

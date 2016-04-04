@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class Globe{
 	
 	public boolean hasUnity;
-	public TextView pbCal,pbCal1,main1tv4;
+	public TextView pbCal,pbCal1,main1tv4,main1tv3;
 	public Button btCal;
 	public RelativeLayout rln1;
 	public int funtype=-1;	//∫Ø ˝¿‡–Õ£®1-5£©
