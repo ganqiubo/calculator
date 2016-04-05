@@ -1,7 +1,10 @@
 package com.emple.activity;
 
+import java.util.zip.Inflater;
+
 import com.ant.liao.GifView;
 import com.emple.calculatorqb.Globe;
+import com.emple.calculatorqb.Main1Inputtext;
 import com.emple.calculatorqb.R;
 import android.app.Activity;
 import android.content.Context;
@@ -11,8 +14,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -21,6 +27,8 @@ import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -36,7 +44,9 @@ public class ElementListActivity extends Activity{
 	private LinearLayout[] rows=new LinearLayout[9];
 	private GridView gview;
 	private SQLiteDatabase db;
-	private GifView gifview;
+	private ImageView eles_iv1;
+	private LayoutInflater inflater;
+	private RelativeLayout rl_main;
 	//private int
 
 	@Override
@@ -75,30 +85,46 @@ public class ElementListActivity extends Activity{
 		rl0.setScaleY((float) 1);*/
 		//gridView.setColumnWidth(20);
 		//gridView
+		db = SQLiteDatabase.openOrCreateDatabase(Environment.getExternalStorageDirectory()+"/gqb/gqb.db", null);   	
+		mcontext = this;
+		eles_rl=(RelativeLayout) findViewById(R.id.eles_rl);
+		eles_iv1=new ImageView(mcontext);
+		eles_iv1.setBackgroundResource(R.drawable.atomic);
+		eles_rl.addView(eles_iv1,RelativeLayout.LayoutParams.FILL_PARENT,
+				RelativeLayout.LayoutParams.FILL_PARENT);
+		inflater = LayoutInflater.from(mcontext);
 		
-		
-		initViews();
+		new Thread(new Runnable() {
+			public void run() {
+				try {
+					Thread.sleep(500);
+					handler.sendEmptyMessage(1);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}).start();
+
 		/*mcontext = this;
 		gview = (GridView) findViewById(R.id.eles_grid);
 		gview.setAdapter(new ElesAdapter());*/
 	}
 
+	private void addViews() {
+		rl_main=(RelativeLayout) inflater.inflate(R.layout.activity_elements_main, null);
+		eles_rl.addView(rl_main,RelativeLayout.LayoutParams.FILL_PARENT,
+				RelativeLayout.LayoutParams.WRAP_CONTENT);
+	}
+	
 	private void initViews() {
 		// TODO Auto-generated method stub
 		
-		db = SQLiteDatabase.openOrCreateDatabase(Environment.getExternalStorageDirectory()+"/gqb/gqb.db", null);   	
-		mcontext = this;
-		eles_rl=(RelativeLayout) findViewById(R.id.eles_rl);
-		
-		gifview=new GifView(mcontext);
-		gifview.setGifImage(R.drawable.gif1);
-		eles_rl.addView(gifview,RelativeLayout.LayoutParams.FILL_PARENT,
-				RelativeLayout.LayoutParams.FILL_PARENT);
 		//gifview.showAnimation();
 		//gifview.showCover();
-		
-		for(int i=0;i<(eles_rl.getChildCount()-1);i++){
-			rows[i]=(LinearLayout) eles_rl.getChildAt(i);
+		Log.e("", "ELES----->"+rl_main.getChildCount());
+		for(int i=0;i<(rl_main.getChildCount());i++){
+			rows[i]=(LinearLayout) rl_main.getChildAt(i);
 			for(int j=0;j<rows[i].getChildCount();j++){
 				addEleData((RelativeLayout) rows[i].getChildAt(j), (i+1), (j+1));
 			}
@@ -145,42 +171,19 @@ public class ElementListActivity extends Activity{
 		
 	}
 	
-	private class ElesAdapter extends BaseAdapter {
+	private Handler handler=new Handler(){
 
 		@Override
-		public int getCount() {
-			return 162;
-		}
-
-		@Override
-		public Object getItem(int position) {
-			return 0;
-		}
-
-		@Override
-		public long getItemId(int position) {
-			return 0;
-		}
-
-		@Override
-		public View getView(final int position, View convertView, ViewGroup parent) {
-			View view;
-			ViewHolder holder = null;
-			if (convertView != null) {
-				view = convertView;
-				holder = (ViewHolder) view.getTag();
-			} else {
-				view = View.inflate(mcontext, R.layout.ele_layout, null);
-				view.setTag(holder);
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			super.handleMessage(msg);
+			if (msg.what==1) {
+				addViews();
+				initViews();
+				eles_iv1.setVisibility(View.INVISIBLE);
 			}
-			//Log.e("", "------>"+view.getClass());
-			return view;
 		}
-
-	}
- 
-	class ViewHolder {
 		
-	}
+	};
 	
 }

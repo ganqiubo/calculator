@@ -28,6 +28,8 @@ import android.os.Build.VERSION_CODES;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.os.Vibrator;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -205,47 +207,47 @@ public class MainActivity extends FrameActivity {
         
         setContentView(R.layout.activity_main);
         
-        try {
-			Thread.sleep(200);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-  	   //statusBarHeight=getStatusHeight(this); 	   
-       DisplayMetrics  dm = new DisplayMetrics();    
- 	   getWindowManager().getDefaultDisplay().getMetrics(dm);    
- 	   pwidth = dm.widthPixels;              
- 	   pheight = dm.heightPixels/*-statusBarHeight*/;
- 	   SkinManage.MODECHANGE=true;
- 	   addButtons();
- 	   
- 	   /*int ds1=pwidth-pwidth*50/254*5-pwidth/254*4;
- 	   ds=ds1-ds1/5;
- 	   btw1=pwidth*50/254+ds1/5;bth1=pwidth*10/54;btspace=pwidth/254;*/
- 	   
- 	   ds=1;
- 	   btw1=(pwidth-4*ds)/5;
- 	   bth1=pheight*15/(24*6);
- 	   //bth1=btw1*5/6;	
- 	   btspace=ds;
- 	   ct=this;	   
- 	   flater=LayoutInflater.from(ct);
- 	   for(int i=0;i<6;i++){
- 		  globe.unitseleid.add(-1);
- 		  globe.unitseleidStr.add("");
- 	   }
- 	  units.add("长    度");units.add("质    量");units.add("面    积");units.add("体    积");units.add("压    力");
- 	  units.add("流    量");
- 	  funet1=new EditText(this);funet1.setFocusableInTouchMode(false);funet1.setFocusable(false);
- 	  funet1.setTextColor(Color.WHITE);funet1.setBackgroundDrawable(null);
- 	 
-      init();
-      getset();
-      globe.statusHeight1=getStatusHeight(this);
-       /*π=customvalues.π;
-       e=customvalues.e;*/    
+        create();
+  	     
     }
 	    	
+	private void create() {
+		// TODO Auto-generated method stub
+		//statusBarHeight=getStatusHeight(this); 	   
+	       DisplayMetrics  dm = new DisplayMetrics();    
+	 	   getWindowManager().getDefaultDisplay().getMetrics(dm);    
+	 	   pwidth = dm.widthPixels;              
+	 	   pheight = dm.heightPixels/*-statusBarHeight*/;
+	 	   SkinManage.MODECHANGE=true;
+	 	   addButtons();
+	 	   
+	 	   /*int ds1=pwidth-pwidth*50/254*5-pwidth/254*4;
+	 	   ds=ds1-ds1/5;
+	 	   btw1=pwidth*50/254+ds1/5;bth1=pwidth*10/54;btspace=pwidth/254;*/
+	 	   
+	 	   ds=1;
+	 	   btw1=(pwidth-4*ds)/5;
+	 	   bth1=pheight*15/(24*6);
+	 	   //bth1=btw1*5/6;	
+	 	   btspace=ds;
+	 	   ct=this;	   
+	 	   flater=LayoutInflater.from(ct);
+	 	   for(int i=0;i<6;i++){
+	 		  globe.unitseleid.add(-1);
+	 		  globe.unitseleidStr.add("");
+	 	   }
+	 	  units.add("长    度");units.add("质    量");units.add("面    积");units.add("体    积");units.add("压    力");
+	 	  units.add("流    量");
+	 	  funet1=new EditText(this);funet1.setFocusableInTouchMode(false);funet1.setFocusable(false);
+	 	  funet1.setTextColor(Color.WHITE);funet1.setBackgroundDrawable(null);
+	 	 
+	      init();
+	      getset();
+	      globe.statusHeight1=getStatusHeight(this);
+	       /*π=customvalues.π;
+	       e=customvalues.e;*/  
+	}
+
 	@Override
 	public void onActionModeFinished(ActionMode mode) {
 		// TODO Auto-generated method stub
@@ -1027,6 +1029,5 @@ public class MainActivity extends FrameActivity {
 		}
 		return false;
 	}
-
     
 }
