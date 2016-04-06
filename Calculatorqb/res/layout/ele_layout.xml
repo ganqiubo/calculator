@@ -124,7 +124,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
         android:text="92"
-        android:layout_marginLeft="1dp"
+        android:layout_marginLeft="1px"
         android:textSize="@dimen/ele_size1"
         />
     
@@ -194,6 +194,7 @@
 	        android:layout_marginTop="@dimen/ele_margin2"
 	        android:text="Uranium"
 	        android:singleLine="true"
+	        android:layout_marginLeft="1px"
 	        android:textSize="@dimen/ele_size4" />
 	    
 	    <TextView
@@ -205,6 +206,7 @@
 	        android:layout_below="@+id/ele_name_us"
 	        android:layout_marginTop="-2dp"
 	        android:text="3s²3p⁴"
+	        android:layout_marginLeft="1px"
 	        android:textSize="@dimen/ele_size4" 
 	        android:singleLine="true"
 	        />

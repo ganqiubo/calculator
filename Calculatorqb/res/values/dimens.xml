@@ -3,9 +3,9 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-	<dimen name="ele_size1">9sp</dimen>
+	<dimen name="ele_size1">8sp</dimen>
 	<dimen name="ele_size2">6sp</dimen>
-	<dimen name="ele_size3">11sp</dimen>
+	<dimen name="ele_size3">10sp</dimen>
 	<dimen name="ele_size4">7sp</dimen>
 	<dimen name="ele_margin">0dp</dimen>
 	<dimen name="ele_margin1">0dp</dimen>

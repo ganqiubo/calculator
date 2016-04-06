@@ -1,17 +1,20 @@
 package com.emple.activity;
 
-import java.util.zip.Inflater;
-
-import com.ant.liao.GifView;
 import com.emple.calculatorqb.Globe;
-import com.emple.calculatorqb.Main1Inputtext;
 import com.emple.calculatorqb.R;
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
+import android.opengl.Visibility;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -20,17 +23,15 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class ElementListActivity extends Activity{
 
@@ -131,9 +132,16 @@ public class ElementListActivity extends Activity{
 		}
 		
 	}
-	
+
 	private void addEleData(RelativeLayout rl,int i,int j) {
 		// TODO Auto-generated method stub
+		
+		TextView ele_name_zh=(TextView) rl.findViewById(R.id.ele_name_zh);
+		TextView ele_name_us=(TextView) rl.findViewById(R.id.ele_name_us);
+		TextView ele_num=(TextView) rl.findViewById(R.id.ele_num);
+		TextView ele_symble=(TextView) rl.findViewById(R.id.ele_symble);
+		ImageView ele_radioactive=(ImageView) rl.findViewById(R.id.ele_radioactive);
+		TextView ele_name_margin=(TextView) rl.findViewById(R.id.ele_name_margin);
 		
 		Cursor c = db.rawQuery("select * from elements_table where ele_x=? and ele_y=?", new String[]{(""+i),(""+j)});
 		if(c.getCount()==0){
@@ -150,15 +158,58 @@ public class ElementListActivity extends Activity{
 				rl.setBackgroundResource(R.drawable.border3);
 			}if (boder==4) {
 				rl.setBackgroundResource(R.drawable.border4);
-				//StateListDrawable sd=(StateListDrawable) rl.getBackground();
-				LayerDrawable ld=(LayerDrawable) rl.getBackground();
-				Log.e("", "----->"+ld.getNumberOfLayers());
 			}
-			//Log.e("", "----->"+rl.getBackground().getClass());
-			rl.setOnClickListener(new click());
-			//LayerDrawable dr;
-			//dr.addLayer(dr);
+			
+			ele_name_zh.setText(c.getString(c.getColumnIndexOrThrow("ele_name_zh")));
+			ele_name_us.setText(c.getString(c.getColumnIndexOrThrow("ele_name_us")));
+			ele_num.setText(c.getString(c.getColumnIndexOrThrow("ele_num")));
+			ele_symble.setText(c.getString(c.getColumnIndexOrThrow("ele_symble_us")));
+			if ("false".equals(c.getString(c.getColumnIndexOrThrow("is_radioactive")))) {
+				ele_radioactive.setVisibility(View.GONE);
+				ele_name_margin.setVisibility(View.GONE);
+			}if ("true".equals(c.getString(c.getColumnIndexOrThrow("is_man-made")))) {
+				ele_symble.setTextColor(Color.rgb(255, 60, 60));
+			}if ("ÆøÌ¬".equals(c.getString(c.getColumnIndexOrThrow("state_matter_normal")))) {
+				ele_name_zh.setTextColor(Color.rgb(255, 255, 255));
+			}if ("ÒºÌ¬".equals(c.getString(c.getColumnIndexOrThrow("state_matter_normal")))) {
+				ele_name_zh.setTextColor(Color.rgb(54, 121, 220));
+			}
+			LayerDrawable ld=(LayerDrawable) rl.getBackground();
+			GradientDrawable gd=(GradientDrawable) ld.getDrawable(1);
+			int id=ld.getId(1);
+			if ("1".equals(c.getString(c.getColumnIndexOrThrow("ele_classify")))) {
+				gd.setColor(Color.rgb(43, 204, 92));
+				ld.setDrawableByLayerId(id, gd);
+				rl.setBackgroundDrawable(ld);
+			}if ("2".equals(c.getString(c.getColumnIndexOrThrow("ele_classify")))) {
+				gd.setColor(Color.rgb(198, 201, 204));
+				ld.setDrawableByLayerId(id, gd);
+				rl.setBackgroundDrawable(ld);
+				//rl.setBackgroundColor(Color.rgb(198, 201, 204));
+			}if ("3".equals(c.getString(c.getColumnIndexOrThrow("ele_classify")))) {
+				gd.setColor(Color.rgb(250, 252, 80));
+				ld.setDrawableByLayerId(id, gd);
+				rl.setBackgroundDrawable(ld);
+				//rl.setBackgroundColor(Color.rgb(250, 252, 80));
+			}if ("4".equals(c.getString(c.getColumnIndexOrThrow("ele_classify")))) {
+				gd.setColor(Color.rgb(244, 214, 82));
+				ld.setDrawableByLayerId(id, gd);
+				rl.setBackgroundDrawable(ld);
+				//rl.setBackgroundColor(Color.rgb(244, 214, 82));
+			}if ("5".equals(c.getString(c.getColumnIndexOrThrow("ele_classify")))) {
+				gd.setColor(Color.rgb(252, 157, 73));
+				ld.setDrawableByLayerId(id, gd);
+				rl.setBackgroundDrawable(ld);
+				//rl.setBackgroundColor(Color.rgb(252, 157, 73));
+			}if ("6".equals(c.getString(c.getColumnIndexOrThrow("ele_classify")))) {
+				gd.setColor(Color.rgb(205, 252, 88));
+				ld.setDrawableByLayerId(id, gd);
+				rl.setBackgroundDrawable(ld);
+				//rl.setBackgroundColor(Color.rgb(205, 252, 88));
+			}
+			
 		}
+		rl.setOnClickListener(new click());
 	}
 
 	class click implements OnClickListener{
