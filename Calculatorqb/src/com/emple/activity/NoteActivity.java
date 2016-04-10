@@ -2,6 +2,9 @@ package com.emple.activity;
 
 import com.emple.calculatorqb.R;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -23,6 +26,6 @@ public class NoteActivity extends StatusSetActivity {
 		// TODO Auto-generated method stub
 		mhead_title=(TextView) findViewById(R.id.mhead_title);
 		mhead_title.setText("功能说明");
-	}
+	}	
 	
 }

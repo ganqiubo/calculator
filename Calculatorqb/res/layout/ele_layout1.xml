@@ -2,42 +2,172 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/ele_rl0"
+    android:id="@+id/ele1_rl0"
     android:orientation="horizontal"
      >
-
-    <RelativeLayout
-        android:id="@+id/ele_rl"
+     
+    <RelativeLayout 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/ele_margin"
-        android:layout_toLeftOf="@id/ele_rl2" >
+        android:paddingTop="3dp"
+    	android:paddingBottom="3dp"
+        >
         
-        <TextView
-        android:id="@+id/ele_num"
+        <RelativeLayout
+        android:id="@+id/ele1_rlbg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
-        android:text="92"
-        android:textSize="@dimen/ele_size1"
-        />
+        android:layout_toLeftOf="@+id/ele1_rl6"
+        android:layout_toRightOf="@+id/ele1_rl5"
+        android:layout_alignTop="@+id/ele1_rl6"
+        android:layout_alignBottom="@+id/ele1_rl6"
+        android:background="@drawable/bg1"
+        android:padding="1px"
+        >
+        
+        <RelativeLayout
+        android:id="@+id/ele1_rl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/ele1_rl4" 
+        >
+        
+        <TextView
+            android:id="@+id/ele1_margin_shell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="32"
+            android:textSize="@dimen/ele1_size2"
+            android:textColor="#0000"
+            />
+        
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_alignRight="@+id/ele1_margin_shell"
+            android:layout_alignLeft="@+id/ele1_margin_shell"
+            android:orientation="vertical"
+            >
+            
+            <TextView
+            android:id="@+id/ele1_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:text="2"
+            android:gravity="right"
+            android:textSize="@dimen/ele1_size2"
+            />
+        
+        <TextView
+            android:id="@+id/ele1_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:text="8"
+            android:textSize="@dimen/ele1_size2"
+            android:gravity="right"
+            />
+        
+        <TextView
+            android:id="@+id/ele1_third"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:text="18"
+            android:textSize="@dimen/ele1_size2"
+            android:gravity="right"
+            />
+        
+        <TextView
+            android:id="@+id/ele1_forth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:text="32"
+            android:textSize="@dimen/ele1_size2"
+            android:gravity="right"
+            />
+        
+        <TextView
+            android:id="@+id/ele1_fifth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:text="21"
+            android:gravity="right"
+            android:textSize="@dimen/ele1_size2"
+            />
+        
+        <TextView
+            android:id="@+id/ele1_sixth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:text="9"
+            android:gravity="right"
+            android:textSize="@dimen/ele1_size2"
+            />
+        
+        <TextView
+            android:id="@+id/ele1_seventh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:text="2"
+            android:gravity="right"
+            android:textSize="@dimen/ele1_size2"/>
+            
+        </LinearLayout>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/ele1_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/ele1_margin"
+        android:layout_toLeftOf="@+id/ele1_rl2"
+        android:layout_toRightOf="@+id/ele1_rl3"
+        android:layout_centerVertical="true"
+        
+        >
+        <!-- android:layout_toLeftOf="@id/ele1_rl2"  -->
+        
+         <TextView
+	        android:id="@+id/ele1_electronic_structure"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignRight="@+id/ele1_rl1"
+	        android:text="3s2p"
+	        android:singleLine="true"
+	        android:gravity="center"
+	        android:layout_marginLeft="1px"
+	        android:paddingTop="2dp"
+	        android:textSize="@dimen/ele1_size4" />
+        
+        <TextView
+	        android:id="@+id/ele1_num"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" 
+	        android:text="92"
+	        android:layout_below="@+id/ele1_electronic_structure"
+	        android:layout_marginLeft="1dp"
+	        android:textSize="@dimen/ele1_size1"
+	        />
     
 	    <TextView
-	        android:id="@+id/ele_symble"
+	        android:id="@+id/ele1_symble"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content" 
 	        android:text="U"
-	        android:textSize="@dimen/ele_size1"
+	        android:layout_below="@+id/ele1_electronic_structure"
+	        android:layout_marginRight="1dp"
+	        android:textSize="@dimen/ele1_size1"
 	        android:layout_alignParentRight="true"
 	        />
 	    
 	    <RelativeLayout
-	        android:id="@+id/ele_rl1"
+	        android:id="@+id/ele1_rl1"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/ele_num"
-	        android:layout_alignRight="@+id/ele_symble"
-	        android:layout_below="@+id/ele_num"
-	        android:layout_marginTop="-2dp" >
+	        android:layout_alignLeft="@+id/ele1_num"
+	        android:layout_alignRight="@+id/ele1_symble"
+	        android:layout_below="@+id/ele1_num" >
 	
 	        <RelativeLayout
 	            android:layout_width="wrap_content"
@@ -45,63 +175,604 @@
 	            android:layout_centerHorizontal="true"
 	             >
 				<TextView
-			        android:id="@+id/ele_name_zh"
+			        android:id="@+id/ele1_name_zh"
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content" 
 			        android:text="铀"
-			        android:textSize="@dimen/ele_size3"
-			        android:layout_marginTop="@dimen/ele_margin3"
+			        android:textSize="@dimen/ele1_size3"
+			        android:layout_marginTop="@dimen/ele1_margin3"
 		        	/>	
 				<TextView
-			        android:id="@+id/ele_name_margin"
+			        android:id="@+id/ele1_name_margin"
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content" 
 			        android:text="铀"
-			        android:textSize="@dimen/ele_size3"
-			        android:layout_alignTop="@+id/ele_name_zh"
-				    android:layout_alignBottom="@+id/ele_name_zh"
-				    android:layout_toRightOf="@+id/ele_name_zh"
+			        android:textSize="@dimen/ele1_size3"
+			        android:layout_alignTop="@+id/ele1_name_zh"
+				    android:layout_alignBottom="@+id/ele1_name_zh"
+				    android:layout_toRightOf="@+id/ele1_name_zh"
 				    android:textColor="#00000000"
 		        	/>	
 				<ImageView
-				    android:id="@+id/ele_radioactive"
+				    android:id="@+id/ele1_radioactive"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content" 
 				    android:src="@drawable/radio"
 				    android:padding="1dp"
-				    android:layout_alignTop="@+id/ele_name_margin"
-				    android:layout_alignBottom="@+id/ele_name_margin"
-				    android:layout_alignLeft="@+id/ele_name_margin"
-				    android:layout_alignRight="@+id/ele_name_margin"
+				    android:layout_alignTop="@+id/ele1_name_margin"
+				    android:layout_alignBottom="@+id/ele1_name_margin"
+				    android:layout_alignLeft="@+id/ele1_name_margin"
+				    android:layout_alignRight="@+id/ele1_name_margin"
 				    />
 			</RelativeLayout>
 	    </RelativeLayout>
 	    
 	    <TextView
-	        android:id="@+id/ele_name_us"
+	        android:id="@+id/ele1_name_us"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentLeft="true"
-	        android:layout_alignRight="@+id/ele_rl1"
-	        android:layout_below="@+id/ele_rl1"
-	        android:layout_marginTop="@dimen/ele_margin2"
+	        android:layout_alignRight="@+id/ele1_rl1"
+	        android:layout_below="@+id/ele1_rl1"
 	        android:text="Uranium"
 	        android:singleLine="true"
-	        android:textSize="@dimen/ele_size4" />
+	        android:gravity="center"
+	        android:layout_marginLeft="1px"
+	        android:textSize="@dimen/ele1_size4" />
 	    
 	    <TextView
-	        android:id="@+id/ele_atomic_structure"
+	        android:id="@+id/relative_atomic_mass1"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentLeft="true"
-	        android:layout_alignRight="@+id/ele_name_us"
-	        android:layout_below="@+id/ele_name_us"
-	        android:layout_marginTop="-2dp"
-	        android:text="3s²3p⁴"
-	        android:textSize="@dimen/ele_size4" 
+	        android:layout_alignRight="@+id/ele1_name_us"
+	        android:layout_below="@+id/ele1_name_us"
+	        android:text="1.0004"
+	        android:gravity="center"
+	        android:layout_marginLeft="1px"
+	        android:textSize="@dimen/ele1_size4" 
 	        android:singleLine="true"
+	        android:paddingBottom="2dp"
 	        />
 
 	</RelativeLayout>
+	
+    <RelativeLayout
+        android:id="@+id/ele1_rl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        >
+	    
+        <TextView
+            android:id="@+id/ele1_margin_shell3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="32454"
+            android:textSize="@dimen/ele1_size2"
+            android:textColor="#0000"
+            />
+        
+        <LinearLayout 
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_alignRight="@+id/ele1_margin_shell3"
+            android:layout_alignLeft="@+id/ele1_margin_shell3"
+        	android:orientation="vertical"
+            >
+	        
+            <TextView
+                android:id="@+id/ele1_density"
+	            android:layout_width="wrap_content"
+	        	android:layout_height="wrap_content"
+	        	android:text="2.07"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+            
+            <TextView
+                android:id="@+id/ele1_melting"
+	            android:layout_width="wrap_content"
+	        	android:layout_height="wrap_content"
+	        	android:text="112"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+            
+            <TextView
+                android:id="@+id/ele1_boil"
+	            android:layout_width="wrap_content"
+	        	android:layout_height="wrap_content"
+	        	android:text="444.674"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+            
+            <TextView
+                android:id="@+id/ele1_volume"
+	            android:layout_width="wrap_content"
+	        	android:layout_height="wrap_content"
+	        	android:text="15.56"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+            
+            <TextView
+                android:id="@+id/ele1_radius"
+	            android:layout_width="wrap_content"
+	        	android:layout_height="wrap_content"
+	        	android:text="104"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+            
+            <TextView
+                android:id="@+id/covalent_radius"
+	            android:layout_width="wrap_content"
+	        	android:layout_height="wrap_content"
+	        	android:text="94"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+            
+            <TextView
+                android:id="@+id/ionic_radius"
+	            android:layout_width="wrap_content"
+	        	android:layout_height="wrap_content"
+	        	android:text="35"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+            
+        </LinearLayout>
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/ele1_rl4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        >
+        
+        <TextView
+            android:id="@+id/ele1_margin_shell4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="32454"
+            android:textSize="@dimen/ele1_size2"
+            android:textColor="#0000"
+            android:paddingTop="4px"
+        	android:paddingBottom="4px"
+            />
+        
+         <LinearLayout 
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_alignRight="@+id/ele1_margin_shell4"
+            android:layout_alignLeft="@+id/ele1_margin_shell4"
+        	android:orientation="vertical"
+            >
+        	
+           <!-- 比热 -->
+           <TextView
+                android:id="@+id/specific_heat"
+	            android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:text="732"
+	        	android:gravity="right"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+             
+           <!-- 蒸发热 -->
+           <TextView
+                android:id="@+id/heat_vaporization"
+	            android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:text="73"
+	        	android:gravity="right"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+           
+           <!-- 熔化热 -->
+           <TextView
+               android:id="@+id/heat_fusion"
+	            android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:text="73"
+	        	android:gravity="right"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+           
+           <!-- 电阻系数 -->
+           <TextView
+               android:id="@+id/electrical_resistivity"
+	            android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:text="73"
+	        	android:gravity="right"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+           
+           <!-- 电负性 -->
+           <TextView
+               android:id="@+id/electronegativity"
+	            android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:text="73"
+	        	android:gravity="right"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+           
+           <!-- 第一电离能-->
+           <TextView
+               android:id="@+id/first_ionization_energy"
+	            android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:text="73"
+	        	android:gravity="right"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+           
+           <!-- 第一电子亲和能-->
+           <TextView
+               android:id="@+id/first_electron_affinity"
+	            android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:text="73"
+	        	android:gravity="right"
+	        	android:singleLine="true"
+	        	android:textSize="@dimen/ele1_size2"/>
+        </LinearLayout>
+    </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ele1_rl5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:paddingTop="1px"
+        android:paddingBottom="1px"
+        >
+	    
+        <TextView
+            android:id="@+id/ele1_margin_shell5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="原子体积子(g/cm3) "
+            android:textSize="@dimen/ele1_size2"
+            android:textColor="#0000"
+            />
+        
+        <LinearLayout 
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_alignRight="@+id/ele1_margin_shell5"
+            android:layout_alignLeft="@+id/ele1_margin_shell5"
+        	android:orientation="vertical"
+            >
+	        
+            <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+                <TextView
+	                android:id="@+id/ele1_density_note"
+		            android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:text="(g/cm3)密度 "
+		        	android:gravity="right"
+		        	android:textSize="@dimen/ele1_size2"/>
+                <!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/ele1_density_note"
+		        	android:layout_alignBottom="@+id/ele1_density_note"
+		        	android:layout_toRightOf="@+id/ele1_density_note"
+		        	android:background="@drawable/arrows" 
+                    />-->
+            </RelativeLayout>
+            
+            <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+                <TextView
+	                android:id="@+id/ele1_melting_note"
+		            android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:text="(℃)熔点 "
+		        	android:gravity="right"
+		        	android:textSize="@dimen/ele1_size2"/>
+                <!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/ele1_melting_note"
+		        	android:layout_alignBottom="@+id/ele1_melting_note"
+		        	android:layout_toRightOf="@+id/ele1_melting_note"
+		        	android:background="@drawable/arrows"
+                    /> -->
+            </RelativeLayout>
+            
+            <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+                <TextView
+	                android:id="@+id/ele1_boil_note"
+		            android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:text="(℃)沸点 "
+		        	android:gravity="right"
+		        	android:textSize="@dimen/ele1_size2"/>
+                <!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/ele1_boil_note"
+		        	android:layout_alignBottom="@+id/ele1_boil_note"
+		        	android:layout_toRightOf="@+id/ele1_boil_note"
+		        	android:background="@drawable/arrows"
+                    /> -->
+            </RelativeLayout>
+            
+            <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+                 <TextView
+	                android:id="@+id/ele1_volume_note"
+		            android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:text="(cm3/mol)原子体积 "
+		        	android:gravity="right"
+		        	android:textSize="@dimen/ele1_size2"/>
+                 <!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/ele1_volume_note"
+		        	android:layout_alignBottom="@+id/ele1_volume_note"
+		        	android:layout_toRightOf="@+id/ele1_volume_note"
+		        	android:background="@drawable/arrows"
+                    /> -->
+            </RelativeLayout>
+           
+            <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+                <TextView
+	                android:id="@+id/ele1_radius_note"
+		            android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:text="(Å)原子半径 "
+		        	android:gravity="right"
+		        	android:textSize="@dimen/ele1_size2"/>
+                <!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/ele1_radius_note"
+		        	android:layout_alignBottom="@+id/ele1_radius_note"
+		        	android:layout_toRightOf="@+id/ele1_radius_note"
+		        	android:background="@drawable/arrows"
+                    /> -->
+            </RelativeLayout>   
+            
+            <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+                <TextView
+	                android:id="@+id/covalent_radius_note"
+		            android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:text="(Å)共价半径 "
+		        	android:gravity="right"
+		        	android:textSize="@dimen/ele1_size2"/>
+                <!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/covalent_radius_note"
+		        	android:layout_alignBottom="@+id/covalent_radius_note"
+		        	android:layout_toRightOf="@+id/covalent_radius_note"
+		        	android:background="@drawable/arrows"
+                    /> -->
+            </RelativeLayout>       
+            
+            <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+                <TextView
+	                android:id="@+id/ionic_radius_note"
+		            android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:text="(Å)离子半径 "
+		        	android:gravity="right"
+		        	android:textSize="@dimen/ele1_size2"/>
+                <!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/ionic_radius_note"
+		        	android:layout_alignBottom="@+id/ionic_radius_note"
+		        	android:layout_toRightOf="@+id/ionic_radius_note"
+		        	android:background="@drawable/arrows"
+                    /> -->
+            </RelativeLayout>    
+        </LinearLayout>
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/ele1_rl6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingTop="1px"
+        android:paddingBottom="1px"
+        >
+        
+        <TextView
+            android:id="@+id/ele1_margin_shell6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text=" 第一电离能(KJ/mol)"
+            android:textSize="@dimen/ele1_size2"
+            android:textColor="#0000"
+            />
+        
+         <LinearLayout 
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_alignRight="@+id/ele1_margin_shell6"
+            android:layout_alignLeft="@+id/ele1_margin_shell6"
+        	android:orientation="vertical"
+            >
+            
+             <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+                  <!-- 比热 -->
+           		<TextView
+	                android:id="@+id/specific_heat_note"
+		            android:layout_width="match_parent"
+		            android:layout_alignParentRight="true"
+		        	android:layout_height="wrap_content"
+		        	android:text=" 比热(KJ/mol)"
+		        	android:textSize="@dimen/ele1_size2"
+		        	/>
+           		<!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/specific_heat_note"
+		        	android:layout_alignBottom="@+id/specific_heat_note"
+		        	android:layout_toLeftOf="@+id/specific_heat_note"
+		        	android:background="@+drawable/anarrows"
+                    /> -->
+             </RelativeLayout>
+        	
+          	 <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+           		<!-- 蒸发热 -->
+           		<TextView
+	                android:id="@+id/heat_vaporization_note"
+		            android:layout_width="match_parent"
+		            android:layout_alignParentRight="true"
+		        	android:layout_height="wrap_content"
+		        	android:text=" 蒸发热(KJ/mol)"
+		        	android:textSize="@dimen/ele1_size2"/>
+          	     <!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/heat_vaporization_note"
+		        	android:layout_alignBottom="@+id/heat_vaporization_note"
+		        	android:layout_toLeftOf="@+id/heat_vaporization_note"
+		        	android:background="@+drawable/anarrows"
+                    /> -->
+             </RelativeLayout>
+           
+          	 <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+           		<!-- 熔化热 -->
+           		<TextView
+	                android:id="@+id/heat_fusion_note"
+		            android:layout_width="match_parent"
+			        android:layout_alignParentRight="true"
+		        	android:layout_height="wrap_content"
+		        	android:text=" 熔化热(KJ/mol) "
+		        	android:textSize="@dimen/ele1_size2"/>
+           		 <!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/heat_fusion_note"
+		        	android:layout_alignBottom="@+id/heat_fusion_note"
+		        	android:layout_toLeftOf="@+id/heat_fusion_note"
+		        	android:background="@+drawable/anarrows"
+                    /> -->
+           	 </RelativeLayout>
+           
+          	 <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+           		<!-- 电阻系数 -->
+	           <TextView
+	               android:id="@+id/electrical_resistivity_note"
+		            android:layout_width="match_parent"
+			        android:layout_alignParentRight="true"
+		        	android:layout_height="wrap_content"
+		        	android:text=" 电阻系数(10^6/cm)"
+		        	android:textSize="@dimen/ele1_size2"/>
+	           <!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/electrical_resistivity_note"
+		        	android:layout_alignBottom="@+id/electrical_resistivity_note"
+		        	android:layout_toLeftOf="@+id/electrical_resistivity_note"
+		        	android:background="@+drawable/anarrows"
+                    /> -->
+           	 </RelativeLayout>
+           	 
+          	 <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+	           <!-- 电负性 -->
+	           <TextView
+	               android:id="@+id/electronegativity_note"
+		            android:layout_width="match_parent"
+			        android:layout_alignParentRight="true"
+		        	android:layout_height="wrap_content"
+		        	android:text=" 电负性"
+		        	android:textSize="@dimen/ele1_size2"/>
+	          <!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/electronegativity_note"
+		        	android:layout_alignBottom="@+id/electronegativity_note"
+		        	android:layout_toLeftOf="@+id/electronegativity_note"
+		        	android:background="@+drawable/anarrows"/> -->	     
+           	</RelativeLayout>
+           	 
+          	 <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+	           <!-- 第一电离能-->
+	           <TextView
+	               android:id="@+id/first_ionization_energy_note"
+		            android:layout_width="match_parent"
+			        android:layout_alignParentRight="true"
+		        	android:layout_height="wrap_content"
+		        	android:text=" 第一电离能(KJ/mol)"
+		        	android:textSize="@dimen/ele1_size2"/>
+	           <!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/first_ionization_energy_note"
+		        	android:layout_alignBottom="@+id/first_ionization_energy_note"
+		        	android:layout_toLeftOf="@+id/first_ionization_energy_note"
+		        	android:background="@+drawable/anarrows"/> -->
+           	 </RelativeLayout>
+           	 
+          	 <RelativeLayout 
+                android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+                >
+	           <!-- 第一电子亲和能-->
+	           <TextView
+	               android:id="@+id/first_electron_affinity_note"
+		            android:layout_width="match_parent"
+			        android:layout_alignParentRight="true"
+		        	android:layout_height="wrap_content"
+		        	android:text=" 第一亲和势(E(eV))"
+		        	android:textSize="@dimen/ele1_size2"/>
+          	   <!-- <TextView 
+                    android:layout_width="match_parent"
+		        	android:layout_height="wrap_content"
+		        	android:layout_alignTop="@+id/first_electron_affinity_note"
+		        	android:layout_alignBottom="@+id/first_electron_affinity_note"
+		        	android:layout_toLeftOf="@+id/first_electron_affinity_note"
+		        	android:background="@+drawable/anarrows"/>   -->
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    
+    </RelativeLayout>
     
 </RelativeLayout>

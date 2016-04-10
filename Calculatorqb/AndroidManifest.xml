@@ -41,6 +41,7 @@
         <activity
             android:name="com.emple.activity.ElementListActivity"
             android:label="@string/title_activity_element_list" >
+            
         </activity>
         <activity
             android:name="com.emple.activity.NoteActivity"

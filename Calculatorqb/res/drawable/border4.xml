@@ -9,8 +9,9 @@
 	</item>   
 	<!-- 主体背景颜色值 -->  
 	<item android:top="1px" android:left="1px" android:bottom="1px" android:right="1px">   
-	     <shape>   
-	           <solid android:color="#ffffff" />   
-	     </shape>       
+	     <selector> 
+	         <item android:state_pressed="true" android:drawable="@color/white1"></item> 
+	         <item android:drawable="@color/yellow1"></item>  
+	     </selector>       
 	</item>  
 </layer-list>  
