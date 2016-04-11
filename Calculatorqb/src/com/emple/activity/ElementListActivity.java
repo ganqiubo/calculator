@@ -243,10 +243,10 @@ public class ElementListActivity extends Activity implements OnClickListener{
 				initViews();
 				eles_iv1.setVisibility(View.INVISIBLE);
 				RelativeLayout.LayoutParams params=(LayoutParams) rl_ele1.getLayoutParams();
-				params.width=pwidth*79/144;
+				params.width=pwidth*10/18+pwidth*1/140;
 				rl_ele1.setLayoutParams(params);
-				rl_ele1.setX(pwidth*17/144);
-				//setEle1(1,1);
+				rl_ele1.setX((pwidth*2/18)-pwidth*1/280);
+				SetEle1(6,6);
 			}
 		}
 	};

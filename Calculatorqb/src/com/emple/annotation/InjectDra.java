@@ -28,7 +28,7 @@ import android.widget.Button;
 import android.widget.ResourceCursorTreeAdapter;
 import android.widget.Toast;
 
-public class Inject {
+public class InjectDra {
 
 	public static void inject(Activity activity){
 		if (SkinManage.MODECHANGE) {

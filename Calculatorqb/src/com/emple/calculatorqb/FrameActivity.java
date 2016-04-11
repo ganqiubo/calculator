@@ -1,6 +1,6 @@
 package com.emple.calculatorqb;
 
-import com.emple.annotation.Inject;
+import com.emple.annotation.InjectDra;
 
 import android.app.Activity;
 import android.util.Log;
@@ -22,7 +22,7 @@ public class FrameActivity extends Activity {
     		}else{
     			onReMeasure(0);
     		}
-    		Inject.inject(this);
+    		InjectDra.inject(this);
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.e("", ""+e);

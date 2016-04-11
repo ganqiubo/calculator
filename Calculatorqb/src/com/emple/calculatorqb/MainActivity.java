@@ -10,7 +10,9 @@ import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
+import com.emple.annotation.InjectColor;
 import com.emple.annotation.InjectStateDraw;
+import com.emple.annotation.InjectTextColor;
 import com.emple.calculatorqb.Globe;
 import com.emple.calculatorqb.Judge;
 import com.emple.calculatorqb.Main1Inputtext;
@@ -80,7 +82,8 @@ import android.widget.Toast;
 
 @SuppressLint("NewApi")
 public class MainActivity extends FrameActivity {
-	
+
+	public final int color=0xff676767;
 	String unitnameshow="all";//,funnote="";
 	BigDecimal π;
 	BigDecimal e;
@@ -97,11 +100,15 @@ public class MainActivity extends FrameActivity {
 	RelativeLayout rln3;
 	EditText main1et1,funet1;
 	
+	@InjectTextColor(color=color)
 	TextView main1tv1;
+	@InjectTextColor(color=color)
 	TextView main1tv4;
 	@InjectStateDraw(draw_name="main1tv2")
+	@InjectTextColor(color=color)
 	TextView main1tv2;
 	@InjectStateDraw(draw_name="main1tv3")
+	@InjectTextColor(color=color)
 	TextView main1tv3;
 	ArrayList<String> function, units=new ArrayList<String>();
 	Button[] funbt=new Button[5];
@@ -124,75 +131,110 @@ public class MainActivity extends FrameActivity {
 	long systime=0;
 	
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button funbt1;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button funbt2;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button funbt3;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button funbt4;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button funbt5;
 	
 	@InjectStateDraw(draw_name="btbg1")
+	@InjectTextColor(color=color)
 	Button bts1;
 	@InjectStateDraw(draw_name="btbg1")
+	@InjectTextColor(color=color)
 	Button bts2;
 	@InjectStateDraw(draw_name="btbg")
+	@InjectTextColor(color=color)
 	Button bts3;
 	@InjectStateDraw(draw_name="btbg1")
+	@InjectTextColor(color=color)
 	Button bts4;
 	@InjectStateDraw(draw_name="btbg1")
+	@InjectTextColor(color=color)
 	Button bts5;
 	@InjectStateDraw(draw_name="btbg1")
+	@InjectTextColor(color=color)
 	Button bts6;
 	@InjectStateDraw(draw_name="btbg")
+	@InjectTextColor(color=color)
 	Button bts7;
 	@InjectStateDraw(draw_name="btbg")
+	@InjectTextColor(color=color)
 	Button bts8;
 	@InjectStateDraw(draw_name="btbg")
+	@InjectTextColor(color=color)
 	Button bts9;
 	@InjectStateDraw(draw_name="btbg1")
+	@InjectTextColor(color=color)
 	Button bts10;
 	@InjectStateDraw(draw_name="btbg1")
+	@InjectTextColor(color=color)
 	Button bts11;
 	@InjectStateDraw(draw_name="btbg")
+	@InjectTextColor(color=color)
 	Button bts12;
 	@InjectStateDraw(draw_name="btbg")
+	@InjectTextColor(color=color)
 	Button bts13;
 	@InjectStateDraw(draw_name="btbg")
+	@InjectTextColor(color=color)
 	Button bts14;
 	@InjectStateDraw(draw_name="btbg1")
+	@InjectTextColor(color=color)
 	Button bts15;
 	@InjectStateDraw(draw_name="btbg1")
+	@InjectTextColor(color=color)
 	Button bts16;
 	@InjectStateDraw(draw_name="btbg")
+	@InjectTextColor(color=color)
 	Button bts17;
 	@InjectStateDraw(draw_name="btbg")
+	@InjectTextColor(color=color)
 	Button bts18;
 	@InjectStateDraw(draw_name="btbg")
+	@InjectTextColor(color=color)
 	Button bts19;
 	@InjectStateDraw(draw_name="btbg1")
+	@InjectTextColor(color=color)
 	Button bts20;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button bts21;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button bts22;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button bts23;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button bts24;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button bts25;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button bts26;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button bts27;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button bts28;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button bts29;
 	@InjectStateDraw(draw_name="btbg2")
+	@InjectTextColor(color=color)
 	Button bts30;
 	
 	RelativeLayout funBtRl;
@@ -208,6 +250,9 @@ public class MainActivity extends FrameActivity {
         setContentView(R.layout.activity_main);
         
         create();
+        if ("Default4".equals(SkinManage.SKINNAME)) {
+			InjectColor.inject(this);
+		}
   	     
     }
 	    	

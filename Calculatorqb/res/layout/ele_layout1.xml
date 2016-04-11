@@ -431,7 +431,7 @@
             android:id="@+id/ele1_margin_shell5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" 
-            android:text="原子体积子(g/cm3) "
+            android:text="原子体积子(g/cm13) "
             android:textSize="@dimen/ele1_size2"
             android:textColor="#0000"
             />
