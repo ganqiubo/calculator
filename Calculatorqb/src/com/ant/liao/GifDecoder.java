@@ -15,7 +15,7 @@ public class GifDecoder extends Thread{
 	public static final int STATUS_FORMAT_ERROR = 1;
 	/**状态：打开失败*/
 	public static final int STATUS_OPEN_ERROR = 2;
-	/**状态：解码成功*/
+
 	public static final int STATUS_FINISH = -1;
 	
 	private InputStream in;

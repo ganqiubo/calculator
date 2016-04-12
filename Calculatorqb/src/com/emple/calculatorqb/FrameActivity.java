@@ -1,8 +1,10 @@
 package com.emple.calculatorqb;
 
+import com.emple.annotation.InjectColor;
 import com.emple.annotation.InjectDra;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 
@@ -22,6 +24,11 @@ public class FrameActivity extends Activity {
     		}else{
     			onReMeasure(0);
     		}
+    		if ("Default4".equals(SkinManage.SKINNAME)) {
+    			InjectColor.inject(this,0xff676767);
+    		}if (!"Default4".equals(SkinManage.SKINNAME)) {
+    			InjectColor.inject(this,0xffffffff);
+			}
     		InjectDra.inject(this);
 		} catch (Exception e) {
 			// TODO: handle exception

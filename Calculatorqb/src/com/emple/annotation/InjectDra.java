@@ -20,6 +20,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.NinePatchDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.graphics.drawable.shapes.Shape;
 import android.util.Log;
@@ -70,13 +71,10 @@ public class InjectDra {
 						field.setAccessible(true);
 						if (draw!=null && ((View)field.get(activity))!=null) {
 							((View)field.get(activity)).setBackgroundDrawable(draw);
-							//Log.e("", field+"--->"+draw+"====>"+((View)field.get(activity)));
-							//Log.e("", field+"------>3333333333333");
 						}
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
 					} 
-					//Toast.makeText(activity, injectStateDraw+"--->"+field+"===>"+draw, Toast.LENGTH_SHORT).show();
 				}
 			}
 			SkinManage.MODECHANGE=false;
@@ -90,19 +88,32 @@ public class InjectDra {
 			boolean hasnormal=false;
 			String normal_draw_name="";
 			String normal_draw_filename="";
+			String draType="0";
 			for (String[] parts : classifyDraws.get(draw_name)) {
 				if ("normal".equals(parts[0])) {
 					hasnormal=true;
 					normal_draw_name=draw_name;
 					normal_draw_filename=parts[1];
+					draType=parts[2];
 				}else{
-					draw.addState(new int[]{SkinManage.States.get(parts[0])}, 
-							Drawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+"/"+parts[1]), draw_name));
+					if ("0".equals(parts[2])) {
+						draw.addState(new int[]{SkinManage.States.get(parts[0])}, 
+								Drawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+"/"+parts[1]), draw_name));
+					}if ("9".equals(parts[2])) {
+						draw.addState(new int[]{SkinManage.States.get(parts[0])}, 
+								NinePatchDrawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+"/"+parts[1]), draw_name));
+					}
 				}
 			}
 			if (hasnormal) {
-				draw.addState(new int[]{}, 
-						Drawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+"/"+normal_draw_filename), draw_name));
+				if ("0".equals(draType)) {
+					draw.addState(new int[]{}, 
+							Drawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+"/"+normal_draw_filename), draw_name));
+				}if ("9".equals(draType)) {
+					draw.addState(new int[]{}, 
+							NinePatchDrawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+"/"+normal_draw_filename), draw_name));
+				}
+				
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -119,10 +130,18 @@ public class InjectDra {
 			String[] parts=filename.split("[-\\.]");
 			if (parts.length==3) {
 				if (classifyDraws.containsKey(parts[0])) {
-					classifyDraws.get(parts[0]).add(new String[]{parts[1],filename});
+					classifyDraws.get(parts[0]).add(new String[]{parts[1],filename,"0"});
 				}else{
 					List<String[]> listDraws=new ArrayList<String[]>();
-					listDraws.add(new String[]{parts[1],filename});
+					listDraws.add(new String[]{parts[1],filename,"0"});
+					classifyDraws.put(parts[0], listDraws);
+				}
+			}if (parts.length==4) {
+				if (classifyDraws.containsKey(parts[0])) {
+					classifyDraws.get(parts[0]).add(new String[]{parts[1],filename,"9"});
+				}else{
+					List<String[]> listDraws=new ArrayList<String[]>();
+					listDraws.add(new String[]{parts[1],filename,"9"});
 					classifyDraws.put(parts[0], listDraws);
 				}
 			}

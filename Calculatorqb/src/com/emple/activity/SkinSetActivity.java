@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.emple.calculatorqb.Globe;
 import com.emple.calculatorqb.R;
 import com.emple.calculatorqb.SkinManage;
 
@@ -45,7 +46,7 @@ public class SkinSetActivity extends StatusSetActivity {
 	private void init() {
 		// TODO Auto-generated method stub
 		
-		db = SQLiteDatabase.openOrCreateDatabase(Environment.getExternalStorageDirectory()+"/gqb/gqb.db", null);  
+		db = SQLiteDatabase.openOrCreateDatabase(Globe.dbFile.getPath(), null);  
 		mhead_title=(TextView) findViewById(R.id.mhead_title);
 		mhead_title.setText("∆§∑Ù…Ë÷√");
 		

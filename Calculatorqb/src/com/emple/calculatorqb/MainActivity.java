@@ -19,6 +19,7 @@ import com.emple.calculatorqb.Main1Inputtext;
 import com.emple.calculatorqb.R;
 import com.emple.calculatorqb.SettingActivity;
 import com.emple.calculatorqb.SkinManage;
+import com.emple.utils.FileUtils;
 import com.emple.calculatorqb.R.anim;
 import com.emple.calculatorqb.R.color;
 import com.emple.calculatorqb.R.drawable;
@@ -33,6 +34,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
+import android.R.string;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -250,9 +252,6 @@ public class MainActivity extends FrameActivity {
         setContentView(R.layout.activity_main);
         
         create();
-        if ("Default4".equals(SkinManage.SKINNAME)) {
-			InjectColor.inject(this);
-		}
   	     
     }
 	    	
@@ -387,22 +386,42 @@ public class MainActivity extends FrameActivity {
     	f2.delete();*/
     	File f=new File(Environment.getExternalStorageDirectory()+"/gqb");
     	File f1=new File(Environment.getExternalStorageDirectory()+"/gqb/gqb.db");
+    	
     	if(!f.exists()){
-    		f.mkdir();
-    		dboutput();
+    		if (f.mkdir()) {
+    			//dboutput(f1.getPath());
+			}else{
+				for (File fn : FileUtils.getrootFiles()) {
+					if (!fn.getPath().equals(Environment.getExternalStorageDirectory().getPath())) {
+						f=new File(fn.getPath()+"/gqb");
+						f1=new File(fn.getPath()+"/gqb/gqb.db");
+						f.mkdir();
+						dboutput(f1.getPath());
+						Log.e("", "@=@1-->"+f1.getPath());
+						break;
+					}
+				}
+			}
     	}if(f.exists()){   		
     		if(!f1.exists()){
-    			dboutput();
+    			dboutput(f1.getPath());
     		}
     	}
+    	Globe.dbFile=f1;
+    	Log.e("", "@=@2-->"+f1.getPath());
+    	try {
+    		db = SQLiteDatabase.openOrCreateDatabase(f1.getPath(), null);  
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e("", "@=@-->"+e);
+		}
     	
-    	db = SQLiteDatabase.openOrCreateDatabase(Environment.getExternalStorageDirectory()+"/gqb/gqb.db", null);  
     	
     	skinManagerInit();
     	
     	getfunname();
     	maxfunid=function.size()/5+1;
-    	judge=new Judge();
+    	judge=new Judge(f1.getPath());
     	
     	rln3=new RelativeLayout(this);
     	rln1=(RelativeLayout) findViewById(R.id.main1rln1);	
@@ -628,10 +647,10 @@ public class MainActivity extends FrameActivity {
     	c.close();
     }
     
-    private void dboutput(){
+    private void dboutput(String path){
     	try {
 			InputStream is = getBaseContext().getAssets().open("gqb.db");
-			OutputStream os = new FileOutputStream(Environment.getExternalStorageDirectory()+"/gqb/gqb.db");
+			OutputStream os = new FileOutputStream(path);
 			byte[] buffer = new byte[1024];
             int length;
             while ((length = is.read(buffer)) > 0) {

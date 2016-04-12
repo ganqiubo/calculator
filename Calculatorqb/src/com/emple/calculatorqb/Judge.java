@@ -10,8 +10,13 @@ import android.util.Log;
 
 public class Judge {
 
-	SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(Environment.getExternalStorageDirectory()+"/gqb/gqb.db", null);
+	SQLiteDatabase db;
 	
+	public Judge(String path) {
+		// TODO Auto-generated constructor stub
+		db = SQLiteDatabase.openOrCreateDatabase(path, null);
+	}
+
 	public boolean isnumberfun(String s){
 				
 		Pattern pattern = null;		

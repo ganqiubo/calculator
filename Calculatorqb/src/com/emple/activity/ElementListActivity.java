@@ -79,7 +79,8 @@ public class ElementListActivity extends Activity implements OnClickListener{
 	 	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		setContentView(R.layout.activity_elements);
 		
-		db = SQLiteDatabase.openOrCreateDatabase(Environment.getExternalStorageDirectory()+"/gqb/gqb.db", null);   	
+		//Environment.getExternalStorageDirectory()+"/gqb/gqb.db"
+		db = SQLiteDatabase.openOrCreateDatabase(Globe.dbFile.getPath(), null);   	
 		mcontext = this;
 		eles_rl=(RelativeLayout) findViewById(R.id.eles_rl);
 		eles_iv1=new ImageView(mcontext);

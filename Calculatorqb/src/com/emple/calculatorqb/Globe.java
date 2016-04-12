@@ -1,6 +1,9 @@
 package com.emple.calculatorqb;
 
+import java.io.File;
 import java.util.ArrayList;
+
+import android.text.StaticLayout;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -9,6 +12,7 @@ import android.widget.TextView;
 
 public class Globe{
 	
+	public static File dbFile;;
 	public boolean hasUnity;
 	public TextView pbCal,pbCal1,main1tv4,main1tv3;
 	public Button btCal;
