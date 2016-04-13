@@ -6,26 +6,18 @@ import com.emple.activity.SkinSetActivity;
 import com.emple.activity.StatusSetActivity;
 import com.emple.activity.UnitTablesActivity;
 import com.emple.activity.VersionInfoActivity;
-
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Build.VERSION;
-import android.os.Build.VERSION_CODES;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -37,7 +29,6 @@ public class SettingActivity extends StatusSetActivity{
 	private static int[] SETICONS=new int[]{R.drawable.skin,R.drawable.note,R.drawable.unit_tables,R.drawable.element_list,R.drawable.version_info};
 	private ListView list_sets;
 	private Context mcontext=this;
-	private Button bt;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +37,6 @@ public class SettingActivity extends StatusSetActivity{
 		setContentView(R.layout.activity_setting);
 		
 		initview();
-		bt=(Button) findViewById(R.id.bbt);
-		Log.e("", bt.getText()+"@=@--->"+bt.getBackground().getClass());
 		
 	}
 

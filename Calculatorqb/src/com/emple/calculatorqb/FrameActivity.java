@@ -19,15 +19,15 @@ public class FrameActivity extends Activity {
     	super.onStart();
     	Log.e("", "====>onStart");
     	try {
-    		if(SkinManage.SKINNAME.equals("Default0")){
+    		if(SkinManage.SKINNAME.equals("Default0") || SkinManage.SKINNAME.equals("Default4")){
     			onReMeasure(1);
     		}else{
     			onReMeasure(0);
     		}
     		if ("Default4".equals(SkinManage.SKINNAME)) {
-    			InjectColor.inject(this,0xff676767);
+    			InjectColor.inject(this,0xff777777,R.layout.unitpopstyle1);
     		}if (!"Default4".equals(SkinManage.SKINNAME)) {
-    			InjectColor.inject(this,0xffffffff);
+    			InjectColor.inject(this,0xffffffff,R.layout.unitpopstyle);
 			}
     		InjectDra.inject(this);
 		} catch (Exception e) {

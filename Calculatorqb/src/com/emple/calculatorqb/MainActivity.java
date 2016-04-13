@@ -18,8 +18,10 @@ import com.emple.calculatorqb.Judge;
 import com.emple.calculatorqb.Main1Inputtext;
 import com.emple.calculatorqb.R;
 import com.emple.calculatorqb.SettingActivity;
+import com.emple.calculatorqb.SettingActivity.ViewHolder;
 import com.emple.calculatorqb.SkinManage;
 import com.emple.utils.FileUtils;
+import com.emple.utils.StateClolr;
 import com.emple.calculatorqb.R.anim;
 import com.emple.calculatorqb.R.color;
 import com.emple.calculatorqb.R.drawable;
@@ -59,6 +61,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
+import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.view.WindowManager;
@@ -67,12 +70,15 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -85,7 +91,7 @@ import android.widget.Toast;
 @SuppressLint("NewApi")
 public class MainActivity extends FrameActivity {
 
-	public final int color=0xff676767;
+	public final int color=0xff777777;
 	String unitnameshow="all";//,funnote="";
 	BigDecimal π;
 	BigDecimal e;
@@ -103,6 +109,7 @@ public class MainActivity extends FrameActivity {
 	EditText main1et1,funet1;
 	
 	@InjectTextColor(color=color)
+	@InjectStateDraw(draw_name="main1tv1")
 	TextView main1tv1;
 	@InjectTextColor(color=color)
 	TextView main1tv4;
@@ -112,16 +119,19 @@ public class MainActivity extends FrameActivity {
 	@InjectStateDraw(draw_name="main1tv3")
 	@InjectTextColor(color=color)
 	TextView main1tv3;
-	ArrayList<String> function, units=new ArrayList<String>();
+	ArrayList<String> function;
+	public static ArrayList<String> units=new ArrayList<String>();
 	Button[] funbt=new Button[5];
 	LinearLayout main1ll1;
+	int unittvColor=0xffffffff;
+	public static ColorStateList unitColorList;
 	HorizontalScrollView main1hsv1;
 	ArrayList<TextView> tvarray=new ArrayList<TextView>();	
 	PopupWindow unitpop;
 	View unitview;
 	LayoutInflater flater;
 	@InjectStateDraw(draw_name="unitpopbg")
-	ListView unitpoplv1;
+	public static ListView unitpoplv1;
 	SQLiteDatabase db;
 	//float TextSize=0;
 	Judge judge;
@@ -129,7 +139,7 @@ public class MainActivity extends FrameActivity {
 	Globe globe=new Globe();	
 	TextView pbCal;
 	@InjectStateDraw(draw_name="pbcal1")
-	TextView pbCal1;	
+	public static TextView pbCal1;	
 	long systime=0;
 	
 	@InjectStateDraw(draw_name="btbg2")
@@ -257,7 +267,9 @@ public class MainActivity extends FrameActivity {
 	    	
 	private void create() {
 		// TODO Auto-generated method stub
-		//statusBarHeight=getStatusHeight(this); 	   
+		//statusBarHeight=getStatusHeight(this); 
+           unitColorList = StateClolr.getListSelected(unittvColor, 0xFF3DEDED);
+		
 	       DisplayMetrics  dm = new DisplayMetrics();    
 	 	   getWindowManager().getDefaultDisplay().getMetrics(dm);    
 	 	   pwidth = dm.widthPixels;              
@@ -341,25 +353,24 @@ public class MainActivity extends FrameActivity {
     	main1inputtext.main1ll1=main1ll1;
     	main1inputtext.main1tv4=main1tv4;
     	
+    	Globe.main1ll1=main1ll1;
     	globe.calculate.globe=globe;
     	globe.calculate.ct=ct;
     	globe.calculate.db=db;
     	globe.calculate.unitseleid=globe.unitseleid;
     	globe.calculate.demic=globe.demic;
     	globe.calculate.degrees=globe.degrees;  
-    	
+    	globe.main1inputtext=main1inputtext;
     	
     	globe.rln1=rln1;
     	globe.pbCal=pbCal;
     	globe.pbCal1=pbCal1;
     	globe.main1et1=main1et1;
-    	globe.main1inputtext=main1inputtext;
     	globe.main1tv4=main1tv4;
     	globe.main1tv3=main1tv3;
     	
     	globe.pwidth=pwidth;
     	globe.pheight=pheight;
-    	
 	}
 
 	public static int getStatusHeight(Activity activity){  
@@ -496,7 +507,7 @@ public class MainActivity extends FrameActivity {
     	//rln2.setBackgroundResource(R.drawable.main1bgrl2);
     	//rln2.setBackgroundDrawable(skinManage.loadMain1Rl2Skin());
     	rln2.setY(globe.btarray.get(25).getY()-bth1*4/7);
-    	main1tv1=new TextView(this);main1tv1.setBackgroundResource(R.drawable.main1tv1);
+    	main1tv1=new TextView(this);//main1tv1.setBackgroundResource(R.drawable.main1tv1);
     	main1tv2=new TextView(this);//main1tv2.setBackgroundDrawable(skinManage.loadMain1Tv2Skin());
     	main1tv3=new TextView(this);//main1tv3.setBackgroundDrawable(skinManage.loadMain1Tv3Skin());
     	main1tv4=new TextView(this);main1tv4.setGravity(Gravity.CENTER);main1tv4.setText("长度");
@@ -509,12 +520,9 @@ public class MainActivity extends FrameActivity {
     	main1tv2.setOnClickListener(new tvclick());main1tv3.setOnClickListener(new tvclick());
     	main1tv2.setFocusable(false);main1tv2.setFocusableInTouchMode(false);main1tv2.setClickable(false);main1tv2.setActivated(false);
     	main1tv3.setActivated(true);  	
-    	
-    	int[] colors = new int[] { Color.rgb(255, 102, 0),Color.rgb(255, 255, 255)};  
-        int[][] states = new int[2][]; 
-        states[0] = new int[] {android.R.attr.state_pressed};  
-        states[1] = new int[] {};         
-		ColorStateList colorList = new ColorStateList(states, colors);
+    	    
+		ColorStateList colorList =StateClolr.getListpressed(Color.rgb(255, 255, 255), 
+				Color.rgb(255, 102, 0));
 		main1tv4.setTextColor(colorList);
 				
 		main1ll1=(LinearLayout) findViewById(R.id.main1ll1);
@@ -529,7 +537,7 @@ public class MainActivity extends FrameActivity {
                 R.layout.unitpopstyle,units));
 		unitpoplv1.setOnItemClickListener(new unititem());
 		//unitpoplv1.setBackgroundDrawable(skinManage.loadPopLv1BgSkin());
-			
+		
 		getunitname();
 		/*Cursor c = db.rawQuery("select * from unit_table", null);
 		//stripTrailingZeros()科学记数		
@@ -640,7 +648,7 @@ public class MainActivity extends FrameActivity {
     		}
     		TextView unit=new TextView(this);unit.setGravity(Gravity.CENTER);
     		unit.setTextSize(TypedValue.COMPLEX_UNIT_PX,(unit.getTextSize()*19/20));
-    		unit.setText(" "+s+" ");unit.setTextColor(Color.WHITE);unit.setClickable(true);
+    		unit.setText(" "+s+" ");unit.setTextColor(unitColorList);unit.setClickable(true);
 			main1ll1.addView(unit,RelativeLayout.LayoutParams.WRAP_CONTENT,bth1*4/7);
 			unit.setOnClickListener(new unitclick());
     	}
@@ -678,7 +686,8 @@ public class MainActivity extends FrameActivity {
 					getunitname();
 					if(globe.unitseleid.get(arg2)!=-1){
 						TextView tv=(TextView) main1ll1.getChildAt(globe.unitseleid.get(arg2));
-						tv.setTextColor(Color.rgb(105, 251, 254));
+						//tv.setTextColor(Color.rgb(105, 251, 254));
+						tv.setSelected(true);
 					}				
 				}		
 				if(unitpop!=null){
@@ -700,10 +709,12 @@ public class MainActivity extends FrameActivity {
 				int a=units.indexOf(s);	
 				TextView tv=(TextView) v;
 				if(globe.unitseleid.get(a)!=main1ll1.indexOfChild(v)){				
-					tv.setTextColor(Color.rgb(105, 251, 254));
+					//tv.setTextColor(Color.rgb(105, 251, 254));
+					tv.setSelected(true);
 					if(globe.unitseleid.get(a)!=-1){
 						TextView tv1=(TextView) main1ll1.getChildAt(globe.unitseleid.get(a));
-						tv1.setTextColor(Color.WHITE);
+						//tv1.setTextColor(unittvColor);
+						tv1.setSelected(false);
 					}				
 					globe.unitseleid.set(a, main1ll1.indexOfChild(v));
 					globe.unitseleidStr.set(a,tv.getText().toString());

@@ -5,6 +5,7 @@
     android:textColor="#ffffff" 
     android:gravity="center"
     android:minHeight="30dp"
+    android:id="@+id/unitpop_tv"
     >
 
 </TextView>

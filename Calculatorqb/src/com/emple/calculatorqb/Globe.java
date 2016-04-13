@@ -6,15 +6,17 @@ import java.util.ArrayList;
 import android.text.StaticLayout;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Globe{
 	
-	public static File dbFile;;
+	public static File dbFile;
 	public boolean hasUnity;
-	public TextView pbCal,pbCal1,main1tv4,main1tv3;
+	public TextView pbCal,pbCal1,main1tv3;
+	public static TextView main1tv4;
 	public Button btCal;
 	public RelativeLayout rln1;
 	public int funtype=-1;	//∫Ø ˝¿‡–Õ£®1-5£©
@@ -44,4 +46,5 @@ public class Globe{
 	public EditText main1et1;
 	public Main1Inputtext main1inputtext;
 	public static int statusHeight1,pwidth,pheight;
+	public static LinearLayout main1ll1;
 }

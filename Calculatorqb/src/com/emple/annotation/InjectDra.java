@@ -11,13 +11,21 @@ import java.util.Map.Entry;
 
 import org.xmlpull.v1.XmlPullParser;
 
+import com.emple.calculatorqb.R;
 import com.emple.calculatorqb.SkinManage;
+import com.emple.utils.NinePatchBitmapFactory;
+
+import android.R.raw;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.NinePatch;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawable;
@@ -99,9 +107,6 @@ public class InjectDra {
 					if ("0".equals(parts[2])) {
 						draw.addState(new int[]{SkinManage.States.get(parts[0])}, 
 								Drawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+"/"+parts[1]), draw_name));
-					}if ("9".equals(parts[2])) {
-						draw.addState(new int[]{SkinManage.States.get(parts[0])}, 
-								NinePatchDrawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+"/"+parts[1]), draw_name));
 					}
 				}
 			}
@@ -109,14 +114,12 @@ public class InjectDra {
 				if ("0".equals(draType)) {
 					draw.addState(new int[]{}, 
 							Drawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+"/"+normal_draw_filename), draw_name));
-				}if ("9".equals(draType)) {
-					draw.addState(new int[]{}, 
-							NinePatchDrawable.createFromStream(activity.getAssets().open(SkinManage.SKINPATH+"/"+normal_draw_filename), draw_name));
 				}
 				
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 			return null;
 		}
 		return draw;
@@ -134,14 +137,6 @@ public class InjectDra {
 				}else{
 					List<String[]> listDraws=new ArrayList<String[]>();
 					listDraws.add(new String[]{parts[1],filename,"0"});
-					classifyDraws.put(parts[0], listDraws);
-				}
-			}if (parts.length==4) {
-				if (classifyDraws.containsKey(parts[0])) {
-					classifyDraws.get(parts[0]).add(new String[]{parts[1],filename,"9"});
-				}else{
-					List<String[]> listDraws=new ArrayList<String[]>();
-					listDraws.add(new String[]{parts[1],filename,"9"});
 					classifyDraws.put(parts[0], listDraws);
 				}
 			}

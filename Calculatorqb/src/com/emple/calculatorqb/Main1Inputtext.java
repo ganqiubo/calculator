@@ -84,7 +84,7 @@ public class Main1Inputtext {
     					ArrayList<String> aListStr=new ArrayList<String>();
     					aListStr.add("长度");aListStr.add("质量");aListStr.add("面积");
     					aListStr.add("体积");aListStr.add("压力");aListStr.add("流量");
-    					unitySeletStr=globe.unitseleidStr.get(aListStr.indexOf(globe.main1tv4.getText()));
+    					unitySeletStr=globe.unitseleidStr.get(aListStr.indexOf(Globe.main1tv4.getText()));
     					if (unitySeletStr.indexOf("(")!=-1) {
     						unitySeletStr=unitySeletStr.substring((unitySeletStr.indexOf("(")+1), unitySeletStr.indexOf(")"));
     					}
