@@ -65,6 +65,7 @@ public class InjectColor {
 				layoutId,MainActivity.units));
 		MainActivity.pbCal1.setTextColor(StateClolr.getListpressed(color, 
 				Color.rgb(255, 102, 0)));
+		Globe.funet1.setTextColor(color);
 	}
 	
 }

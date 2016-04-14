@@ -354,6 +354,7 @@ public class MainActivity extends FrameActivity {
     	main1inputtext.main1tv4=main1tv4;
     	
     	Globe.main1ll1=main1ll1;
+    	Globe.funet1=funet1;
     	globe.calculate.globe=globe;
     	globe.calculate.ct=ct;
     	globe.calculate.db=db;

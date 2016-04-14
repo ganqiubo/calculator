@@ -1,11 +1,14 @@
 package com.emple.calculatorqb;
 
+import com.emple.activity.EleTvSizeActivity;
 import com.emple.activity.ElementListActivity;
 import com.emple.activity.NoteActivity;
 import com.emple.activity.SkinSetActivity;
 import com.emple.activity.StatusSetActivity;
 import com.emple.activity.UnitTablesActivity;
 import com.emple.activity.VersionInfoActivity;
+
+import android.R.raw;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -25,8 +28,9 @@ import android.widget.TextView;
 @SuppressLint("NewApi")
 public class SettingActivity extends StatusSetActivity{
 
-	private static String[] SETS=new String[]{"皮肤管理","功能详细说明","单位转换表","元素周期表","软件版本号"};
-	private static int[] SETICONS=new int[]{R.drawable.skin,R.drawable.note,R.drawable.unit_tables,R.drawable.element_list,R.drawable.version_info};
+	private static String[] SETS=new String[]{"皮肤管理","功能详细说明","单位转换表","元素周期表","字体大小","软件版本号"};
+	private static int[] SETICONS=new int[]{R.drawable.skin,R.drawable.note,R.drawable.unit_tables,
+			R.drawable.element_list,R.drawable.fontsize,R.drawable.version_info};
 	private ListView list_sets;
 	private Context mcontext=this;
 
@@ -65,6 +69,9 @@ public class SettingActivity extends StatusSetActivity{
 				Intent intent=new Intent(SettingActivity.this, ElementListActivity.class);
 				startActivity(intent);
 			}if (position==4) {
+				Intent intent=new Intent(SettingActivity.this, EleTvSizeActivity.class);
+				startActivity(intent);
+			}if (position==5) {
 				Intent intent=new Intent(SettingActivity.this, VersionInfoActivity.class);
 				startActivity(intent);
 			}

@@ -44,6 +44,7 @@ public class Globe{
 	public int input=1;//异步计算不能输入，1代表能输入，-1代表不能输入
 	public CalDataTask cdTask;
 	public EditText main1et1;
+	public static EditText funet1;
 	public Main1Inputtext main1inputtext;
 	public static int statusHeight1,pwidth,pheight;
 	public static LinearLayout main1ll1;
