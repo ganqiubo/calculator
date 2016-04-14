@@ -12,5 +12,6 @@
     <string name="title_activity_note">NoteActivity</string>
     <string name="title_activity_version_info">VersionInfoActivity</string>
     <string name="title_activity_main_ad">MainAdActivity</string>
+    <string name="title_activity_ele_tv_size">EleTvSizeActivity</string>
 
 </resources>

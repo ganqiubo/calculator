@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 
 import com.emple.calculatorqb.Globe;
 import com.emple.calculatorqb.R;
+import com.emple.entity.ElesTextSize;
+import com.emple.utils.ElesTxtSizeUtile;
+
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
@@ -23,6 +26,7 @@ import android.text.Spanned;
 import android.text.style.SuperscriptSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -60,9 +64,17 @@ public class ElementListActivity extends Activity implements OnClickListener{
 	private TextView ele1_density,ele1_melting,ele1_boil,ele1_volume,
 		ele1_radius,covalent_radius,ionic_radius,ele1_density_note,
 		specific_heat,heat_vaporization,heat_fusion,electrical_resistivity,
-		electronegativity,first_ionization_energy,first_electron_affinity;
+		electronegativity,first_ionization_energy,first_electron_affinity,ele1_melting_note,ele1_volume_note,
+		ele1_radius_note,covalent_radius_note,ionic_radius_note,specific_heat_note,heat_vaporization_note,
+		heat_fusion_note,electrical_resistivity_note,electronegativity_note,first_ionization_energy_note,
+		first_electron_affinity_note,ele1_boil_note,ele1_margin_shell6,ele1_margin_shell,ele1_margin_shell3,
+		ele1_margin_shell4,ele1_margin_shell5;
 	
 	private long touchtime;
+	private ElesTextSize elesSize=new ElesTextSize();
+	private ElesTxtSizeUtile elesSizeUtil=new ElesTxtSizeUtile();
+	private int typedSizeValue=TypedValue.COMPLEX_UNIT_SP;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +90,6 @@ public class ElementListActivity extends Activity implements OnClickListener{
 	 	Globe.pheight=pheight;
 	 	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		setContentView(R.layout.activity_elements);
-		
 		//Environment.getExternalStorageDirectory()+"/gqb/gqb.db"
 		db = SQLiteDatabase.openOrCreateDatabase(Globe.dbFile.getPath(), null);   	
 		mcontext = this;
@@ -88,6 +99,8 @@ public class ElementListActivity extends Activity implements OnClickListener{
 		eles_rl.addView(eles_iv1,RelativeLayout.LayoutParams.FILL_PARENT,
 				RelativeLayout.LayoutParams.FILL_PARENT);
 		inflater = LayoutInflater.from(mcontext);
+		
+		elesSize=elesSizeUtil.getTextSizes();
 		
 		new Thread(new Runnable() {
 			public void run() {
@@ -144,6 +157,72 @@ public class ElementListActivity extends Activity implements OnClickListener{
 		electronegativity=(TextView)rl_ele1.findViewById(R.id.electronegativity);
 		first_ionization_energy=(TextView)rl_ele1.findViewById(R.id.first_ionization_energy);
 		first_electron_affinity=(TextView)rl_ele1.findViewById(R.id.first_electron_affinity);
+		ele1_melting_note=(TextView)rl_ele1.findViewById(R.id.ele1_melting_note);
+		ele1_boil_note=(TextView)rl_ele1.findViewById(R.id.ele1_boil_note);
+		ele1_volume_note=(TextView)rl_ele1.findViewById(R.id.ele1_volume_note);
+		ele1_radius_note=(TextView)rl_ele1.findViewById(R.id.ele1_radius_note);
+		covalent_radius_note=(TextView)rl_ele1.findViewById(R.id.covalent_radius_note);
+		ionic_radius_note=(TextView)rl_ele1.findViewById(R.id.ionic_radius_note);
+		specific_heat_note=(TextView)rl_ele1.findViewById(R.id.specific_heat_note);
+		heat_vaporization_note=(TextView)rl_ele1.findViewById(R.id.heat_vaporization_note);
+		heat_fusion_note=(TextView)rl_ele1.findViewById(R.id.heat_fusion_note);
+		electrical_resistivity_note=(TextView)rl_ele1.findViewById(R.id.electrical_resistivity_note);
+		electronegativity_note=(TextView)rl_ele1.findViewById(R.id.electronegativity_note);
+		first_ionization_energy_note=(TextView)rl_ele1.findViewById(R.id.first_ionization_energy_note);
+		first_electron_affinity_note=(TextView)rl_ele1.findViewById(R.id.first_electron_affinity_note);
+		ele1_margin_shell6=(TextView)rl_ele1.findViewById(R.id.ele1_margin_shell6);
+		ele1_margin_shell=(TextView)rl_ele1.findViewById(R.id.ele1_margin_shell);
+		ele1_margin_shell3=(TextView)rl_ele1.findViewById(R.id.ele1_margin_shell3);
+		ele1_margin_shell4=(TextView)rl_ele1.findViewById(R.id.ele1_margin_shell4);
+		ele1_margin_shell5=(TextView)rl_ele1.findViewById(R.id.ele1_margin_shell5);
+		
+		ele1_name_margin.setTextSize(typedSizeValue, elesSize.getEle1_size3());
+		ele1_electronic_structure.setTextSize(typedSizeValue, elesSize.getEle1_size4());
+		ele1_num.setTextSize(typedSizeValue, elesSize.getEle1_size1());
+		ele1_symble.setTextSize(typedSizeValue, elesSize.getEle1_size1());
+		ele1_name_zh.setTextSize(typedSizeValue, elesSize.getEle1_size3());
+		ele1_name_us.setTextSize(typedSizeValue, elesSize.getEle1_size4());
+		relative_atomic_mass1.setTextSize(typedSizeValue, elesSize.getEle1_size4());
+		tv_configs[0].setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		tv_configs[1].setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		tv_configs[2].setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		tv_configs[3].setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		tv_configs[4].setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		tv_configs[5].setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		tv_configs[6].setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_density.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_melting.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_boil.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_volume.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_radius.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		covalent_radius.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ionic_radius.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		specific_heat.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		heat_vaporization.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		heat_fusion.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		electrical_resistivity.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		electronegativity.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		first_ionization_energy.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		first_electron_affinity.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_density_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_melting_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_volume_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_radius_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		covalent_radius_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ionic_radius_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		specific_heat_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		heat_vaporization_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		heat_fusion_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		electrical_resistivity_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		electronegativity_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		first_ionization_energy_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		first_electron_affinity_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_boil_note.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_margin_shell.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_margin_shell3.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_margin_shell4.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_margin_shell5.setTextSize(typedSizeValue, elesSize.getEle1_size2());
+		ele1_margin_shell6.setTextSize(typedSizeValue, elesSize.getEle1_size2());
 		
 	}
 	
@@ -171,6 +250,13 @@ public class ElementListActivity extends Activity implements OnClickListener{
 		ImageView ele_radioactive=(ImageView) rl.findViewById(R.id.ele_radioactive);
 		TextView ele_name_margin=(TextView) rl.findViewById(R.id.ele_name_margin);
 		TextView relative_atomic_mass=(TextView) rl.findViewById(R.id.relative_atomic_mass);
+		
+		ele_name_zh.setTextSize(typedSizeValue, elesSize.getEle_size3());
+		ele_name_us.setTextSize(typedSizeValue, elesSize.getEle_size4());
+		ele_num.setTextSize(typedSizeValue, elesSize.getEle_size1());
+		ele_symble.setTextSize(typedSizeValue, elesSize.getEle_size1());
+		ele_name_margin.setTextSize(typedSizeValue, elesSize.getEle_size3());
+		relative_atomic_mass.setTextSize(typedSizeValue, elesSize.getEle_size4());
 		
 		Cursor c = db.rawQuery("select * from elements_table where ele_x=? and ele_y=?", new String[]{(""+i),(""+j)});
 		if(c.getCount()==0){

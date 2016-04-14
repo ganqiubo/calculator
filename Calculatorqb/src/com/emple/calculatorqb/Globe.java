@@ -47,4 +47,5 @@ public class Globe{
 	public Main1Inputtext main1inputtext;
 	public static int statusHeight1,pwidth,pheight;
 	public static LinearLayout main1ll1;
+	
 }

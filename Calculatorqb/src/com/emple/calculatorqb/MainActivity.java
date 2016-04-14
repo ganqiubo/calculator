@@ -444,8 +444,8 @@ public class MainActivity extends FrameActivity {
     	rln1.addView(main1et1,pwidth-12,pheight-6*bth1-5*btspace-bth1*4/7);
     	main1et1.setX(6);
     	//rln3.setBackgroundDrawable(skinManage.loadMain1Et1Skin());
-    	etsize=(int) (main1et1.getTextSize()+4);
-    	btsize=(int) (main1et1.getTextSize());
+    	etsize=(int) (main1et1.getTextSize());
+    	btsize=(int) (main1et1.getTextSize()-2);
     	main1et1.setTextSize(TypedValue.COMPLEX_UNIT_PX, etsize);
     	
     	for(int i=0;i<30;i++){
@@ -647,7 +647,7 @@ public class MainActivity extends FrameActivity {
     			s=c.getString(c.getColumnIndexOrThrow("unitsimple"));
     		}
     		TextView unit=new TextView(this);unit.setGravity(Gravity.CENTER);
-    		unit.setTextSize(TypedValue.COMPLEX_UNIT_PX,(unit.getTextSize()*19/20));
+    		unit.setTextSize(TypedValue.COMPLEX_UNIT_PX,(unit.getTextSize()*16/20));
     		unit.setText(" "+s+" ");unit.setTextColor(unitColorList);unit.setClickable(true);
 			main1ll1.addView(unit,RelativeLayout.LayoutParams.WRAP_CONTENT,bth1*4/7);
 			unit.setOnClickListener(new unitclick());

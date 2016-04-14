@@ -41,7 +41,6 @@
         <activity
             android:name="com.emple.activity.ElementListActivity"
             android:label="@string/title_activity_element_list" >
-            
         </activity>
         <activity
             android:name="com.emple.activity.NoteActivity"
@@ -59,6 +58,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.emple.activity.EleTvSizeActivity"
+            android:label="@string/title_activity_ele_tv_size" >
         </activity>
     </application>
 

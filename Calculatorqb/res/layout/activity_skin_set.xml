@@ -19,7 +19,7 @@
         android:layout_alignBottom="@+id/myskin_sp"
         android:layout_alignTop="@+id/myskin_sp"
         android:text="我的皮肤："
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:gravity="center"
         android:layout_marginLeft="20dp"
         />

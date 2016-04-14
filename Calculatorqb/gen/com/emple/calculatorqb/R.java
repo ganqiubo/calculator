@@ -109,9 +109,9 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f0a0063;
-        public static final int ad_bt1=0x7f0a0010;
-        public static final int ad_iv1=0x7f0a000f;
-        public static final int button1=0x7f0a0011;
+        public static final int ad_bt1=0x7f0a0011;
+        public static final int ad_iv1=0x7f0a0010;
+        public static final int button1=0x7f0a0012;
         public static final int covalent_radius=0x7f0a0040;
         public static final int covalent_radius_note=0x7f0a0050;
         public static final int ele1_boil=0x7f0a003d;
@@ -165,17 +165,17 @@ public final class R {
         public static final int electrical_resistivity_note=0x7f0a0056;
         public static final int electronegativity=0x7f0a0047;
         public static final int electronegativity_note=0x7f0a0057;
-        public static final int eles_ll1=0x7f0a0002;
-        public static final int eles_ll2=0x7f0a0003;
-        public static final int eles_ll3=0x7f0a0004;
-        public static final int eles_ll4=0x7f0a0005;
-        public static final int eles_ll5=0x7f0a0006;
-        public static final int eles_ll6=0x7f0a0007;
-        public static final int eles_ll7=0x7f0a0008;
-        public static final int eles_ll8=0x7f0a0009;
-        public static final int eles_ll9=0x7f0a000a;
-        public static final int eles_rl=0x7f0a0000;
-        public static final int eles_rl_main=0x7f0a0001;
+        public static final int eles_ll1=0x7f0a0003;
+        public static final int eles_ll2=0x7f0a0004;
+        public static final int eles_ll3=0x7f0a0005;
+        public static final int eles_ll4=0x7f0a0006;
+        public static final int eles_ll5=0x7f0a0007;
+        public static final int eles_ll6=0x7f0a0008;
+        public static final int eles_ll7=0x7f0a0009;
+        public static final int eles_ll8=0x7f0a000a;
+        public static final int eles_ll9=0x7f0a000b;
+        public static final int eles_rl=0x7f0a0001;
+        public static final int eles_rl_main=0x7f0a0002;
         public static final int first_electron_affinity=0x7f0a0049;
         public static final int first_electron_affinity_note=0x7f0a0059;
         public static final int first_ionization_energy=0x7f0a0048;
@@ -184,13 +184,13 @@ public final class R {
         public static final int heat_fusion_note=0x7f0a0055;
         public static final int heat_vaporization=0x7f0a0044;
         public static final int heat_vaporization_note=0x7f0a0054;
-        public static final int include=0x7f0a0012;
+        public static final int include=0x7f0a0000;
         public static final int ionic_radius=0x7f0a0041;
         public static final int ionic_radius_note=0x7f0a0051;
-        public static final int main1et1=0x7f0a000c;
-        public static final int main1hsv1=0x7f0a000d;
-        public static final int main1ll1=0x7f0a000e;
-        public static final int main1rln1=0x7f0a000b;
+        public static final int main1et1=0x7f0a000d;
+        public static final int main1hsv1=0x7f0a000e;
+        public static final int main1ll1=0x7f0a000f;
+        public static final int main1rln1=0x7f0a000c;
         public static final int mhead_back=0x7f0a005b;
         public static final int mhead_title=0x7f0a005c;
         public static final int myskin_modify=0x7f0a0016;
@@ -210,24 +210,25 @@ public final class R {
         public static final int unitpoprl1=0x7f0a0060;
     }
     public static final class layout {
-        public static final int activity_elements=0x7f030000;
-        public static final int activity_elements_main=0x7f030001;
-        public static final int activity_main=0x7f030002;
-        public static final int activity_main_ad=0x7f030003;
-        public static final int activity_main_draw=0x7f030004;
-        public static final int activity_note=0x7f030005;
-        public static final int activity_setting=0x7f030006;
-        public static final int activity_skin_set=0x7f030007;
-        public static final int activity_unit_tables=0x7f030008;
-        public static final int activity_version_info=0x7f030009;
-        public static final int ele_layout=0x7f03000a;
-        public static final int ele_layout1=0x7f03000b;
-        public static final int head=0x7f03000c;
-        public static final int set_list_item=0x7f03000d;
-        public static final int spinn_style=0x7f03000e;
-        public static final int unitpop=0x7f03000f;
-        public static final int unitpopstyle=0x7f030010;
-        public static final int unitpopstyle1=0x7f030011;
+        public static final int activity_ele_tv_size=0x7f030000;
+        public static final int activity_elements=0x7f030001;
+        public static final int activity_elements_main=0x7f030002;
+        public static final int activity_main=0x7f030003;
+        public static final int activity_main_ad=0x7f030004;
+        public static final int activity_main_draw=0x7f030005;
+        public static final int activity_note=0x7f030006;
+        public static final int activity_setting=0x7f030007;
+        public static final int activity_skin_set=0x7f030008;
+        public static final int activity_unit_tables=0x7f030009;
+        public static final int activity_version_info=0x7f03000a;
+        public static final int ele_layout=0x7f03000b;
+        public static final int ele_layout1=0x7f03000c;
+        public static final int head=0x7f03000d;
+        public static final int set_list_item=0x7f03000e;
+        public static final int spinn_style=0x7f03000f;
+        public static final int unitpop=0x7f030010;
+        public static final int unitpopstyle=0x7f030011;
+        public static final int unitpopstyle1=0x7f030012;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -238,6 +239,7 @@ public final class R {
         public static final int action_settings=0x7f070001;
         public static final int app_name=0x7f070000;
         public static final int hello_world=0x7f070002;
+        public static final int title_activity_ele_tv_size=0x7f07000b;
         public static final int title_activity_element_list=0x7f070007;
         public static final int title_activity_main_ad=0x7f07000a;
         public static final int title_activity_main_draw=0x7f070003;
