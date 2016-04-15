@@ -25,7 +25,7 @@ public class FrameActivity extends Activity {
     			onReMeasure(0);
     		}
     		if ("Default4".equals(SkinManage.SKINNAME)) {
-    			InjectColor.inject(this,0xff777777,R.layout.unitpopstyle1);
+    			InjectColor.inject(this,0xff676767,R.layout.unitpopstyle1);
     		}if (!"Default4".equals(SkinManage.SKINNAME)) {
     			InjectColor.inject(this,0xffffffff,R.layout.unitpopstyle);
 			}

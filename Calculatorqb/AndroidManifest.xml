@@ -62,6 +62,7 @@
         <activity
             android:name="com.emple.activity.EleTvSizeActivity"
             android:label="@string/title_activity_ele_tv_size" >
+            
         </activity>
     </application>
 

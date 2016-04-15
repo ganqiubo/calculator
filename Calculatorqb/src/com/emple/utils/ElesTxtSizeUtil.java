@@ -7,11 +7,11 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-public class ElesTxtSizeUtile {
+public class ElesTxtSizeUtil {
 	
 	SQLiteDatabase db;
 	
-	public ElesTxtSizeUtile() {
+	public ElesTxtSizeUtil() {
 		super();
 		// TODO Auto-generated constructor stub
 		if (db==null) {
@@ -88,7 +88,7 @@ public class ElesTxtSizeUtile {
 		}
 	}
 	
-	public boolean setDefaultSize(){
+	public boolean setToDefaultSize(){
 		return setTextSizes(getDefaultSizes());
 	}
 	

@@ -1,6 +1,6 @@
 package com.emple.entity;
 
-public class ElesTextSize {
+public class ElesTextSize implements Cloneable{
 
 	private int ele_size1;
 	private int ele_size2;
@@ -10,7 +10,7 @@ public class ElesTextSize {
 	private int ele1_size2;
 	private int ele1_size3;
 	private int ele1_size4;
-
+	
 	public ElesTextSize() {
 		// TODO Auto-generated constructor stub
 	}
@@ -73,5 +73,45 @@ public class ElesTextSize {
 	public void setEle1_size4(int ele1_size4) {
 		this.ele1_size4 = ele1_size4;
 	}
+	
+	@Override
+	public ElesTextSize clone() {
+		// TODO Auto-generated method stub
+		ElesTextSize elesTextSize=null;
+		try {
+			elesTextSize=(ElesTextSize) super.clone();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return elesTextSize;
+	}
 
+	public void addTinyOne(){
+		this.ele_size1 = this.ele_size1+1;
+		this.ele_size2 = this.ele_size2+1;
+		this.ele_size3 = this.ele_size3+1;
+		this.ele_size4 = this.ele_size4+1;
+	}
+	
+	public void addBigOne(){
+		this.ele1_size1 = this.ele1_size1+1;
+		this.ele1_size2 = this.ele1_size2+1;
+		this.ele1_size3 = this.ele1_size3+1;
+		this.ele1_size4 = this.ele1_size4+1;
+	}
+	
+	public void subTinyOne(){
+		this.ele_size1 = this.ele_size1-1;
+		this.ele_size2 = this.ele_size2-1;
+		this.ele_size3 = this.ele_size3-1;
+		this.ele_size4 = this.ele_size4-1;
+	}
+	
+	public void subBigOne(){
+		this.ele1_size1 = this.ele1_size1-1;
+		this.ele1_size2 = this.ele1_size2-1;
+		this.ele1_size3 = this.ele1_size3-1;
+		this.ele1_size4 = this.ele1_size4-1;
+	}
+	
 }

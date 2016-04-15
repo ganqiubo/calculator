@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import com.emple.calculatorqb.Globe;
 import com.emple.calculatorqb.R;
 import com.emple.entity.ElesTextSize;
-import com.emple.utils.ElesTxtSizeUtile;
+import com.emple.utils.ElesTxtSizeUtil;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -72,7 +72,7 @@ public class ElementListActivity extends Activity implements OnClickListener{
 	
 	private long touchtime;
 	private ElesTextSize elesSize=new ElesTextSize();
-	private ElesTxtSizeUtile elesSizeUtil=new ElesTxtSizeUtile();
+	private ElesTxtSizeUtil elesSizeUtil=new ElesTxtSizeUtil();
 	private int typedSizeValue=TypedValue.COMPLEX_UNIT_SP;
 	
 
