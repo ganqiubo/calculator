@@ -10,110 +10,110 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/border1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -128,110 +128,110 @@
         android:layout_marginTop="@dimen/ele_margin3"
          >
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#ccdd55"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -246,110 +246,110 @@
         android:layout_marginTop="@dimen/ele_margin3"
          >
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#ccdd55"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -364,110 +364,110 @@
         android:layout_marginTop="@dimen/ele_margin3"
          >
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#ccdd55"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -482,110 +482,110 @@
         android:layout_marginTop="@dimen/ele_margin3"
          >
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#ccdd55"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -600,110 +600,110 @@
         android:layout_below="@+id/eles_ll5"
          >
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#ccdd55"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -718,110 +718,110 @@
         android:layout_below="@+id/eles_ll6"
          >
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#ccdd55"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -836,110 +836,110 @@
         android:layout_below="@+id/eles_ll7"
          >
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#ccdd55"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -954,110 +954,110 @@
         android:layout_below="@+id/eles_ll8"
          >
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#ccdd55"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
            />
         <include 
-            layout="@layout/ele_layout"
+            layout="@layout/ele_layout0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

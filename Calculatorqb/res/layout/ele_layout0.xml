@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ele_rl0"
+    android:orientation="horizontal"
+     >
+   
+    
+    <RelativeLayout
+        android:id="@+id/ele_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/ele_margin"
+        >
+        <!-- android:layout_toLeftOf="@id/ele_rl2" --> 
+        <TextView
+        android:id="@+id/ele_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="92"
+        android:layout_marginLeft="2px"
+        android:textSize="@dimen/ele_size1"
+        />
+    
+	    <TextView
+	        android:id="@+id/ele_symble"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" 
+	        android:text="U"
+	        android:layout_marginRight="2px"
+	        android:textSize="@dimen/ele_size1"
+	        android:layout_alignParentRight="true"
+	        />
+	    
+	    <RelativeLayout
+	        android:id="@+id/ele_rl1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/ele_num"
+	        android:layout_alignRight="@+id/ele_symble"
+	        android:layout_below="@+id/ele_num"
+	        android:layout_marginTop="-2dp" >
+	
+	        <RelativeLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerHorizontal="true"
+	             >
+				<TextView
+			        android:id="@+id/ele_name_zh1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" 
+			        android:text="铀"
+			        android:textSize="@dimen/ele_size3"
+			        android:layout_marginTop="@dimen/ele_margin3"
+		        	/>
+				<TextView
+			        android:id="@+id/ele_name_margin"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" 
+			        android:text="铀"
+			        android:textSize="@dimen/ele_size3"
+			        android:layout_alignTop="@+id/ele_name_zh1"
+				    android:layout_alignBottom="@+id/ele_name_zh1"
+				    android:layout_toRightOf="@+id/ele_name_zh1"
+				    android:textColor="#000000"
+		        	/>	
+				<ImageView
+				    android:id="@+id/ele_radioactive"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content" 
+				    android:src="@drawable/radio"
+				    android:padding="1dp"
+				    android:layout_alignTop="@+id/ele_name_margin"
+				    android:layout_alignBottom="@+id/ele_name_margin"
+				    android:layout_alignLeft="@+id/ele_name_margin"
+				    android:layout_alignRight="@+id/ele_name_margin"
+				    />
+			</RelativeLayout>
+	    </RelativeLayout>
+	    
+	    <TextView
+	        android:id="@+id/ele_name_us"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignRight="@+id/ele_rl1"
+	        android:layout_below="@+id/ele_rl1"
+	        android:layout_marginTop="@dimen/ele_margin2"
+	        android:text="Uranium"
+	        android:singleLine="true"
+	        android:gravity="center"
+	        android:layout_marginLeft="1px"
+	        android:textSize="@dimen/ele_size4" />
+	    
+	    <TextView
+	        android:id="@+id/relative_atomic_mass"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignRight="@+id/ele_name_us"
+	        android:layout_below="@+id/ele_name_us"
+	        android:layout_marginTop="-2dp"
+	        android:text="1.0004"
+	        android:gravity="center"
+	        android:layout_marginLeft="1px"
+	        android:textSize="@dimen/ele_size4" 
+	        android:singleLine="true"
+	        />
+
+	</RelativeLayout>
+
+    
+</LinearLayout>

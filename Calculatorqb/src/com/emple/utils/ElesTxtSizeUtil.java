@@ -25,15 +25,15 @@ public class ElesTxtSizeUtil {
 		try {
 			Cursor c=db.rawQuery("select * from eles_size where type=?", new String[]{"modifed"});
 			while(c.moveToNext()){
-				elesTextSize.setEle_size1(c.getInt(c.getColumnIndexOrThrow("ele_size1")));
-				elesTextSize.setEle_size2(c.getInt(c.getColumnIndexOrThrow("ele_size2")));
-				elesTextSize.setEle_size3(c.getInt(c.getColumnIndexOrThrow("ele_size3")));
-				elesTextSize.setEle_size4(c.getInt(c.getColumnIndexOrThrow("ele_size4")));
+				elesTextSize.setEle_size1(c.getFloat(c.getColumnIndexOrThrow("ele_size1")));
+				elesTextSize.setEle_size2(c.getFloat(c.getColumnIndexOrThrow("ele_size2")));
+				elesTextSize.setEle_size3(c.getFloat(c.getColumnIndexOrThrow("ele_size3")));
+				elesTextSize.setEle_size4(c.getFloat(c.getColumnIndexOrThrow("ele_size4")));
 				
-				elesTextSize.setEle1_size1(c.getInt(c.getColumnIndexOrThrow("ele1_size1")));
-				elesTextSize.setEle1_size2(c.getInt(c.getColumnIndexOrThrow("ele1_size2")));
-				elesTextSize.setEle1_size3(c.getInt(c.getColumnIndexOrThrow("ele1_size3")));
-				elesTextSize.setEle1_size4(c.getInt(c.getColumnIndexOrThrow("ele1_size4")));
+				elesTextSize.setEle1_size1(c.getFloat(c.getColumnIndexOrThrow("ele1_size1")));
+				elesTextSize.setEle1_size2(c.getFloat(c.getColumnIndexOrThrow("ele1_size2")));
+				elesTextSize.setEle1_size3(c.getFloat(c.getColumnIndexOrThrow("ele1_size3")));
+				elesTextSize.setEle1_size4(c.getFloat(c.getColumnIndexOrThrow("ele1_size4")));
 				break;
 			}
 		} catch (Exception e) {
@@ -48,15 +48,15 @@ public class ElesTxtSizeUtil {
 		try {
 			Cursor c=db.rawQuery("select * from eles_size where type=?", new String[]{"default"});
 			while(c.moveToNext()){
-				elesTextSize.setEle_size1(c.getInt(c.getColumnIndexOrThrow("ele_size1")));
-				elesTextSize.setEle_size2(c.getInt(c.getColumnIndexOrThrow("ele_size2")));
-				elesTextSize.setEle_size3(c.getInt(c.getColumnIndexOrThrow("ele_size3")));
-				elesTextSize.setEle_size4(c.getInt(c.getColumnIndexOrThrow("ele_size4")));
+				elesTextSize.setEle_size1(c.getFloat(c.getColumnIndexOrThrow("ele_size1")));
+				elesTextSize.setEle_size2(c.getFloat(c.getColumnIndexOrThrow("ele_size2")));
+				elesTextSize.setEle_size3(c.getFloat(c.getColumnIndexOrThrow("ele_size3")));
+				elesTextSize.setEle_size4(c.getFloat(c.getColumnIndexOrThrow("ele_size4")));
 				
-				elesTextSize.setEle1_size1(c.getInt(c.getColumnIndexOrThrow("ele1_size1")));
-				elesTextSize.setEle1_size2(c.getInt(c.getColumnIndexOrThrow("ele1_size2")));
-				elesTextSize.setEle1_size3(c.getInt(c.getColumnIndexOrThrow("ele1_size3")));
-				elesTextSize.setEle1_size4(c.getInt(c.getColumnIndexOrThrow("ele1_size4")));
+				elesTextSize.setEle1_size1(c.getFloat(c.getColumnIndexOrThrow("ele1_size1")));
+				elesTextSize.setEle1_size2(c.getFloat(c.getColumnIndexOrThrow("ele1_size2")));
+				elesTextSize.setEle1_size3(c.getFloat(c.getColumnIndexOrThrow("ele1_size3")));
+				elesTextSize.setEle1_size4(c.getFloat(c.getColumnIndexOrThrow("ele1_size4")));
 				break;
 			}
 		} catch (Exception e) {

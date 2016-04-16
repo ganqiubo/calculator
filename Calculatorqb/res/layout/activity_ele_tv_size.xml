@@ -19,17 +19,29 @@
 	    android:divider="#00ffffff">
     </ListView>
     
-     <Button
-        android:id="@+id/tvsize_default"
+     <TextView 
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:textSize="16sp"
+    	android:text="恢复默认设置 "
+    	android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:textColor="#676767"
+        android:id="@+id/tvsize_default"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="10dp"
+        android:gravity="center_horizontal"
+        android:clickable="true"
         android:layout_below="@+id/tvsize_list"
-        android:layout_marginLeft="20sp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="18dp"
-        android:text="恢复默认设置"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/btshape"
-         />
+        android:background="@drawable/tvsizebg"
+        />
+     
+     <View 
+        android:layout_width="match_parent"
+    	android:layout_height="1px"
+    	android:background="#DDDDDD"
+    	android:layout_below="@+id/tvsize_default"
+        />
+     
     
 </RelativeLayout>

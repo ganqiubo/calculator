@@ -26,7 +26,7 @@ public class EleTvSizeActivity extends StatusSetActivity {
 	private ElesTextSize elesSize=new ElesTextSize();
 	private ElesTxtSizeUtil elesSizeUtil=new ElesTxtSizeUtil();
 	private Context mcontext;
-	private Button tvsize_default;
+	private TextView tvsize_default;
 	private MyListAdapter myListAdapter;
 	
 	@Override
@@ -47,7 +47,7 @@ public class EleTvSizeActivity extends StatusSetActivity {
 		
 		elesSize=elesSizeUtil.getTextSizes();
 		list_tvsize=(ListView) findViewById(R.id.tvsize_list);
-		tvsize_default=(Button) findViewById(R.id.tvsize_default);
+		tvsize_default=(TextView) findViewById(R.id.tvsize_default);
 		tvsize_default.setOnClickListener(new btclick());
 		myListAdapter=new MyListAdapter();
 		list_tvsize.setAdapter(myListAdapter);

@@ -10,7 +10,7 @@
 	<dimen name="ele_margin">0dp</dimen>
 	<dimen name="ele_margin1">0dp</dimen>
 	<dimen name="ele_margin2">-3dp</dimen>
-	<dimen name="ele_margin3">-2dp</dimen>
+	<dimen name="ele_margin3">-3dp</dimen>
 	<dimen name="ele_margin4">-2dp</dimen>
 	
 	<dimen name="ele1_size1">13sp</dimen>

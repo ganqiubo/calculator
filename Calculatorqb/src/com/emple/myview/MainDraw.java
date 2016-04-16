@@ -159,7 +159,7 @@ public class MainDraw extends Activity {
 				view = convertView;
 				holder = (ViewHolder) view.getTag();
 			} else {
-				view = View.inflate(mcontext, R.layout.ele_layout, null);
+				view = View.inflate(mcontext, R.layout.ele_layout0, null);
 				view.setTag(holder);
 			}
 			//Log.e("", "------>"+view.getClass());

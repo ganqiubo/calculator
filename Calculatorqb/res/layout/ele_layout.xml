@@ -1,113 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ele_ll0"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/ele_rl0"
-    android:orientation="horizontal"
-     >
-
-        <!-- <RelativeLayout
-        android:id="@+id/ele_rl2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true" >
-        
-        <TextView
-            android:id="@+id/ele_margin_shell"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-            android:text="32"
-            android:textSize="@dimen/ele_size2"
-            android:textColor="#0000"
-            />
-        
-        <LinearLayout 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-            android:layout_alignRight="@+id/ele_margin_shell"
-            android:layout_alignLeft="@+id/ele_margin_shell"
-            android:orientation="vertical"
-            >
-            
-            <TextView
-            android:id="@+id/ele_first"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
-            android:text="2"
-            android:gravity="right"
-            android:textSize="@dimen/ele_size2"
-            />
-        
-        <TextView
-            android:id="@+id/ele_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
-            android:text="8"
-            android:textSize="@dimen/ele_size2"
-            android:gravity="right"
-            android:layout_marginTop="@dimen/ele_margin2"
-            />
-        
-        <TextView
-            android:id="@+id/ele_third"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
-            android:text="18"
-            android:textSize="@dimen/ele_size2"
-            android:gravity="right"
-            android:layout_marginTop="@dimen/ele_margin2"
-            />
-        
-        <TextView
-            android:id="@+id/ele_forth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
-            android:text="32"
-            android:textSize="@dimen/ele_size2"
-            android:gravity="right"
-            android:layout_marginTop="@dimen/ele_margin2"
-            />
-        
-        <TextView
-            android:id="@+id/ele_fifth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
-            android:text="21"
-            android:gravity="right"
-            android:textSize="@dimen/ele_size2"
-            android:layout_marginTop="@dimen/ele_margin2"
-            />
-        
-        <TextView
-            android:id="@+id/ele_sixth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
-            android:text="9"
-            android:gravity="right"
-            android:textSize="@dimen/ele_size2"
-            android:layout_marginTop="@dimen/ele_margin2"
-            />
-        
-        <TextView
-            android:id="@+id/ele_seventh"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
-            android:text="2"
-            android:gravity="right"
-            android:textSize="@dimen/ele_size2"
-            android:layout_marginTop="@dimen/ele_margin2"/>
-            
-        </LinearLayout>
-        
-    </RelativeLayout> -->
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
     
-    <RelativeLayout
-        android:id="@+id/ele_rl"
+    <RelativeLayout 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/ele_margin"
+    	android:layout_height="wrap_content"
         >
-        <!-- android:layout_toLeftOf="@id/ele_rl2" --> 
         <TextView
         android:id="@+id/ele_num"
         android:layout_width="wrap_content"
@@ -126,61 +30,35 @@
 	        android:textSize="@dimen/ele_size1"
 	        android:layout_alignParentRight="true"
 	        />
+    </RelativeLayout>
 	    
-	    <RelativeLayout
-	        android:id="@+id/ele_rl1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/ele_num"
-	        android:layout_alignRight="@+id/ele_symble"
-	        android:layout_below="@+id/ele_num"
-	        android:layout_marginTop="-2dp" >
-	
-	        <RelativeLayout
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_centerHorizontal="true"
-	             >
-				<TextView
-			        android:id="@+id/ele_name_zh"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content" 
-			        android:text="铀"
-			        android:textSize="@dimen/ele_size3"
-			        android:layout_marginTop="@dimen/ele_margin3"
-		        	/>	
-				<TextView
-			        android:id="@+id/ele_name_margin"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content" 
-			        android:text="铀"
-			        android:textSize="@dimen/ele_size3"
-			        android:layout_alignTop="@+id/ele_name_zh"
-				    android:layout_alignBottom="@+id/ele_name_zh"
-				    android:layout_toRightOf="@+id/ele_name_zh"
-				    android:textColor="#00000000"
-		        	/>	
-				<ImageView
-				    android:id="@+id/ele_radioactive"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content" 
-				    android:src="@drawable/radio"
-				    android:padding="1dp"
-				    android:layout_alignTop="@+id/ele_name_margin"
-				    android:layout_alignBottom="@+id/ele_name_margin"
-				    android:layout_alignLeft="@+id/ele_name_margin"
-				    android:layout_alignRight="@+id/ele_name_margin"
-				    />
-			</RelativeLayout>
-	    </RelativeLayout>
-	    
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/ele_margin3"
+        >
 	    <TextView
+		  android:id="@+id/ele_name_zh"
+		  android:layout_width="wrap_content"
+		  android:layout_height="wrap_content"
+		  android:text="铀"
+		  android:textSize="@dimen/ele_size3" />             
+        
+	    <ImageView
+			android:id="@+id/ele_radioactive"
+			android:layout_width="8dp"
+			android:layout_height="8dp" 
+			android:src="@drawable/radio"
+			android:layout_gravity="center_horizontal"
+			android:padding="1dp"
+			/>	    
+    </LinearLayout>
+
+    <TextView
 	        android:id="@+id/ele_name_us"
-	        android:layout_width="wrap_content"
+	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:layout_alignParentLeft="true"
-	        android:layout_alignRight="@+id/ele_rl1"
-	        android:layout_below="@+id/ele_rl1"
 	        android:layout_marginTop="@dimen/ele_margin2"
 	        android:text="Uranium"
 	        android:singleLine="true"
@@ -190,11 +68,8 @@
 	    
 	    <TextView
 	        android:id="@+id/relative_atomic_mass"
-	        android:layout_width="wrap_content"
+	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:layout_alignParentLeft="true"
-	        android:layout_alignRight="@+id/ele_name_us"
-	        android:layout_below="@+id/ele_name_us"
 	        android:layout_marginTop="-2dp"
 	        android:text="1.0004"
 	        android:gravity="center"
@@ -202,49 +77,5 @@
 	        android:textSize="@dimen/ele_size4" 
 	        android:singleLine="true"
 	        />
-
-	</RelativeLayout>
-
-    <!-- <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ele_rl"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="69dp"
-        android:background="@drawable/border1"
-        android:text="Button1" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_marginLeft="66dp"
-        android:layout_toRightOf="@+id/button1"
-        android:background="@drawable/border2"
-        android:text="Button2" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="29dp"
-        android:background="@drawable/border3"
-        android:text="Button3" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button3"
-        android:layout_alignBottom="@+id/button3"
-        android:layout_alignLeft="@+id/button2"
-        android:background="@drawable/border4"
-        android:text="Button4" /> -->
     
-</RelativeLayout>
+</LinearLayout>
