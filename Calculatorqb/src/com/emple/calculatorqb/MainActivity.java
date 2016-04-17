@@ -97,8 +97,10 @@ public class MainActivity extends FrameActivity {
 	BigDecimal e;
 	//boolean soundinput=false;
 	Context ct;
+	//String[] strarray=new String[]{"n",".","0","=","+","√","1","2","3","-","^","4","5","6","×",
+			                    //"( )","7","8","9","÷","sin","cos","tan","log","ln","L","R","∑","C","D"};	
 	String[] strarray=new String[]{"n",".","0","=","+","√","1","2","3","-","^","4","5","6","×",
-			                    "( )","7","8","9","÷","sin","cos","tan","log","ln","L","R","∑","C","D"};			 	
+            "( )","7","8","9","÷","sin","cos","tan","log","ln","◀","▶","∑","C","D"};			 	
 	int pwidth,pheight,btw1,bth1,btspace/*,statusBarHeight*/,ds,funid=1,maxfunid=0,etsize=0,btsize=0;
 	@InjectStateDraw(draw_name="main1bg")
 	RelativeLayout rln1;

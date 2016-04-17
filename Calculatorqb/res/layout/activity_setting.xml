@@ -15,8 +15,9 @@
         android:id="@+id/setting_list"
         android:layout_below="@+id/include"
         android:layout_width="fill_parent"
-	    android:layout_height="fill_parent"
-	    android:divider="#00ffffff">
+	    android:layout_height="wrap_content"
+	    android:divider="@null"
+        android:dividerHeight="0px">
     </ListView>
     
 </RelativeLayout>

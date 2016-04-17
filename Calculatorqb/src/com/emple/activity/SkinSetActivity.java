@@ -5,22 +5,31 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.emple.activity.EleTvSizeActivity.ViewHolder;
 import com.emple.calculatorqb.Globe;
 import com.emple.calculatorqb.R;
+import com.emple.calculatorqb.R.layout;
 import com.emple.calculatorqb.SkinManage;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
@@ -29,9 +38,11 @@ import android.widget.Toast;
 public class SkinSetActivity extends StatusSetActivity {
 
 	private TextView mhead_title;
-	private Spinner skinname;
-	private Button skin_modify;
 	private SQLiteDatabase db;
+	private ListView skin_set_lv;
+	private List<String> skins;
+	private Context mContext;
+	private MyListAdapter myListAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,68 +57,94 @@ public class SkinSetActivity extends StatusSetActivity {
 	private void init() {
 		// TODO Auto-generated method stub
 		
+		mContext=this;
 		db = SQLiteDatabase.openOrCreateDatabase(Globe.dbFile.getPath(), null);  
 		mhead_title=(TextView) findViewById(R.id.mhead_title);
 		mhead_title.setText("皮肤设置");
 		
-		skinname=(Spinner) findViewById(R.id.myskin_sp);
-		List<String> skins=new ArrayList<String>();
+		skins=new ArrayList<String>();
 		try {
 			skins = Arrays.asList(getAssets().list("skin"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 		}
-		ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,R.layout.spinn_style, skins);
-		skinname.setAdapter(adapter);
-		skinname.setSelection(skins.indexOf(SkinManage.SKINNAME));
-		skinname.setOnItemSelectedListener(new itemselected());
-		
-		skin_modify=(Button) findViewById(R.id.myskin_modify);
-		skin_modify.setOnClickListener(new btclick());
+		skin_set_lv=(ListView) findViewById(R.id.skin_set_lv);
+		myListAdapter = new MyListAdapter();
+		skin_set_lv.setAdapter(myListAdapter);
 	}
 
-	class itemselected implements OnItemSelectedListener{
+	class MyListAdapter extends BaseAdapter{
 
 		@Override
-		public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+		public int getCount() {
 			// TODO Auto-generated method stub
-			Log.e("", skinname.getSelectedItem().toString()+"<<<<<<<<<onItemSelected-----》"+SkinManage.SKINNAME);
-			//skin_modify.getBackground().getClass();
-			Log.e("", skin_modify.getBackground().getClass()+"<<<<<<<<<getBackground-----》");
-			if (skinname.getSelectedItem().toString().equals(SkinManage.SKINNAME)) {
-				skin_modify.setEnabled(false);
-			}else{
-				skin_modify.setEnabled(true);
-			}
+			return skins.size();
 		}
 
 		@Override
-		public void onNothingSelected(AdapterView<?> parent) {
+		public Object getItem(int arg0) {
 			// TODO Auto-generated method stub
+			return skins.get(arg0);
+		}
+
+		@Override
+		public long getItemId(int arg0) {
+			// TODO Auto-generated method stub
+			return arg0;
+		}
+
+		@Override
+		public View getView(final int position, View convertView, ViewGroup parent) {
+			// TODO Auto-generated method stub
+			
+			View view;
+			final ViewHolder holder;
+			if (convertView != null) {
+				view = convertView;
+				holder = (ViewHolder) view.getTag();
+			}else {
+				view = LayoutInflater.from(mContext).inflate(R.layout.skin_list_item, null);
+				holder = new ViewHolder();
+				holder.skin_item_note=(TextView) view.findViewById(R.id.skin_item_note);
+				holder.skin_item_ok=(ImageView) view.findViewById(R.id.skin_item_ok);
+				view.setTag(holder);
+			}
+			if (position!=skins.indexOf(SkinManage.SKINNAME)) {
+				holder.skin_item_ok.setVisibility(View.GONE);
+			}else {
+				holder.skin_item_ok.setVisibility(View.VISIBLE);
+			}
+			holder.skin_item_note.setText(skins.get(position));
+			view.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					TextView tv=(TextView) v.findViewById(R.id.skin_item_note);
+					if (!tv.getText().toString().equals(SkinManage.SKINNAME)) {
+						String newskin=tv.getText().toString();
+						SkinManage.SKINNAME=newskin;
+						SkinManage.SKINPATH="skin/"+newskin;
+						SkinManage.MODECHANGE=true;
+						updateSkin();
+					}
+				}
+			});
+			return view;
 		}
 	}
 	
-	class btclick implements OnClickListener{
-		@Override
-		public void onClick(View v) {
-			// TODO Auto-generated method stub
-			String newskin=skinname.getSelectedItem().toString();
-			SkinManage.SKINNAME=newskin;
-			SkinManage.SKINPATH="skin/"+newskin;
-			SkinManage.MODECHANGE=true;
-			updateSkin();
-			Toast.makeText(SkinSetActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
-			skin_modify.setEnabled(false);
-		}
-
-		private void updateSkin() {
-			// TODO Auto-generated method stub
-			
-			ContentValues values=new ContentValues();
-			values.put("name", SkinManage.SKINNAME);
-			values.put("path", SkinManage.SKINPATH);
-			db.update("skin", values, "id=0", null);
-		}
+	class ViewHolder {
+		TextView skin_item_note;
+		ImageView skin_item_ok;
+	}
+	
+	public void updateSkin() {
+		// TODO Auto-generated method stub
+		ContentValues values=new ContentValues();
+		values.put("name", SkinManage.SKINNAME);
+		values.put("path", SkinManage.SKINPATH);
+		db.update("skin", values, "id=0", null);
+		myListAdapter.notifyDataSetChanged();
 	}
 	
 }

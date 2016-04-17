@@ -53,7 +53,7 @@ public class ElementListActivity extends Activity implements OnClickListener{
 	private ElesTxtSizeUtil elesSizeUtil=new ElesTxtSizeUtil();
 	private int typedSizeValue=TypedValue.COMPLEX_UNIT_SP;
 	private SQLiteDatabase db;
-	private int PressIndex,rawPressIndex=-1,rawPressIndexX,rawPressIndexY;
+	private int rawPressIndex=-1,rawPressIndexX,rawPressIndexY;
 	private float TouchedX,TouchedY,rawTouchedX,rawTouchedY;
 	private LinearLayout touchedEle,frontTouchedEle;
 	private int EleWidth,EleHeight;
@@ -585,6 +585,13 @@ public class ElementListActivity extends Activity implements OnClickListener{
 			}
 		}
 		return sub;
+	}
+	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		rawPressIndex=-1;
 	}
 	
 }
