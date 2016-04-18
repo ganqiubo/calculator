@@ -341,11 +341,10 @@ public class Main1Inputtext {
 					String str = main1et1.getText().toString();
 					str = str.substring((str.indexOf("{") + 1),
 							str.lastIndexOf("}"));
+					Log.e("", globe.funtype+"<=@=@=>" + str+"::"+copymatches);
 					if (globe.funtype == 2) {
-						Log.e("", "funtype2====>" + str);
 						funtype24Str(str,2,copymatches);
 					}if (globe.funtype == 4) {
-						Log.e("", "thisfuntype======>4");
 						funtype24Str(str,4,copymatches);
 					}
 				}
@@ -495,8 +494,8 @@ public class Main1Inputtext {
 
 	private void funtype24Str(String str, int type, String copymatches) {
 		// TODO Auto-generated method stub
-    	
-    	globe.cdTask=new CalDataTask();
+		Log.e("", globe.funtype+"<=0=0=>" + str+"::"+copymatches);
+		globe.cdTask=new CalDataTask();
     	globe.cdTask.globe=globe;globe.cdTask.ct=ct;
     	globe.cdTask.execute(str,(type+""),copymatches);
  	
@@ -540,7 +539,7 @@ public class Main1Inputtext {
 				copymatches2=copymatches2.replace("X", "1");
 				copymatches2=copymatches2.replace("Y", "1");
 				copymatches2=copymatches2.replace("AVG", "1");
-				copymatches2=globe.calculate.calculate(copymatches2);
+				//copymatches2=globe.calculate.calculate(copymatches2);
 				if (copymatches2==null) {
 					matchs=false;
 				}
