@@ -120,27 +120,45 @@ public class CalDataTask extends AsyncTask<String, Integer, String>{
 					String body=str.substring((str.indexOf("¡Æ")+1), str.lastIndexOf("["));
 					int N=0;String strCal="";int run=-1;BigDecimal calbigdem=new BigDecimal("0");BigDecimal calbigdem1=new BigDecimal("0");
 					int sum=stop.subtract(start).intValue();String copybody = body;
-					ArrayList<Integer> aList=new ArrayList<Integer>();boolean find = true;
-					while (find) {
+					ArrayList<Integer> aList=new ArrayList<Integer>();
+					/*while (find) {
 						Pattern pattern = Pattern.compile("[\\+|¡Á|\\-|¡Â|\\^¡Ì\\(]n[\\+|¡Á|\\-|¡Â|\\^\\)]");
 						Matcher matcher = pattern.matcher(copybody);
 						while (find=matcher.find()) {
 							String s = matcher.group();
 							//aList.add((matcher.start() + s.indexOf("n")));
+							copybody=body;
 							int integer=(matcher.start() + s.indexOf("n"));
 							copybody = globe.calculate.inc_subreplace(
-									copybody, start.toPlainString(),
+									copybody, (start+""),
 									integer, integer);
-							/*copybody = globe.calculate.inc_subreplace(
+							copybody = globe.calculate.inc_subreplace(
 									copybody, start.toPlainString(),
 									(matcher.start() + s.indexOf("n")),
-									(matcher.start() + s.indexOf("n")));*/
+									(matcher.start() + s.indexOf("n")));
 							break;
 						}
-					}if (start.compareTo(stop)==-1 || start.compareTo(stop)==0) {
+					}*/
+					if (start.compareTo(stop)==-1 || start.compareTo(stop)==0) {
 						while (start.compareTo(stop)==-1 || start.compareTo(stop)==0) {
 							if (cancer) {
 								return null;
+							}
+							
+							copybody=body;
+							boolean find = true;
+							while (find) {
+								Pattern pattern = Pattern.compile("[\\+|¡Á|\\-|¡Â|\\^¡Ì\\(]n[\\+|¡Á|\\-|¡Â|\\^\\)]");
+								Matcher matcher = pattern.matcher(copybody);
+								while (find=matcher.find()) {
+									String s = matcher.group();
+									//aList.add((matcher.start() + s.indexOf("n")));
+									int integer=(matcher.start() + s.indexOf("n"));
+									copybody = globe.calculate.inc_subreplace(
+											copybody, start.toPlainString(),
+											integer, integer);
+									break;
+								}
 							}
 							/*copybody = body;
 							ArrayList<String> replaces=new ArrayList<String>();
@@ -199,12 +217,29 @@ public class CalDataTask extends AsyncTask<String, Integer, String>{
 							if (cancer) {
 								return null;
 							}
-							copybody = body;
+							
+							copybody=body;
+							boolean find = true;
+							while (find) {
+								Pattern pattern = Pattern.compile("[\\+|¡Á|\\-|¡Â|\\^¡Ì\\(]n[\\+|¡Á|\\-|¡Â|\\^\\)]");
+								Matcher matcher = pattern.matcher(copybody);
+								while (find=matcher.find()) {
+									String s = matcher.group();
+									//aList.add((matcher.start() + s.indexOf("n")));
+									copybody=body;
+									int integer=(matcher.start() + s.indexOf("n"));
+									copybody = globe.calculate.inc_subreplace(
+											copybody, start.toPlainString(),
+											integer, integer);
+									break;
+								}
+							}
+							/*copybody = body;
 							for (Integer integer : aList) {
 								copybody = globe.calculate.inc_subreplace(
 										copybody, start.toPlainString(),
 										integer, integer);
-							}
+							}*/
 							try {
 								calbigdem1 = new BigDecimal(
 										globe.calculate.calculate(copybody));
