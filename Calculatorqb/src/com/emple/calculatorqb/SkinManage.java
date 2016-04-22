@@ -7,8 +7,8 @@ import android.graphics.drawable.StateListDrawable;
 public class SkinManage {
 	
 	public static int SKINMODE=1;
-	public static String SKINNAME="Default0";
-	public static String SKINPATH="skin/Default0";
+	public static String SKINNAME="Default4";
+	public static String SKINPATH="skin/Default4";
 	public static boolean MODECHANGE=true;
 	
 	public static HashMap<String, Integer> States=new HashMap<String, Integer>();
