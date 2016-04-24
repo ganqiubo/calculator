@@ -12,11 +12,19 @@ import javax.security.auth.Subject;
 
 import org.junit.Test;
 
+import com.emple.utils.SoundPlayer;
+
 import android.R.integer;
 import android.R.string;
+import android.app.Service;
 import android.content.Context;
+import android.content.res.AssetFileDescriptor;
 import android.graphics.Color;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.os.AsyncTask;
+import android.os.Vibrator;
+import android.renderscript.Type;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.BackgroundColorSpan;
@@ -41,6 +49,7 @@ public class Main1Inputtext {
 	HorizontalScrollView main1hsv1;
 	LinearLayout main1ll1;
 	TextView main1tv4;
+	SoundPlayer soundPlayer;
 	
 	/*1.¡Æ()
 	2.¡Æ()[]
@@ -379,6 +388,7 @@ public class Main1Inputtext {
         		   		&& !s.equals("6") && !s.equals("7") && !s.equals("8") && !s.equals("9")&& !s.equals(".") 
         		   		&& !s.equals("0") && !s.equals(")") && !s.equals("¦Ð") && !s.equals("e") && !s.equals("n")){
     				  addSpannableStr(main1et1.getSelectionStart(),"n",ct.getResources().getColor(R.color.strpan1),0);
+    				  soundPlayer.playSound(1,"n");
     			  }
     			  
     		  }if(main1et1.getSelectionStart()-1>funa1 && main1et1.getSelectionStart()<=funb1 && funa4==-1 || 
@@ -587,68 +597,100 @@ public class Main1Inputtext {
 	}
 
 	public void inputnormal(int a, String s){
+		String playStr="";
        if(a==2 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
    		   addSpannableStr(main1et1.getSelectionStart(),"0",ct.getResources().getColor(R.color.strpan1),0);
-   	   }if(a==6 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
+   		   playStr="zero";
+       }if(a==6 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
    		   addSpannableStr(main1et1.getSelectionStart(),"1",ct.getResources().getColor(R.color.strpan1),0);
-   	   }if(a==7 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
+   		   playStr="one";
+       }if(a==7 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
    		   addSpannableStr(main1et1.getSelectionStart(),"2",ct.getResources().getColor(R.color.strpan1),0);
-   	   }if(a==8 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
+   		   playStr="two";
+       }if(a==8 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
    		   addSpannableStr(main1et1.getSelectionStart(),"3",ct.getResources().getColor(R.color.strpan1),0);
-   	   }if(a==11 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
+   		playStr="three";  
+       }if(a==11 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
    		   addSpannableStr(main1et1.getSelectionStart(),"4",ct.getResources().getColor(R.color.strpan1),0);
-   	   }if(a==12 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
+   		playStr="four";  
+       }if(a==12 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
    		   addSpannableStr(main1et1.getSelectionStart(),"5",ct.getResources().getColor(R.color.strpan1),0);
-   	   }if(a==13 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
+   		playStr="five";  
+       }if(a==13 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
    		   addSpannableStr(main1et1.getSelectionStart(),"6",ct.getResources().getColor(R.color.strpan1),0);
-   	   }if(a==16 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
+   		playStr="six";  
+       }if(a==16 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
    		   addSpannableStr(main1et1.getSelectionStart(),"7",ct.getResources().getColor(R.color.strpan1),0);
-   	   }if(a==17 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
+   		playStr="seven";  
+       }if(a==17 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("¡Æ") && !s.equals("n")){
    		   addSpannableStr(main1et1.getSelectionStart(),"8",ct.getResources().getColor(R.color.strpan1),0);
-   	   }if(a==18 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("n")){
+   		playStr="eight";  
+       }if(a==18 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals("n")){
    		   addSpannableStr(main1et1.getSelectionStart(),"9",ct.getResources().getColor(R.color.strpan1),0);
-   	   }if(a==28 && !globe.isfun1save && !globe.isfuning){
+   		playStr="nine";  
+       }if(a==28 && !globe.isfun1save && !globe.isfuning){
    		   main1et1.setText("");      		   
    	   }if(a==29 && main1et1.getSelectionStart()>0 && !globe.isfun1save && !globe.isfuning){
    		   main1et1.getText().delete(main1et1.getSelectionStart()-1, main1et1.getSelectionStart());
+   		playStr="D";  
    	   }if(a==1 && !s.equals("¦Ð") && !s.equals("e") && !s.equals(")") && !s.equals(".") && 
    			   !s.equals("+") && !s.equals("¡Æ") && !s.equals("-") && !s.equals("¡Á") && !s.equals("¡Â")
    			   && !s.equals("¡Ì") && !s.equals("^") && !s.equals("(") && !s.equals("")){
    		   addSpannableStr(main1et1.getSelectionStart(),".",ct.getResources().getColor(R.color.strpan1),0);
+   		playStr="point";  
    	   }if(!s.equals(".") && !s.equals("-") && !s.equals("¡Á") && !s.equals("¡Â") && !s.equals("¡Ì")
    			   && !s.equals("^") && !s.equals("(") && !s.equals("+") && !s.equals("")){
    		   if(a==4){  
    			   addSpannableStr(main1et1.getSelectionStart(),"+",ct.getResources().getColor(R.color.strpan5),0);
+   			playStr="plus";  
    		   }if(a==14){
    			   addSpannableStr(main1et1.getSelectionStart(),"¡Á",ct.getResources().getColor(R.color.strpan5),0);
+   			playStr="multiply";  
    		   }if(a==19){
    			   addSpannableStr(main1et1.getSelectionStart(),"¡Â",ct.getResources().getColor(R.color.strpan5),0);
+   			playStr="divide";  
    		   }		   
    	   }if(a==9 && !s.equals(".") && !s.equals("-") && !s.equals("¡Á") && !s.equals("¡Â") && !s.equals("¡Ì")
    			    && !s.equals("+")){
 			   addSpannableStr(main1et1.getSelectionStart(),"-",ct.getResources().getColor(R.color.strpan5),0);
-		   }if(a==5 && !s.equals(".") && !s.equals("¦Ð") && !s.equals("e") && !s.equals("0")
+			   playStr="subtract";  
+   	   }if(a==5 && !s.equals(".") && !s.equals("¦Ð") && !s.equals("e") && !s.equals("0")
    			   && !s.equals("1") && !s.equals("2") && !s.equals("3") && !s.equals("4") && !s.equals("5")
    			   && !s.equals("6") && !s.equals("7") && !s.equals("8") && !s.equals("9") && !s.equals(")")){
    		   addSpannableStr(main1et1.getSelectionStart(),"¡Ì",ct.getResources().getColor(R.color.strpan3),0);
+   		playStr="sqr";  
    	   }if(a==10 && !s.equals("^") && !s.equals("(") && !s.equals(".") && !s.equals("+") && !s.equals("-") 
    			   && !s.equals("¡Á") && !s.equals("¡Â") && !s.equals("¡Ì") && !s.equals("")){
    		   addSpannableStr(main1et1.getSelectionStart(),"^",ct.getResources().getColor(R.color.strpan3),0);
+   		playStr="power";  
    	   }if(a==15 && !s.equals(")") && !s.equals("1") && !s.equals("2") && !s.equals("3") && !s.equals("4")
    			   && !s.equals("5") && !s.equals("6") && !s.equals("7") && !s.equals("8") && !s.equals("9")
    			   && !s.equals(".") && !s.equals("0") && !s.equals("¦Ð") && !s.equals("e") && !s.equals("n")){
    		   addSpannableStr(main1et1.getSelectionStart(),"()",ct.getResources().getColor(R.color.strpan3),1);
+   		playStr="bracket";
    	   }if(a==26){
    		   	cursormove(1);
    			//addSpannableStr(main1et1.getSelectionStart(),"¦Ð",ct.getResources().getColor(R.color.strpan1),0);
    	   }if(a==25){
    		   cursormove(-1);
    			//addSpannableStr(main1et1.getSelectionStart(),"e",ct.getResources().getColor(R.color.strpan1),0);
-   	   }
+   	   }if (a==3) {
+   		playStr="equal";
+   	   }/*if (a==29) {
+   		   Vibrator vibrator = (Vibrator)ct.getSystemService(Service.VIBRATOR_SERVICE);
+   		   long[] pattern = {0, 1, 20, 21,30,31}; 
+   		   vibrator.vibrate(pattern,-1);
+   	   }*/
    		/*if(!s.equals("1") && !s.equals("2") && !s.equals("3") && !s.equals("4") && !s.equals("5") 
    		   		 && !s.equals("6") && !s.equals("7") && !s.equals("8") && !s.equals("9")&& !s.equals(".") 
    		   		 && !s.equals("0") && !s.equals(")") && !s.equals("¦Ð") && !s.equals("e") && !s.equals("n")){
    		}*/
+	   	if (soundPlayer==null) {
+			soundPlayer=new SoundPlayer(ct);
+		}if (!"".equals(playStr)) {
+			soundPlayer.playSound(1,playStr);
+		}
+	
     }
     
     private void cursormove(int index) {
@@ -815,8 +857,10 @@ public class Main1Inputtext {
 		if(globe.funnote .indexOf("N")!=-1){
 			String sn1=globe.funnote .substring(globe.funnote .indexOf("["), globe.funnote .indexOf("]")+1);
 			addSpannableStr(main1et1.getSelectionStart(),sn1+"{}",ct.getResources().getColor(R.color.strpan3),1);
+			soundPlayer.playSound(1, etstr);
 		}if(globe.funnote .indexOf("N")==-1){
 			addSpannableStr(main1et1.getSelectionStart(),"{}",ct.getResources().getColor(R.color.strpan3),1);
+			soundPlayer.playSound(1, etstr);
 		}
 		mainet1fxy();  	    	 
 		funet1.setTextSize(TypedValue.COMPLEX_UNIT_PX, globe.TextSize);funet1.setText("");   			   			
@@ -864,9 +908,7 @@ public class Main1Inputtext {
 		 int a=s.indexOf("{");int b=s.indexOf("}");
 		 globe.main1et1.getText().delete(a, (b+1));
 		 globe.main1inputtext.addSpannableStr(a, ("("+result+")"), ct.getResources().getColor(R.color.strpan1), 0);
-		 
 	}
-	  
 }
 
 

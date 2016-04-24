@@ -4,6 +4,7 @@ import com.emple.annotation.InjectColor;
 import com.emple.annotation.InjectDra;
 
 import android.app.Activity;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
@@ -25,9 +26,18 @@ public class FrameActivity extends Activity {
     			onReMeasure(0);
     		}
     		if ("Default4".equals(SkinManage.SKINNAME)) {
-    			InjectColor.inject(this,0xff676767,R.layout.unitpopstyle1);
+    			if (this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE) {
+    				InjectColor.inject(this,0xff676767,R.layout.unitpopstyle3);
+    			}else {
+    				InjectColor.inject(this,0xff676767,R.layout.unitpopstyle1);
+				}
     		}if (!"Default4".equals(SkinManage.SKINNAME)) {
-    			InjectColor.inject(this,0xffffffff,R.layout.unitpopstyle);
+    			if (this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE) {
+    				InjectColor.inject(this,0xffffffff,R.layout.unitpopstyle2);
+    			}else {
+    				InjectColor.inject(this,0xffffffff,R.layout.unitpopstyle);
+    			}
+    			
 			}
     		InjectDra.inject(this);
 		} catch (Exception e) {

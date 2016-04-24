@@ -21,6 +21,7 @@ import com.emple.calculatorqb.SettingActivity;
 import com.emple.calculatorqb.SettingActivity.ViewHolder;
 import com.emple.calculatorqb.SkinManage;
 import com.emple.utils.FileUtils;
+import com.emple.utils.SoundPlayer;
 import com.emple.utils.StateClolr;
 import com.emple.calculatorqb.R.anim;
 import com.emple.calculatorqb.R.color;
@@ -44,6 +45,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -290,12 +292,18 @@ public class MainActivity extends FrameActivity {
 	 	   btspace=ds;
 	 	   ct=this;	   
 	 	   flater=LayoutInflater.from(ct);
-	 	   for(int i=0;i<6;i++){
-	 		  globe.unitseleid.add(-1);
-	 		  globe.unitseleidStr.add("");
-	 	   }
-	 	  units.add("长    度");units.add("质    量");units.add("面    积");units.add("体    积");units.add("压    力");
-	 	  units.add("流    量");
+	 	  if (globe.unitseleid.size()==0) {
+	 		 for(int i=0;i<6;i++){
+	 			globe.unitseleid.add(-1);
+		 		globe.unitseleidStr.add("");   
+	 		 }
+	 	  }
+	 	   
+	 	  units=new ArrayList<String>();
+	 	  if (units.size()==0) {
+	 		 units.add("长    度");units.add("质    量");units.add("面    积");units.add("体    积");units.add("压    力");
+		 	 units.add("流    量");
+	 	  }
 	 	  funet1=new EditText(this);funet1.setFocusableInTouchMode(false);funet1.setFocusable(false);
 	 	  funet1.setTextColor(Color.WHITE);funet1.setBackgroundDrawable(null);
 	 	 
@@ -354,6 +362,7 @@ public class MainActivity extends FrameActivity {
     	main1inputtext.main1hsv1=main1hsv1;
     	main1inputtext.main1ll1=main1ll1;
     	main1inputtext.main1tv4=main1tv4;
+    	main1inputtext.soundPlayer=new SoundPlayer(ct);
     	
     	Globe.main1ll1=main1ll1;
     	Globe.funet1=funet1;
@@ -448,7 +457,11 @@ public class MainActivity extends FrameActivity {
     	main1et1.setX(6);
     	//rln3.setBackgroundDrawable(skinManage.loadMain1Et1Skin());
     	etsize=(int) (main1et1.getTextSize());
-    	btsize=(int) (main1et1.getTextSize()-2);
+    	if(this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE){
+    		btsize=(int) (main1et1.getTextSize()-7);
+    	}else{
+    		btsize=(int) (main1et1.getTextSize()-2);
+    	}
     	main1et1.setTextSize(TypedValue.COMPLEX_UNIT_PX, etsize);
     	
     	for(int i=0;i<30;i++){
@@ -515,10 +528,21 @@ public class MainActivity extends FrameActivity {
     	main1tv3=new TextView(this);//main1tv3.setBackgroundDrawable(skinManage.loadMain1Tv3Skin());
     	main1tv4=new TextView(this);main1tv4.setGravity(Gravity.CENTER);main1tv4.setText("长度");
     	main1tv1.setGravity(Gravity.CENTER);
-    	rln2.addView(main1tv1, bth1*3/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv1.setClickable(true);
-    	rln2.addView(main1tv2, bth1*3/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv2.setX(bth1*3/5);
-    	rln2.addView(main1tv3, bth1*3/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv3.setClickable(true);main1tv3.setX(pwidth-bth1*6/5);
-    	rln2.addView(main1tv4, bth1*3/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv4.setClickable(true);main1tv4.setX(pwidth-bth1*3/5);   	
+    	
+    	if(this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE){
+    		rln2.addView(main1tv1, btw1*1/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv1.setClickable(true);
+        	rln2.addView(main1tv2, btw1*1/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv2.setX(btw1*1/5);
+        	rln2.addView(main1tv3, btw1*1/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv3.setClickable(true);main1tv3.setX(pwidth-btw1*2/5);
+        	rln2.addView(main1tv4, btw1*1/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv4.setClickable(true);main1tv4.setX(pwidth-btw1*1/5);
+        	main1tv4.setTextSize(TypedValue.COMPLEX_UNIT_SP,10);
+    	}else{
+    		rln2.addView(main1tv1, bth1*3/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv1.setClickable(true);
+        	rln2.addView(main1tv2, bth1*3/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv2.setX(bth1*3/5);
+        	rln2.addView(main1tv3, bth1*3/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv3.setClickable(true);main1tv3.setX(pwidth-bth1*6/5);
+        	rln2.addView(main1tv4, bth1*3/5,RelativeLayout.LayoutParams.FILL_PARENT);main1tv4.setClickable(true);main1tv4.setX(pwidth-bth1*3/5);
+        	main1tv4.setTextSize(TypedValue.COMPLEX_UNIT_SP,13);
+    	}
+    	
     	main1tv1.setOnClickListener(new tvclick());main1tv4.setOnClickListener(new tvclick());
     	main1tv2.setOnClickListener(new tvclick());main1tv3.setOnClickListener(new tvclick());
     	main1tv2.setFocusable(false);main1tv2.setFocusableInTouchMode(false);main1tv2.setClickable(false);main1tv2.setActivated(false);
@@ -530,11 +554,17 @@ public class MainActivity extends FrameActivity {
 				
 		main1ll1=(LinearLayout) findViewById(R.id.main1ll1);
 		main1hsv1=(HorizontalScrollView) findViewById(R.id.main1hsv1);
-		rln1.removeView(main1hsv1);rln2.addView(main1hsv1,pwidth-bth1*12/5,bth1*4/7);
-		main1hsv1.setX(bth1*6/5);		
+		if(this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE) {
+			rln1.removeView(main1hsv1);rln2.addView(main1hsv1,pwidth-btw1*4/5,bth1*4/7);
+			main1hsv1.setX(btw1*2/5);
+		}else{
+			rln1.removeView(main1hsv1);rln2.addView(main1hsv1,pwidth-bth1*12/5,bth1*4/7);
+			main1hsv1.setX(bth1*6/5);
+		}
+				
 		anim1(0,30,750);
 		
-		unitview=flater.inflate(R.layout.unitpop, null);	
+		unitview=flater.inflate(R.layout.unitpop, null);
 		unitpoplv1=(ListView) unitview.findViewById(R.id.unitpoplv1);
 		unitpoplv1.setAdapter((ListAdapter) new ArrayAdapter<String>(this,  
                 R.layout.unitpopstyle,units));
@@ -824,10 +854,20 @@ public class MainActivity extends FrameActivity {
     	if(unitpop!=null){
     		unitpop.dismiss();
     	}
-    	unitpop=new PopupWindow(unitview,bth1*23/20,RelativeLayout.LayoutParams.WRAP_CONTENT, true);
+		if (this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE) {
+			unitpop=new PopupWindow(unitview,bth1*41/20,RelativeLayout.LayoutParams.WRAP_CONTENT, true);
+		}else {
+			unitpop=new PopupWindow(unitview,bth1*23/20,RelativeLayout.LayoutParams.WRAP_CONTENT, true);
+		}
+		
     	unitpop.setOnDismissListener(new dismiss());
-    	unitpop.setBackgroundDrawable(new BitmapDrawable());		
-    	unitpop.showAsDropDown(main1tv4,-bth1*11/20-2,0);
+    	unitpop.setBackgroundDrawable(new BitmapDrawable());
+    	if (this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE) {
+    		unitpop.showAsDropDown(main1tv4,-bth1*20/20-2,0);
+		}else {
+			unitpop.showAsDropDown(main1tv4,-bth1*11/20-2,0);
+		}
+    	
     	unitpop.setOutsideTouchable(true);  		          
     	unitpop.setFocusable(true);		 
     	globe.btarray.get(19).setText("");
@@ -925,6 +965,7 @@ public class MainActivity extends FrameActivity {
 						if (b.getText().toString().equals("π") || b.getText().toString().equals("e")) {
 							main1inputtext.addSpannableStr(main1et1.getSelectionStart(),b.getText().toString(),
 															ct.getResources().getColor(R.color.strpan1),0);
+							main1inputtext.soundPlayer.playSound(1, b.getText().toString());
 						}if (!b.getText().toString().equals("π") && !b.getText().toString().equals("e") && !globe.isfuning){
 							funbtclick(b.getText().toString(),s);
 						}
@@ -967,9 +1008,11 @@ public class MainActivity extends FrameActivity {
     			if(!etstr.equals("log")){
     				main1inputtext.addSpannableStr(main1et1.getSelectionStart(),etstr,this.getResources().getColor(R.color.strpan1),0);  
             		main1inputtext.addSpannableStr(main1et1.getSelectionStart(),"()",this.getResources().getColor(R.color.strpan3),1);
+            		main1inputtext.soundPlayer.playSound(1, etstr);
     			}if(etstr.equals("log")){
     				main1inputtext.addSpannableStr(main1et1.getSelectionStart(),etstr,this.getResources().getColor(R.color.strpan1),0);  
     	    		main1inputtext.addSpannableStr(main1et1.getSelectionStart(),"(,)",this.getResources().getColor(R.color.strpan3),2);
+    	    		main1inputtext.soundPlayer.playSound(1, etstr);
     			}    			        		
     		}if(globe.isfun1save){
     			     
@@ -987,9 +1030,11 @@ public class MainActivity extends FrameActivity {
     				if(!etstr.equals("log")){
     					main1inputtext.addSpannableStr(main1et1.getSelectionStart(),etstr,this.getResources().getColor(R.color.strpan1),0);  
                 		main1inputtext.addSpannableStr(main1et1.getSelectionStart(),"()",this.getResources().getColor(R.color.strpan3),1);
+                		main1inputtext.soundPlayer.playSound(1, etstr);
         			}if(etstr.equals("log")){
         				main1inputtext.addSpannableStr(main1et1.getSelectionStart(),etstr,this.getResources().getColor(R.color.strpan1),0);  
         	    		main1inputtext.addSpannableStr(main1et1.getSelectionStart(),"(,)",this.getResources().getColor(R.color.strpan3),2);
+        	    		main1inputtext.soundPlayer.playSound(1, etstr);
         			}
     			}
     		}
@@ -1003,8 +1048,10 @@ public class MainActivity extends FrameActivity {
     		int m=main1et1.getText().toString().indexOf("∑");
     		if(globe.isfun1save && middle>left && middle<=right && etstr.matches("(X|Y)")){
     			main1inputtext.addSpannableStr(main1et1.getSelectionStart(),etstr,this.getResources().getColor(R.color.strpan1),0);  
+    			main1inputtext.soundPlayer.playSound(1, etstr);
     		}if(globe.isfun1save && middle>left && middle<=right && etstr.matches("(AVG)") && m!=-1 && globe.funtype!=0){
     			main1inputtext.addSpannableStr(main1et1.getSelectionStart(),etstr,this.getResources().getColor(R.color.strpan1),0);  
+    			main1inputtext.soundPlayer.playSound(1, etstr);
     		}
     		a=1;
     	}if(etstr.equals("{+}")){

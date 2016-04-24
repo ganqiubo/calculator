@@ -11,6 +11,7 @@ import com.emple.utils.StateClolr;
 
 import android.app.Activity;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
@@ -61,6 +62,7 @@ public class InjectColor {
 		Globe.main1tv4.setTextColor(StateClolr.getListpressed(color, 
 				Color.rgb(255, 102, 0)));
 		//int position=MainActivity.unitpoplv1.getSelectedItemPosition();
+		
 		MainActivity.unitpoplv1.setAdapter((ListAdapter) new ArrayAdapter<String>(activity,  
 				layoutId,MainActivity.units));
 		MainActivity.pbCal1.setTextColor(StateClolr.getListpressed(color, 

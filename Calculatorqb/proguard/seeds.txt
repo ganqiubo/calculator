@@ -1,3 +1,4 @@
+android.support.annotation.Keep
 android.support.v4.app.BackStackState: android.os.Parcelable$Creator CREATOR
 android.support.v4.app.Fragment$SavedState: android.os.Parcelable$Creator CREATOR
 android.support.v4.app.FragmentManagerState: android.os.Parcelable$Creator CREATOR

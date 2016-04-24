@@ -18,7 +18,6 @@ android.support.annotation.IntDef
 android.support.annotation.IntRange
 android.support.annotation.IntegerRes
 android.support.annotation.InterpolatorRes
-android.support.annotation.Keep
 android.support.annotation.LayoutRes
 android.support.annotation.MainThread
 android.support.annotation.MenuRes
