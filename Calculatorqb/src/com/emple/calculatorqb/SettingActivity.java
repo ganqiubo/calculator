@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import cn.bmob.paytest.MainActivity;
 import cn.gqb.calculator.R;
 
 @SuppressLint("NewApi")
@@ -77,7 +78,8 @@ public class SettingActivity extends StatusSetActivity{
 				Intent intent=new Intent(SettingActivity.this, VersionInfoActivity.class);
 				startActivity(intent);
 			}if (position==6) {
-				Intent intent=new Intent(SettingActivity.this, OtherActivity.class);
+				/*Intent intent=new Intent(SettingActivity.this, OtherActivity.class);*/
+				Intent intent=new Intent(SettingActivity.this,MainActivity.class);
 				startActivity(intent);
 			}
 			overridePendingTransition(R.anim.slide_in_right,R.anim.slide_no); 
