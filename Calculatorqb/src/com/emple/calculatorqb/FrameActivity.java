@@ -8,6 +8,7 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
+import cn.gqb.calculator.R;
 
 /**
  * Created by 11649 on 2016/2/16.

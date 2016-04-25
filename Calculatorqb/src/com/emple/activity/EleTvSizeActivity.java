@@ -1,6 +1,6 @@
 package com.emple.activity;
 
-import com.emple.calculatorqb.R;
+import cn.gqb.calculator.R;
 import com.emple.entity.ElesTextSize;
 import com.emple.utils.ElesTxtSizeUtil;
 import android.content.Context;

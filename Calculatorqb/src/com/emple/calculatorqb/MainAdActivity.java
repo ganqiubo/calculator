@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.widget.Button;
 import android.widget.ImageView;
+import cn.gqb.calculator.R;
 
 public class MainAdActivity extends Activity {
 

@@ -3,6 +3,7 @@ package com.emple.calculatorqb;
 import com.emple.activity.EleTvSizeActivity;
 import com.emple.activity.ElementListActivity;
 import com.emple.activity.NoteActivity;
+import com.emple.activity.OtherActivity;
 import com.emple.activity.SkinSetActivity;
 import com.emple.activity.StatusSetActivity;
 import com.emple.activity.UnitTablesActivity;
@@ -24,13 +25,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import cn.gqb.calculator.R;
 
 @SuppressLint("NewApi")
 public class SettingActivity extends StatusSetActivity{
 
-	private static String[] SETS=new String[]{"皮肤管理","功能详细说明","单位转换表","元素周期表","字体大小","软件版本号"};
+	private static String[] SETS=new String[]{"皮肤管理","功能详细说明","单位转换表","元素周期表","字体大小","软件版本号","其他设置"};
 	private static int[] SETICONS=new int[]{R.drawable.skin,R.drawable.note,R.drawable.unit_tables,
-			R.drawable.element_list,R.drawable.fontsize,R.drawable.version_info};
+			R.drawable.element_list,R.drawable.fontsize,R.drawable.version_info,R.drawable.other_sets};
 	private ListView list_sets;
 	private Context mcontext=this;
 
@@ -73,6 +75,9 @@ public class SettingActivity extends StatusSetActivity{
 				startActivity(intent);
 			}if (position==5) {
 				Intent intent=new Intent(SettingActivity.this, VersionInfoActivity.class);
+				startActivity(intent);
+			}if (position==6) {
+				Intent intent=new Intent(SettingActivity.this, OtherActivity.class);
 				startActivity(intent);
 			}
 			overridePendingTransition(R.anim.slide_in_right,R.anim.slide_no); 

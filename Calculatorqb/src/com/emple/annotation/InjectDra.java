@@ -11,7 +11,7 @@ import java.util.Map.Entry;
 
 import org.xmlpull.v1.XmlPullParser;
 
-import com.emple.calculatorqb.R;
+import cn.gqb.calculator.R;
 import com.emple.calculatorqb.SkinManage;
 import com.emple.utils.NinePatchBitmapFactory;
 

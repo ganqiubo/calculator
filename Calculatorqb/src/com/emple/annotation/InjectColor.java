@@ -5,8 +5,8 @@ import java.lang.reflect.Method;
 
 import com.emple.calculatorqb.Globe;
 import com.emple.calculatorqb.MainActivity;
-import com.emple.calculatorqb.R;
-import com.emple.calculatorqb.R.id;
+import cn.gqb.calculator.R;
+import cn.gqb.calculator.R.id;
 import com.emple.utils.StateClolr;
 
 import android.app.Activity;

@@ -1,7 +1,7 @@
 package com.emple.activity;
 
 import com.emple.calculatorqb.Globe;
-import com.emple.calculatorqb.R;
+import cn.gqb.calculator.R;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Color;

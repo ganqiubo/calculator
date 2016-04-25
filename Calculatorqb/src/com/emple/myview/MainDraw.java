@@ -1,7 +1,7 @@
 package com.emple.myview;
 
 import com.emple.calculatorqb.Globe;
-import com.emple.calculatorqb.R;
+import cn.gqb.calculator.R;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.DisplayMetrics;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.emple.calculatorqb"
+    package="cn.gqb.calculator"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.emple.calculatorqb.MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
@@ -27,7 +27,7 @@
             android:label="@string/title_activity_main_draw" >
         </activity>
         <activity
-            android:name=".SettingActivity"
+            android:name="com.emple.calculatorqb.SettingActivity"
             android:label="@string/title_activity_setting" >
         </activity>
         <activity
@@ -41,7 +41,6 @@
         <activity
             android:name="com.emple.activity.ElementListActivity"
             android:label="@string/title_activity_element_list" >
-            
         </activity>
         <activity
             android:name="com.emple.activity.NoteActivity"
@@ -52,9 +51,9 @@
             android:label="@string/title_activity_version_info" >
         </activity>
         <activity
-            android:name=".MainAdActivity"
-            android:label="@string/app_name" > >
-            <intent-filter>
+            android:name="com.emple.calculatorqb.MainAdActivity"
+            android:label="@string/app_name" >
+ 		>            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -63,7 +62,27 @@
         <activity
             android:name="com.emple.activity.EleTvSizeActivity"
             android:label="@string/title_activity_ele_tv_size" >
-            
+        </activity>
+        <activity
+            android:name="cn.bmob.paytest.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <!-- bmob pay sdk activity start -->
+        <activity
+            android:name="c.b.a.A"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="c.b.a.B"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent" />
+        <!-- bmob pay sdk activity end -->
+        <activity
+            android:name="com.emple.activity.OtherActivity"
+            android:label="@string/title_activity_other" >
         </activity>
     </application>
 

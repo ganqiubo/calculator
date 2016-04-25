@@ -10,24 +10,25 @@ import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
+import com.emple.activity.OtherActivity;
 import com.emple.annotation.InjectColor;
 import com.emple.annotation.InjectStateDraw;
 import com.emple.annotation.InjectTextColor;
 import com.emple.calculatorqb.Globe;
 import com.emple.calculatorqb.Judge;
 import com.emple.calculatorqb.Main1Inputtext;
-import com.emple.calculatorqb.R;
+import cn.gqb.calculator.R;
 import com.emple.calculatorqb.SettingActivity;
 import com.emple.calculatorqb.SettingActivity.ViewHolder;
 import com.emple.calculatorqb.SkinManage;
 import com.emple.utils.FileUtils;
 import com.emple.utils.SoundPlayer;
 import com.emple.utils.StateClolr;
-import com.emple.calculatorqb.R.anim;
-import com.emple.calculatorqb.R.color;
-import com.emple.calculatorqb.R.drawable;
-import com.emple.calculatorqb.R.id;
-import com.emple.calculatorqb.R.layout;
+import cn.gqb.calculator.R.anim;
+import cn.gqb.calculator.R.color;
+import cn.gqb.calculator.R.drawable;
+import cn.gqb.calculator.R.id;
+import cn.gqb.calculator.R.layout;
 
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
@@ -439,6 +440,7 @@ public class MainActivity extends FrameActivity {
 			Log.e("", "@=@-->"+e);
 		}
     	
+    	InitSQLStatic();
     	
     	skinManagerInit();
     	
@@ -614,7 +616,16 @@ public class MainActivity extends FrameActivity {
 		
     }
     
-    private void skinManagerInit() {
+    private void InitSQLStatic() {
+		// TODO Auto-generated method stub
+    	Cursor cursor=db.rawQuery("select * from other_sets where id=?", new String[]{"1"});
+		while(cursor.moveToNext()){
+			OtherActivity.PLAYSOUND=cursor.getInt(cursor.getColumnIndexOrThrow("play_sound"))>0;
+		}
+		cursor.close();
+	}
+
+	private void skinManagerInit() {
 		// TODO Auto-generated method stub
     	Cursor c=db.rawQuery("select * from skin", new String[]{});
     	while (c.moveToNext()) {

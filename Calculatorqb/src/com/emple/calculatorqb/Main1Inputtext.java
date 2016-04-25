@@ -38,6 +38,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import cn.gqb.calculator.R;
 
 public class Main1Inputtext {
 

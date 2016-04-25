@@ -3,7 +3,7 @@ package com.emple.activity;
 import java.math.BigDecimal;
 
 import com.emple.calculatorqb.Globe;
-import com.emple.calculatorqb.R;
+import cn.gqb.calculator.R;
 import com.emple.entity.ElesTextSize;
 import com.emple.utils.ElesTxtSizeUtil;
 

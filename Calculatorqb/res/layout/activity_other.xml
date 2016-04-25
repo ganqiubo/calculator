@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    tools:context="com.emple.activity.OtherActivity" >
+
+    <include 
+        android:id="@+id/include"
+        layout="@layout/head"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"/>
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView 
+            android:id="@+id/other_detail_soundiv"
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="12dp"
+            android:paddingTop="14dp"
+        	android:paddingBottom="14dp"
+        	android:src="@drawable/sound"
+        	android:layout_alignTop="@+id/other_detail_sound"
+        	android:layout_alignBottom="@+id/other_detail_sound"
+            />
+        <TextView 
+            android:id="@+id/other_detail_sound"
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="语音播报"
+        	android:textSize="17sp"
+        	android:paddingTop="14dp"
+        	android:paddingBottom="14dp"
+        	android:textColor="#676767"
+        	android:layout_toRightOf="@+id/other_detail_soundiv"
+        	android:layout_marginLeft="3dp"
+            />
+        
+        <com.kyleduo.switchbutton.SwitchButton
+            android:id="@+id/other_detail_soundsb"
+            style="@style/SwitchButtonStyleMD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        	android:layout_centerVertical="true"
+        	android:layout_alignParentRight="true"
+            />
+        <View 
+            android:layout_width="fill_parent"
+        	android:layout_height="1px"
+        	android:layout_below="@+id/other_detail_sound"
+        	android:background="#DDDDDD"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

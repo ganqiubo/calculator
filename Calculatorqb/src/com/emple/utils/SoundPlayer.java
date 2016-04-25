@@ -3,7 +3,8 @@ package com.emple.utils;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.emple.calculatorqb.R;
+import com.emple.activity.OtherActivity;
+import cn.gqb.calculator.R;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -65,18 +66,19 @@ public class SoundPlayer {
 	}
 
 	public void playSound(int Type,final String sourceId){
-		new Thread(new Runnable() {
-			public void run() {
-				try {
-					soundPool.play(sounds.get(sourceId), 
-							1, 1, 1, 0, 1f);
-				} catch (Exception e) {
-					// TODO: handle exception
-					Log.e("", "2----<"+e);
+		if (OtherActivity.PLAYSOUND) {
+			new Thread(new Runnable() {
+				public void run() {
+					try {
+						soundPool.play(sounds.get(sourceId), 
+								1, 1, 1, 0, 1f);
+					} catch (Exception e) {
+						// TODO: handle exception
+						Log.e("", "2----<"+e);
+					}
 				}
-			}
-		}).start();
-		
+			}).start();
+		}
 	} 
 	
 }
