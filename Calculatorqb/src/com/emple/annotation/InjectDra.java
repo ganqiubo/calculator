@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.hamcrest.core.IsInstanceOf;
 import org.xmlpull.v1.XmlPullParser;
 
 import cn.gqb.calculator.R;
@@ -34,6 +35,7 @@ import android.graphics.drawable.shapes.Shape;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ResourceCursorTreeAdapter;
 import android.widget.Toast;
 
@@ -78,7 +80,13 @@ public class InjectDra {
 						//Log.e("", draw+"====>"+((View)field.get(activity)));
 						field.setAccessible(true);
 						if (draw!=null && ((View)field.get(activity))!=null) {
-							((View)field.get(activity)).setBackgroundDrawable(draw);
+							
+							if (field.get(activity) instanceof ImageView) {
+								((ImageView)field.get(activity)).setImageDrawable(draw);
+							}else{
+								((View)field.get(activity)).setBackgroundDrawable(draw);
+							}
+							
 						}
 					} catch (Exception e) {
 						// TODO Auto-generated catch block

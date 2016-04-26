@@ -105,7 +105,7 @@ public class MainActivity extends FrameActivity {
 	//String[] strarray=new String[]{"n",".","0","=","+","√","1","2","3","-","^","4","5","6","×",
 			                    //"( )","7","8","9","÷","sin","cos","tan","log","ln","L","R","∑","C","D"};	
 	String[] strarray=new String[]{"n",".","0","=","+","√","1","2","3","-","^","4","5","6","×",
-            "( )","7","8","9","÷","sin","cos","tan","log","ln","◀","▶","∑","C","D"};			 	
+            "( )","7","8","9","÷","sin","cos","tan","log","ln","◀","▶","∑","C",""};			 	
 	int pwidth,pheight,btw1,bth1,btspace/*,statusBarHeight*/,ds,funid=1,maxfunid=0,etsize=0,btsize=0;
 	@InjectStateDraw(draw_name="main1bg")
 	RelativeLayout rln1;
@@ -255,6 +255,7 @@ public class MainActivity extends FrameActivity {
 	@InjectStateDraw(draw_name="btbg2")
 	@InjectTextColor(color=color)
 	Button bts30;
+	@InjectStateDraw(draw_name="iv30")
 	ImageView iv30;
 	
 	RelativeLayout funBtRl;
@@ -498,7 +499,6 @@ public class MainActivity extends FrameActivity {
             globe.btarray.get(i).setX((i%5*(btw1+btspace)));globe.btarray.get(i).setY(pheight-(i/5+1)*bth1-i/5*btspace);
             globe.btarray.get(i).setOnClickListener(new main1btclick());
             if (i==29) {
-            	iv30.setImageResource(R.drawable.delete1);
             	rln1.addView(iv30,btw1+ds,bth1);
             	iv30.setX((i%5*(btw1+btspace)));iv30.setY(pheight-(i/5+1)*bth1-i/5*btspace);
 			}
