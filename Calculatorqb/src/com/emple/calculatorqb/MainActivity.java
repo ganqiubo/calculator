@@ -54,6 +54,7 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.StateListDrawable;
+import android.media.Image;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -81,6 +82,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
@@ -166,13 +168,13 @@ public class MainActivity extends FrameActivity {
 	@InjectStateDraw(draw_name="btbg1")
 	@InjectTextColor(color=color)
 	Button bts1;
-	@InjectStateDraw(draw_name="btbg1")
+	@InjectStateDraw(draw_name="btbg2n")
 	@InjectTextColor(color=color)
 	Button bts2;
 	@InjectStateDraw(draw_name="btbg")
 	@InjectTextColor(color=color)
 	Button bts3;
-	@InjectStateDraw(draw_name="btbg1")
+	@InjectStateDraw(draw_name="btbg4n")
 	@InjectTextColor(color=color)
 	Button bts4;
 	@InjectStateDraw(draw_name="btbg1")
@@ -253,6 +255,7 @@ public class MainActivity extends FrameActivity {
 	@InjectStateDraw(draw_name="btbg2")
 	@InjectTextColor(color=color)
 	Button bts30;
+	ImageView iv30;
 	
 	RelativeLayout funBtRl;
 
@@ -345,6 +348,7 @@ public class MainActivity extends FrameActivity {
     	bts16=new Button(this);bts17=new Button(this);bts18=new Button(this);bts19=new Button(this);bts20=new Button(this);
     	bts21=new Button(this);bts22=new Button(this);bts23=new Button(this);bts24=new Button(this);bts25=new Button(this);
     	bts26=new Button(this);bts27=new Button(this);bts28=new Button(this);bts29=new Button(this);bts30=new Button(this);
+    	iv30=new ImageView(this);
     	globe.btarray.add(bts1);globe.btarray.add(bts2);globe.btarray.add(bts3);globe.btarray.add(bts4);globe.btarray.add(bts5);
     	globe.btarray.add(bts6);globe.btarray.add(bts7);globe.btarray.add(bts8);globe.btarray.add(bts9);globe.btarray.add(bts10);
 		globe.btarray.add(bts11);globe.btarray.add(bts12);globe.btarray.add(bts13);globe.btarray.add(bts14);globe.btarray.add(bts15);
@@ -493,6 +497,11 @@ public class MainActivity extends FrameActivity {
     		}
             globe.btarray.get(i).setX((i%5*(btw1+btspace)));globe.btarray.get(i).setY(pheight-(i/5+1)*bth1-i/5*btspace);
             globe.btarray.get(i).setOnClickListener(new main1btclick());
+            if (i==29) {
+            	iv30.setImageResource(R.drawable.delete1);
+            	rln1.addView(iv30,btw1+ds,bth1);
+            	iv30.setX((i%5*(btw1+btspace)));iv30.setY(pheight-(i/5+1)*bth1-i/5*btspace);
+			}
     	}
     	
     	funBtRl=new RelativeLayout(ct);
@@ -515,6 +524,11 @@ public class MainActivity extends FrameActivity {
     	for(int i=25;i<=29;i++){
     		rln1.removeView(globe.btarray.get(i));
     		rln1.addView(globe.btarray.get(i));
+    		if (i==29) {
+    			rln1.removeView(iv30);
+    			rln1.addView(iv30);
+			}
+    		
     	}for(int i=15;i<=19;i++){
     		rln1.removeView(globe.btarray.get(i));
     		rln1.addView(globe.btarray.get(i));

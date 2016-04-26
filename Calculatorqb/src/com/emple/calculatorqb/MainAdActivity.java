@@ -27,7 +27,7 @@ public class MainAdActivity extends Activity {
 		new Thread(new Runnable() {
 			public void run() {
 				try {
-					for (int i = 5; i >= 0; i--) {
+					for (int i = 1; i >= 0; i--) {
 						Thread.sleep(1000);
 						handler.sendEmptyMessage(i);
 					}

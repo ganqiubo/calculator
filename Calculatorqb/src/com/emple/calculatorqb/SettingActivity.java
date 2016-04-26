@@ -78,8 +78,8 @@ public class SettingActivity extends StatusSetActivity{
 				Intent intent=new Intent(SettingActivity.this, VersionInfoActivity.class);
 				startActivity(intent);
 			}if (position==6) {
-				/*Intent intent=new Intent(SettingActivity.this, OtherActivity.class);*/
-				Intent intent=new Intent(SettingActivity.this,MainActivity.class);
+				/*Intent intent=new Intent(SettingActivity.this, MainActivity.class);*/
+				Intent intent=new Intent(SettingActivity.this,OtherActivity.class);
 				startActivity(intent);
 			}
 			overridePendingTransition(R.anim.slide_in_right,R.anim.slide_no); 

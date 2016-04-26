@@ -59,7 +59,11 @@
         <activity
             android:name="com.emple.calculatorqb.MainAdActivity"
             android:label="@string/app_name" >
-            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.emple.activity.EleTvSizeActivity"
@@ -68,11 +72,7 @@
         <activity
             android:name="cn.bmob.paytest.MainActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            
         </activity>
 
         <!-- bmob pay sdk activity start -->
