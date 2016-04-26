@@ -1123,12 +1123,22 @@ public class MainActivity extends FrameActivity {
 
     private void anim1(int b,int c,int time){
     	for(int i=b;i<c;i++){
+    		
     		ScaleAnimation sa1 = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f,
-   	             Animation.RELATIVE_TO_PARENT, (float) ((globe.btarray.get(i).getX()+btw1/2*1.0)/pwidth), 
-   	             Animation.RELATIVE_TO_PARENT, (float) ((globe.btarray.get(i).getY()+bth1*1.0/2)/pheight)); 
-    		sa1.setInterpolator(new DecelerateInterpolator());
-    		sa1.setDuration(time);
-    		globe.btarray.get(i).startAnimation(sa1);		
+	   	    Animation.RELATIVE_TO_PARENT, (float) ((globe.btarray.get(i).getX()+btw1/2*1.0)/pwidth), 
+	   	    Animation.RELATIVE_TO_PARENT, (float) ((globe.btarray.get(i).getY()+bth1*1.0/2)/pheight)); 
+	    	sa1.setInterpolator(new DecelerateInterpolator());
+	    	sa1.setDuration(time);
+	    	globe.btarray.get(i).startAnimation(sa1);	
+    		if (i==29) {
+    			sa1 = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f,
+    	   	   	Animation.RELATIVE_TO_PARENT, (float) ((globe.btarray.get(i).getX()+btw1/2*1.0)/pwidth), 
+    	   	   	Animation.RELATIVE_TO_PARENT, (float) ((globe.btarray.get(i).getY()+bth1*1.0/2)/pheight)); 
+    	    	sa1.setInterpolator(new DecelerateInterpolator());
+    	    	sa1.setDuration(time);
+    	    	iv30.startAnimation(sa1);
+			}
+    			
     	}
     }
 
