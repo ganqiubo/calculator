@@ -332,7 +332,7 @@ public class MainActivity extends FrameActivity {
 			// TODO Auto-generated method stub
 			globe.btarray.get(19).setText("÷");
 	    	globe.btarray.get(24).setText("ln");
-	    	globe.btarray.get(29).setText("D");
+	    	globe.btarray.get(29).setText("");
 			Log.e("", "------->onDismiss");
 		}
 		

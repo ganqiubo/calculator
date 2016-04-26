@@ -58,7 +58,7 @@ public class ElementListActivity extends Activity implements OnClickListener{
 	private LinearLayout touchedEle,frontTouchedEle;
 	private int EleWidth,EleHeight;
 	private LayoutInflater inflater;
-	private RelativeLayout rl_ele1;
+	private RelativeLayout rl_ele1,ele1_rlbg;
 	
 	private TextView ele1_electronic_structure,ele1_num,ele1_symble,ele1_name_zh,
 	ele1_name_us,relative_atomic_mass1,ele1_name_margin;
@@ -129,6 +129,7 @@ public class ElementListActivity extends Activity implements OnClickListener{
 		recy.setLayoutManager(mgr);
 		recy.setAdapter(new MyAdapter());
 		
+		ele1_rlbg=(RelativeLayout) rl_ele1.findViewById(R.id.ele1_rlbg);
 		tv_configs=new TextView[7];
 		ele1_name_margin=(TextView)rl_ele1.findViewById(R.id.ele1_name_margin);
 		ele1_electronic_structure=(TextView)rl_ele1.findViewById(R.id.ele1_electronic_structure);
@@ -518,6 +519,19 @@ public class ElementListActivity extends Activity implements OnClickListener{
 				}if ("固态".equals(c.getString(c.getColumnIndexOrThrow("state_matter_normal")))) {
 					ele1_name_zh.setTextColor(Color.rgb(0, 0, 0));
 				}
+				/*if ("1".equals(c.getString(c.getColumnIndexOrThrow("ele_classify")))) {
+					ele1_rlbg.setBackgroundColor(Color.rgb(43, 204, 92));
+				}if ("2".equals(c.getString(c.getColumnIndexOrThrow("ele_classify")))) {
+					ele1_rlbg.setBackgroundColor(Color.rgb(198, 201, 204));
+				}if ("3".equals(c.getString(c.getColumnIndexOrThrow("ele_classify")))) {
+					ele1_rlbg.setBackgroundColor(Color.rgb(250, 252, 80));
+				}if ("4".equals(c.getString(c.getColumnIndexOrThrow("ele_classify")))) {
+					ele1_rlbg.setBackgroundColor(Color.rgb(244, 214, 82));
+				}if ("5".equals(c.getString(c.getColumnIndexOrThrow("ele_classify")))) {
+					ele1_rlbg.setBackgroundColor(Color.rgb(252, 157, 73));
+				}if ("6".equals(c.getString(c.getColumnIndexOrThrow("ele_classify")))) {
+					ele1_rlbg.setBackgroundColor(Color.rgb(205, 252, 88));
+				}*/
 				String[] confs=c.getString(c.getColumnIndexOrThrow("electronic_confi")).split(",");
 				for (int i = 0; i < 7; i++) {
 					if (i<confs.length) {
