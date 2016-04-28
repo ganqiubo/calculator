@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context="com.emple.activity.UnitTablesActivity" >
+    tools:context="com.emple.activity.PayTourActivity" >
 
     <include 
         android:id="@+id/include"

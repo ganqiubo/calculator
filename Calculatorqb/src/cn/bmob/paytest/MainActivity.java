@@ -29,7 +29,7 @@ public class MainActivity extends Activity implements OnCheckedChangeListener {
 	// 此为测试Appid,请将Appid改成你自己的Bmob AppId
 	//String APPID = "9ae5cba4fbdc81a4a2832192bd1cb952";
 	//String APPID ="880c9a6549fc23118ce61e962aca4e90";
-	String APPID ="9ae5cba4fbdc81a4a2832192bd1cb952";
+	String APPID ="880c9a6549fc23118ce61e962aca4e90";
 	EditText name, price, body, order;
 	Button go;
 	RadioGroup type;
@@ -329,6 +329,6 @@ public class MainActivity extends Activity implements OnCheckedChangeListener {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-		}
+			}
 
 }

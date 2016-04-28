@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.TextView;
 
-public class UnitTablesActivity extends StatusSetActivity {
+public class PayTourActivity extends StatusSetActivity {
 
 	private TextView mhead_title;
 

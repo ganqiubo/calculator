@@ -41,7 +41,7 @@
             android:label="@string/title_activity_skin_set" >
         </activity>
         <activity
-            android:name="com.emple.activity.UnitTablesActivity"
+            android:name="com.emple.activity.PayTourActivity"
             android:label="@string/title_activity_unit_tables" >
         </activity>
         <activity
