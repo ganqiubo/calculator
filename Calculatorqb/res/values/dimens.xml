@@ -31,5 +31,13 @@
 	<dimen name="ksw_md_thumb_solid_size">20dp</dimen>
 	<dimen name="ksw_md_thumb_shadow_size">21dp</dimen>
 	<dimen name="ksw_md_thumb_shadow_offset">2dp</dimen>
+	
+	<!-- <dimen name="mth_tab_height">48dp</dimen> -->
+    <dimen name="mth_tab_indicator_height">3dp</dimen>
+    <dimen name="mth_tab_width_padding">12dp</dimen>
+    <dimen name="mth_tab_bottom_padding">16dp</dimen>
+    <dimen name="mth_tab_text_size">16sp</dimen>
+    <!-- 72 - fth_tab_width_padding(12) -->
+    <dimen name="mth_tab_left_offset">60dp</dimen>
 </resources>
 

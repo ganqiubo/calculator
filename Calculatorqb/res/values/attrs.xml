@@ -22,4 +22,8 @@
         <attr name="kswTextOff" format="string"/>
         <attr name="kswTextMarginH" format="dimension"/>
     </declare-styleable>
+    
+    <declare-styleable name="MaterialTabHost">
+        <attr name="colorTabIndicator" format="color|reference" />
+    </declare-styleable>
 </resources>

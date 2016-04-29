@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
+import android.support.v4.app.FragmentActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -17,7 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 
 @SuppressLint("NewApi")
-public class StatusSetActivity extends Activity{
+public class StatusSetActivity extends FragmentActivity{
 
 	public boolean hide_status=false;
 	public RelativeLayout rlhead;
