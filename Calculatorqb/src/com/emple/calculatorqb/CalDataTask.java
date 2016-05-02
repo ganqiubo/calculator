@@ -198,7 +198,7 @@ public class CalDataTask extends AsyncTask<String, Integer, String>{
 									calbigdem=calbigdem1;
 								}if (N>0) {
 									try {
-										calbigdem=calbigdem.divide(calbigdem1, (globe.demic+2), RoundingMode.HALF_UP);
+										calbigdem=calbigdem.divide(calbigdem1, (Globe.demic+2), RoundingMode.HALF_UP);
 									} catch (Exception e) {
 										// TODO: handle exception
 										return null;
@@ -266,7 +266,7 @@ public class CalDataTask extends AsyncTask<String, Integer, String>{
 									calbigdem=calbigdem1;
 								}if (N>0) {
 									try {
-										calbigdem=calbigdem.divide(calbigdem1, (globe.demic+2), RoundingMode.HALF_UP);
+										calbigdem=calbigdem.divide(calbigdem1, (Globe.demic+2), RoundingMode.HALF_UP);
 									} catch (Exception e) {
 										// TODO: handle exception
 										return null;
@@ -281,7 +281,7 @@ public class CalDataTask extends AsyncTask<String, Integer, String>{
 						}
 					}if (type.equals("4")) {
 						try {
-							calbigdem=calbigdem.divide(new BigDecimal((""+N)), (globe.demic+2), RoundingMode.HALF_UP);
+							calbigdem=calbigdem.divide(new BigDecimal((""+N)), (Globe.demic+2), RoundingMode.HALF_UP);
 						} catch (Exception e) {
 							// TODO: handle exception
 							return null;

@@ -54,6 +54,7 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.StateListDrawable;
+import android.media.AudioManager;
 import android.media.Image;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -259,6 +260,7 @@ public class MainActivity extends FrameActivity {
 	ImageView iv30;
 	
 	RelativeLayout funBtRl;
+	private AudioManager audioManager;
 
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -279,6 +281,7 @@ public class MainActivity extends FrameActivity {
 		//statusBarHeight=getStatusHeight(this); 
            unitColorList = StateClolr.getListSelected(unittvColor, 0xFF3DEDED);
 		
+           audioManager = (AudioManager) getSystemService(Service.AUDIO_SERVICE);
 	       DisplayMetrics  dm = new DisplayMetrics();    
 	 	   getWindowManager().getDefaultDisplay().getMetrics(dm);    
 	 	   pwidth = dm.widthPixels;              
@@ -293,6 +296,7 @@ public class MainActivity extends FrameActivity {
 	 	   ds=1;
 	 	   btw1=(pwidth-4*ds)/5;
 	 	   bth1=pheight*15/(24*6);
+	 	   //pheight-6*bth1-5*btspace-bth1*4/7
 	 	   //bth1=btw1*5/6;	
 	 	   btspace=ds;
 	 	   ct=this;	   
@@ -314,9 +318,10 @@ public class MainActivity extends FrameActivity {
 	 	 
 	      init();
 	      getset();
+	      
 	      globe.statusHeight1=getStatusHeight(this);
 	       /*π=customvalues.π;
-	       e=customvalues.e;*/  
+	       e=customvalues.e;*/ 
 	}
 
 	@Override
@@ -333,6 +338,7 @@ public class MainActivity extends FrameActivity {
 			globe.btarray.get(19).setText("÷");
 	    	globe.btarray.get(24).setText("ln");
 	    	globe.btarray.get(29).setText("");
+	    	iv30.setVisibility(View.VISIBLE);
 			Log.e("", "------->onDismiss");
 		}
 		
@@ -376,7 +382,7 @@ public class MainActivity extends FrameActivity {
     	globe.calculate.ct=ct;
     	globe.calculate.db=db;
     	globe.calculate.unitseleid=globe.unitseleid;
-    	globe.calculate.demic=globe.demic;
+    	globe.calculate.demic=Globe.demic;
     	globe.calculate.degrees=globe.degrees;  
     	globe.main1inputtext=main1inputtext;
     	
@@ -635,6 +641,7 @@ public class MainActivity extends FrameActivity {
     	Cursor cursor=db.rawQuery("select * from other_sets where id=?", new String[]{"1"});
 		while(cursor.moveToNext()){
 			OtherActivity.PLAYSOUND=cursor.getInt(cursor.getColumnIndexOrThrow("play_sound"))>0;
+			Globe.demic=cursor.getInt(cursor.getColumnIndexOrThrow("digital"));
 		}
 		cursor.close();
 	}
@@ -898,6 +905,8 @@ public class MainActivity extends FrameActivity {
     	globe.btarray.get(19).setText("");
     	globe.btarray.get(24).setText("");
     	globe.btarray.get(29).setText("");
+    	iv30.setVisibility(View.INVISIBLE);
+    	
     }
     
     private void funchange(String s){ 
@@ -1186,6 +1195,16 @@ public class MainActivity extends FrameActivity {
 			Intent intent=new Intent(this, SettingActivity.class);
 			startActivity(intent);
 			overridePendingTransition(R.anim.slide_in_right,R.anim.slide_no);    
+		}if(event.getKeyCode()==KeyEvent.KEYCODE_VOLUME_UP){
+			audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+				 AudioManager.ADJUST_RAISE, AudioManager.FLAG_PLAY_SOUND
+				 | AudioManager.FLAG_SHOW_UI);
+			return true;
+		}if(event.getKeyCode()==KeyEvent.KEYCODE_VOLUME_DOWN){
+			audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+				 AudioManager.ADJUST_LOWER, AudioManager.FLAG_PLAY_SOUND
+				 | AudioManager.FLAG_SHOW_UI);
+			return true;
 		}
 		return false;
 	}

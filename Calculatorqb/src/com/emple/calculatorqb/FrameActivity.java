@@ -32,13 +32,19 @@ public class FrameActivity extends Activity {
     			}else {
     				InjectColor.inject(this,0xff676767,R.layout.unitpopstyle1);
 				}
-    		}if (!"Default4".equals(SkinManage.SKINNAME) && !"Default1".equals(SkinManage.SKINNAME)) {
+    		}if ("Default2".equals(SkinManage.SKINNAME)) {
+    			if (this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE) {
+    				InjectColor.inject(this,0xff565656,R.layout.unitpopstyle3);
+    			}else {
+    				InjectColor.inject(this,0xff565656,R.layout.unitpopstyle1);
+				}
+			}if (!"Default4".equals(SkinManage.SKINNAME) && !"Default1".equals(SkinManage.SKINNAME) 
+    				&& !"Default2".equals(SkinManage.SKINNAME)) {
     			if (this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE) {
     				InjectColor.inject(this,0xffffffff,R.layout.unitpopstyle2);
     			}else {
     				InjectColor.inject(this,0xffffffff,R.layout.unitpopstyle);
     			}
-    			
 			}
     		InjectDra.inject(this);
 		} catch (Exception e) {

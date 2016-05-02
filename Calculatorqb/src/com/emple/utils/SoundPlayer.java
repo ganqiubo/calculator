@@ -59,6 +59,7 @@ public class SoundPlayer {
 			sounds.put("AVG", soundPool.load(ct,R.raw.avg, 1));
 			sounds.put("·½²î", soundPool.load(ct,R.raw.variance, 1));
 			sounds.put("D", soundPool.load(ct,R.raw.delete, 1));
+			sounds.put("minus", soundPool.load(ct,R.raw.minus, 1));
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.e("", "1----<"+e);
@@ -80,5 +81,61 @@ public class SoundPlayer {
 			}).start();
 		}
 	} 
+	
+	//²¥·Å×Ö·û´®ÉùÒô
+	public void playSeriSound(int Type,final String sourceId){
+		if (OtherActivity.PLAYSOUND) {
+			new Thread(new Runnable() {
+				public void run() {
+					try {
+						for(int i=0;i<sourceId.length();i++){
+							int sleepTime=390;
+							if ("=".equals((sourceId.charAt(i)+""))) {
+								sleepTime=480;
+							}
+							soundPool.play(
+								sounds.get(soundStrFormat((sourceId.charAt(i)+""))), 
+								1, 1, 1, 0, 1f);
+							Thread.sleep(sleepTime);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+			}).start();	
+		}
+	}
+	
+	public String soundStrFormat(String playStr) {
+		// TODO Auto-generated method stub
+    	if (".".equals(playStr)) {
+    		return "point";
+		}if ("0".equals(playStr)) {
+			return "zero";
+		}if ("1".equals(playStr)) {
+			return "one";
+		}if ("2".equals(playStr)) {
+			return "two";
+		}if ("3".equals(playStr)) {
+			return "three";
+		}if ("4".equals(playStr)) {
+			return "four";
+		}if ("5".equals(playStr)) {
+			return "five";
+		}if ("6".equals(playStr)) {
+			return "six";
+		}if ("7".equals(playStr)) {
+			return "seven";
+		}if ("8".equals(playStr)) {
+			return "eight";
+		}if ("9".equals(playStr)) {
+			return "nine";
+		}if ("-".equals(playStr)) {
+			return "minus";
+		}if ("=".equals(playStr)) {
+			return "equal";
+		}
+		return "";
+	}
 	
 }

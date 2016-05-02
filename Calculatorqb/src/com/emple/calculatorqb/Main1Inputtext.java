@@ -12,6 +12,7 @@ import javax.security.auth.Subject;
 
 import org.junit.Test;
 
+import com.emple.utils.GetSizeOnCreate;
 import com.emple.utils.SoundPlayer;
 
 import android.R.integer;
@@ -19,6 +20,7 @@ import android.R.string;
 import android.app.Service;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -72,13 +74,13 @@ public class Main1Inputtext {
     				
     			}if(s1!=null){
     				if(s1.equals("-e")){
-    					s1="-"+CustomValues.e.setScale(globe.demic, RoundingMode.HALF_UP);
+    					s1="-"+CustomValues.e.setScale(Globe.demic, RoundingMode.HALF_UP);
     				}if(s1.equals("e")){
-    					s1=""+CustomValues.e.setScale(globe.demic, RoundingMode.HALF_UP);
+    					s1=""+CustomValues.e.setScale(Globe.demic, RoundingMode.HALF_UP);
     				}if(s1.equals("-π")){
-    					s1="-"+CustomValues.π.setScale(globe.demic, RoundingMode.HALF_UP);
+    					s1="-"+CustomValues.π.setScale(Globe.demic, RoundingMode.HALF_UP);
     				}if(s1.equals("π")){
-    					s1=""+CustomValues.π.setScale(globe.demic, RoundingMode.HALF_UP);
+    					s1=""+CustomValues.π.setScale(Globe.demic, RoundingMode.HALF_UP);
     				}
     				main1et1.setText("");
     				BigDecimal bigDecimal=new BigDecimal(s1);
@@ -101,7 +103,8 @@ public class Main1Inputtext {
     					s1=s1+unitySeletStr;
 					}
     				addSpannableStr(main1et1.getSelectionStart(),s1,ct.getResources().getColor(R.color.strpan1),0);
-    				
+    				//Thread.sleep(450);
+    				soundPlayer.playSeriSound(1, "="+s1);
     				//addSpannableStr(main1et1.getSelectionStart(),"=",ct.getResources().getColor(R.color.strpan5),0);
     			}    			   			    			
     		}if(a==27 && !globe.isfuning && !globe.isfun1save && (s.equals("+") || s.equals("-") || s.equals("×")
@@ -120,6 +123,7 @@ public class Main1Inputtext {
        	    }
     		
     		String calStr="";
+    		String playStr="";
     		 if (a==3) {
     			 String indStr=funet1.getText().toString();
     			 indStr=getIndexStr(indStr);//除去一个多余的未知数
@@ -158,6 +162,9 @@ public class Main1Inputtext {
 						}
 						 globe.main1et1.getText().delete(as1, (as2+1));
 						 globe.main1inputtext.addSpannableStr(as1, ("("+calStr+")"), ct.getResources().getColor(R.color.strpan1), 0);
+						 //soundPlayer.playSound(1, "equal");
+						 //Thread.sleep(450);
+		    			 soundPlayer.playSeriSound(1, "="+calStr);
 						 funcancer("noclear");
 					}
 				}/*if (globe.funtype==2) {
@@ -176,15 +183,16 @@ public class Main1Inputtext {
         		int funstart=main1et1.getText().toString().indexOf("f");
     			int funend=main1et1.getText().toString().indexOf(")", funstart);
     			int funinclud1=main1et1.getText().toString().indexOf("(", funstart);   		
-        		
         		 if(a==2 || a==6 || a==7 || a==8 || a==11 || a==12 || a==13 || a==16 || a==17 || a==18){
         			 
         			 if(main1et1.getSelectionStart()>funinclud1 && main1et1.getSelectionStart()<=funend){
         				 addSpannableStr(main1et1.getSelectionStart(),globe.btarray.get(a).getText().toString(),Color.RED,0);
+        				 playStr=globe.btarray.get(a).getText().toString();
         			 }    			     			 
         		 }if(a==1 && !s.equals("(") && !s.equals("√")){
         			 if(main1et1.getSelectionStart()>funinclud1 && main1et1.getSelectionStart()<=funend){
         				 addSpannableStr(main1et1.getSelectionStart(),globe.btarray.get(a).getText().toString(),Color.RED,0);
+        				 playStr=globe.btarray.get(a).getText().toString();
         			 }  		 
         		 } if(a==9){ 
         			 if((s.equals("(") || s.equals(",")) && main1et1.getSelectionStart()>funinclud1 && main1et1.getSelectionStart()<=funend){
@@ -318,7 +326,12 @@ public class Main1Inputtext {
         				 }        				 
         			 }   
         		 }
-    		}   		
+    		} 
+    		if (soundPlayer==null) {
+    			soundPlayer=new SoundPlayer(ct);
+    		}if (!"".equals(playStr)) {
+    			soundPlayer.playSound(1,soundPlayer.soundStrFormat(playStr));
+    		}
     	}if(globe.isfun1save && !globe.isfuning){   
     		
     		if(a==26){
@@ -470,14 +483,16 @@ public class Main1Inputtext {
     	   etcursor();    	  
     }   
     
-    //计算结果优化
+    
+
+	//计算结果优化
     public String unityScale(String s1) {
 		// TODO Auto-generated method stub
     	
     	int a=s1.indexOf(".");
     	String s2=s1.substring((a+1), s1.length());
     	int isscale=-1;
-    	if (a!=-1 && globe.demic>5) {
+    	if (a!=-1 && Globe.demic>5) {
     		for (int i = 0; i < (s2.length()-4); i++) {
     			String ch=s2.charAt(i)+"";
     			if (ch.equals("0") && (isscale==0 || isscale==-1)) {
@@ -563,13 +578,16 @@ public class Main1Inputtext {
 		// TODO Auto-generated method stub
     	for (String xyStr : globe.xy) {
 			try {
-				 sumDecimal=sumDecimal.add(new BigDecimal(xyStr));
+				if(xyStr.indexOf("√")!=-1){
+					xyStr=globe.calculate.calculate(xyStr);
+				}
+				sumDecimal=sumDecimal.add(new BigDecimal(xyStr));
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
 		}
 		 if (globe.xy.size()>=1) {
-			 sumDecimal=sumDecimal.divide(new BigDecimal((globe.xy.size()+"")), (globe.demic+2), RoundingMode.HALF_UP);
+			 sumDecimal=sumDecimal.divide(new BigDecimal((globe.xy.size()+"")), (Globe.demic+2), RoundingMode.HALF_UP);
 			 /*calculate的demic？*/
 		}
 		return sumDecimal;
@@ -676,7 +694,7 @@ public class Main1Inputtext {
    		   cursormove(-1);
    			//addSpannableStr(main1et1.getSelectionStart(),"e",ct.getResources().getColor(R.color.strpan1),0);
    	   }if (a==3) {
-   		playStr="equal";
+   		//playStr="equal";
    	   }/*if (a==29) {
    		   Vibrator vibrator = (Vibrator)ct.getSystemService(Service.VIBRATOR_SERVICE);
    		   long[] pattern = {0, 1, 20, 21,30,31}; 
@@ -863,10 +881,15 @@ public class Main1Inputtext {
 			addSpannableStr(main1et1.getSelectionStart(),"{}",ct.getResources().getColor(R.color.strpan3),1);
 			soundPlayer.playSound(1, etstr);
 		}
-		mainet1fxy();  	    	 
-		funet1.setTextSize(TypedValue.COMPLEX_UNIT_PX, globe.TextSize);funet1.setText("");   			   			
-		main1hsv1.addView(funet1,ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);   
-		globe.funcharacter=globe.funnote .charAt(globe.funnote .length()-1)+"";//main1hsv1    			  			
+		mainet1fxy();
+		
+		funet1.setIncludeFontPadding(false);
+		funet1.setPadding(0, 0, 0, 0);funet1.setGravity(Gravity.CENTER);
+		funet1.setTextSize(TypedValue.COMPLEX_UNIT_PX, globe.TextSize);
+		funet1.setText("");
+		main1hsv1.addView(funet1,ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.MATCH_PARENT);   
+		//funet1.setY((main1hsv1.getHeight()-GetSizeOnCreate.getSize(funet1)[1])/2);
+		globe.funcharacter=globe.funnote .charAt(globe.funnote.length()-1)+"";//main1hsv1    			  			
 		String body=globe.funnote .substring(0, c1);
 		body=body+globe.funnote .substring(d1, d1+1);
 		body=body+globe.funnote .substring(e1, globe.funnote .length()-1);
@@ -894,22 +917,28 @@ public class Main1Inputtext {
 	 public void inputResult(String result) {
 		 
 		 if(result.equals("-e")){
-			 result="-"+CustomValues.e.setScale(globe.demic, RoundingMode.HALF_UP);
+			 result="-"+CustomValues.e.setScale(Globe.demic, RoundingMode.HALF_UP);
 		 }if(result.equals("e")){
-			 result=""+CustomValues.e.setScale(globe.demic, RoundingMode.HALF_UP);
+			 result=""+CustomValues.e.setScale(Globe.demic, RoundingMode.HALF_UP);
 		 }if(result.equals("-π")){
-			 result="-"+CustomValues.π.setScale(globe.demic, RoundingMode.HALF_UP);
+			 result="-"+CustomValues.π.setScale(Globe.demic, RoundingMode.HALF_UP);
 		 }if(result.equals("π")){
-			 result=""+CustomValues.π.setScale(globe.demic, RoundingMode.HALF_UP);
+			 result=""+CustomValues.π.setScale(Globe.demic, RoundingMode.HALF_UP);
 		 }
 		 BigDecimal bigDecimal=new BigDecimal(result);
-		 result=bigDecimal.setScale(globe.demic, RoundingMode.HALF_UP).toPlainString();
+		 result=bigDecimal.setScale(Globe.demic, RoundingMode.HALF_UP).toPlainString();
 		 result=removie0(result);
 		 String s=globe.main1et1.getText().toString();
 		 int a=s.indexOf("{");int b=s.indexOf("}");
 		 globe.main1et1.getText().delete(a, (b+1));
 		 globe.main1inputtext.addSpannableStr(a, ("("+result+")"), ct.getResources().getColor(R.color.strpan1), 0);
-	}
+		 /*try {
+			Thread.sleep(450);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+		}*/
+		 soundPlayer.playSeriSound(1, "="+result);
+	 }
 }
 
 

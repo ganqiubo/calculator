@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-        <ImageView 
+        <!-- <ImageView 
             android:id="@+id/other_detail_soundiv"
             android:layout_width="wrap_content"
         	android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
         	android:src="@drawable/sound"
         	android:layout_alignTop="@+id/other_detail_sound"
         	android:layout_alignBottom="@+id/other_detail_sound"
-            />
+            /> -->
         <TextView 
             android:id="@+id/other_detail_sound"
             android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
         	android:paddingBottom="14dp"
         	android:textColor="#676767"
         	android:layout_toRightOf="@+id/other_detail_soundiv"
-        	android:layout_marginLeft="3dp"
+        	android:layout_marginLeft="10dp"
             />
         
         <com.kyleduo.switchbutton.SwitchButton
@@ -58,4 +58,10 @@
             />
     </RelativeLayout>
 
+   <include 
+       android:id="@+id/include1"
+       layout="@layout/tvsize_list_item"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+    
 </LinearLayout>

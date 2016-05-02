@@ -938,7 +938,7 @@ public class Calculate {
 				 }
 				 bd1= bd1.multiply(new BigDecimal(unitysize));
 				 BigDecimal bd2= new BigDecimal(unitysizeSelet);
-				 bd1=bd1.divide(bd2, (globe.demic+4), RoundingMode.HALF_UP);
+				 bd1=bd1.divide(bd2, (Globe.demic+4), RoundingMode.HALF_UP);
 				 group=bd1.toPlainString();
 			} catch (Exception e) {
 				// TODO: handle exception

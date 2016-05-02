@@ -39,7 +39,7 @@ public class Globe{
 	public ArrayList<Integer> unitseleid=new ArrayList<Integer>();
 	public ArrayList<String> unitseleidStr=new ArrayList<String>();
 	public String unitshowtype="us";
-	public int demic=14;//保存的小数点位数
+	public static int demic=14;//保存的小数点位数
 	public String degrees="degree";//radian:弧度 degree:角度
 	public int input=1;//异步计算不能输入，1代表能输入，-1代表不能输入
 	public CalDataTask cdTask;
