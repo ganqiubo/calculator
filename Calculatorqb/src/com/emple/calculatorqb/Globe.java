@@ -2,12 +2,9 @@ package com.emple.calculatorqb;
 
 import java.io.File;
 import java.util.ArrayList;
-
-import android.text.StaticLayout;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 

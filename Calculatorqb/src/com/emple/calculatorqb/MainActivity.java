@@ -491,6 +491,9 @@ public class MainActivity extends FrameActivity {
     		
     		if(i<=19 || i>=25){
     			globe.btarray.get(i).setText(strarray[i]);
+    			if (i==27 && globe.isfuning) {
+					globe.btarray.get(i).setText("→");
+				}
     		}else{
     			globe.btarray.get(i).setText(function.get(i-20));
     		}

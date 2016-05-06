@@ -120,9 +120,10 @@ public class SettingActivity extends StatusSetActivity{
 				holder.set_tv=(TextView) view.findViewById(R.id.setting_list_itemtv);
 				holder.set_icon=(ImageView) view.findViewById(R.id.setting_list_itemiv);
 				
-				holder.set_tv.setText(SETS[position]);
-				holder.set_icon.setImageResource(SETICONS[position]);
+				view.setTag(holder);
 			}
+			holder.set_tv.setText(SETS[position]);
+			holder.set_icon.setImageResource(SETICONS[position]);
 			//Log.e("", "===>"+position);
 			//holder.set_tv.setText(SETS[position]);
 			//holder.set_icon.setImageResource(SETICONS[position]);
