@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+       <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:paddingRight="@dimen/activity_note_padLR"
+        android:paddingTop="6dp"
+        android:textSize="@dimen/activity_note_tvsize1"
+        android:text="关于∑表达式：" />
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:paddingRight="@dimen/activity_note_padLR"
+        android:textSize="@dimen/activity_note_tvsize2"
+        android:id="@+id/fragment_mvoid_about"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:textSize="@dimen/activity_note_tvsize1"
+        android:paddingTop="6dp"
+        android:paddingRight="@dimen/activity_note_padLR"
+        android:text="∑表达式组成：" />
+    
+    <TextView 
+        android:id="@+id/fragment_mvoid_stru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:textSize="@dimen/activity_note_tvsize2"
+        android:paddingRight="@dimen/activity_note_padLR"
+        />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:textSize="@dimen/activity_note_tvsize1"
+        android:paddingTop="6dp"
+        android:paddingRight="@dimen/activity_note_padLR"
+        android:text="关于X,Y,AVG,n：" />
+    
+    <TextView 
+        android:id="@+id/fragment_mvoid_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:textSize="@dimen/activity_note_tvsize2"
+        android:paddingRight="@dimen/activity_note_padLR"
+        />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:textSize="@dimen/activity_note_tvsize1"
+        android:paddingTop="6dp"
+        android:paddingRight="@dimen/activity_note_padLR"
+        android:text="AVG与[1/N]区别：" />
+    
+    <TextView 
+        android:id="@+id/fragment_mvoid_diff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:textSize="@dimen/activity_note_tvsize2"
+        android:paddingRight="@dimen/activity_note_padLR"
+        />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:textSize="@dimen/activity_note_tvsize1"
+        android:paddingTop="6dp"
+        android:paddingRight="@dimen/activity_note_padLR"
+        android:text="示例：" />
+    
+    <TextView 
+        android:id="@+id/fragment_mvoid_sample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:textSize="@dimen/activity_note_tvsize2"
+        android:paddingRight="@dimen/activity_note_padLR"
+        android:paddingBottom="15dp"
+        /> 
+</LinearLayout>
+    
+</ScrollView>
+

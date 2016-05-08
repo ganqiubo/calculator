@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:paddingRight="@dimen/activity_note_padLR"
+        android:paddingTop="6dp"
+        android:textSize="@dimen/activity_note_tvsize1"
+        android:text="支持的计算单位：" />
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:paddingRight="@dimen/activity_note_padLR"
+        android:textSize="@dimen/activity_note_tvsize2"
+        android:id="@+id/fragment_unitcal_support"
+        />
+    
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:paddingRight="@dimen/activity_note_padLR"
+        android:paddingTop="6dp"
+        android:textSize="@dimen/activity_note_tvsize1"
+        android:text="该功能需注意：" />
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_note_padLR"
+        android:paddingRight="@dimen/activity_note_padLR"
+        android:textSize="@dimen/activity_note_tvsize2"
+        android:id="@+id/fragment_unitcal_waring"
+        />
+    
+</LinearLayout>
+    
+</ScrollView>
+

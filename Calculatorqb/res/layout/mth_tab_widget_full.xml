@@ -22,6 +22,6 @@
     android:gravity="center"
     android:textColor="@color/mth_tab_widget_text"
     android:textSize="@dimen/mth_tab_text_size"
-    android:paddingTop="6dp"
-    android:paddingBottom="17dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="12dp"
     tools:layout_width="match_parent"/>

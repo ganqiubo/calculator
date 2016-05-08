@@ -92,7 +92,8 @@ public class ElementListActivity extends Activity implements OnClickListener{
 		db = SQLiteDatabase.openOrCreateDatabase(Globe.dbFile.getPath(), null);  
 		eles_rl=(RelativeLayout) findViewById(R.id.eles_rl);
 		eles_iv1=new ImageView(mcontext);
-		eles_iv1.setBackgroundResource(R.drawable.atomic);
+		//eles_iv1.setBackgroundResource(R.drawable.atomic);
+		eles_iv1.setBackgroundResource(R.drawable.bgarc);
 		eles_rl.addView(eles_iv1,RelativeLayout.LayoutParams.FILL_PARENT,
 				RelativeLayout.LayoutParams.FILL_PARENT);
 		inflater = LayoutInflater.from(mcontext);

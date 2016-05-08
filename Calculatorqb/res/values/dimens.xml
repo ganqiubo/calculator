@@ -39,5 +39,8 @@
     <dimen name="mth_tab_text_size">16sp</dimen>
     <!-- 72 - fth_tab_width_padding(12) -->
     <dimen name="mth_tab_left_offset">60dp</dimen>
+    
+    <dimen name="activity_note_padLR">8dp</dimen>
+    <dimen name="activity_note_tvsize1">18sp</dimen>
+    <dimen name="activity_note_tvsize2">16sp</dimen>
 </resources>
-
